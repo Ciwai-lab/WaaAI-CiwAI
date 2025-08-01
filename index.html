@@ -149,7 +149,7 @@
   </section>
 
   <section id="screenshots">
-    <h2>Sneak Peek</h2>
+    <h2>Screenshot</h2>
     <div class="glider-contain">
       <div class="glider">
         <div class="glider-slide"><img src="Screenshot_HomeScreen.png" alt="Home" /></div>
@@ -178,16 +178,17 @@
     © 2025 WaaAi™. by CiwAI Smart Digital
   </footer>
 
-  <!-- WA Button -->
+  <!-- WA Chat Button -->
   <a href="https://wa.me/6285121111456" class="whatsapp-float" target="_blank" title="Chat via WhatsApp">
     💬 Chat WA
   </a>
 
-  <!-- Scripts -->
+  <!-- Glider Script + Autoplay -->
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
   <script>
     window.addEventListener('load', function(){
-      const glider = new Glider(document.querySelector('.glider'), {
+      const gliderEl = document.querySelector('.glider');
+      const glider = new Glider(gliderEl, {
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: true,
@@ -198,10 +199,10 @@
         scrollLock: true
       });
 
-      // Autoplay
+      let currentIndex = 0;
       setInterval(() => {
-        const g = document.querySelector('.glider').glider;
-        g.scrollItem((g.page + 1) % g.slideEls.length, true);
+        currentIndex = (currentIndex + 1) % glider.slideEls.length;
+        glider.scrollItem(currentIndex);
       }, 2500);
     });
   </script>
