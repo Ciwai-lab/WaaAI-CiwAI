@@ -1,213 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WaaAi™ - Smart Network Tools for Android">
-  <title>WaaAi™ - Smart Network Tools</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0d0d0d;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-    header {
-      padding: 2rem;
-      text-align: center;
-    }
-    .logo {
-      width: 250px;
-      max-width: 90%;
-      margin-bottom: 1rem;
-    }
-    p.description {
-      color: #ccc;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-    }
-    .cta {
-      margin-top: 2rem;
-    }
-    .cta a {
-      display: inline-block;
-      margin: 0.5rem;
-      background: #00ffc8;
-      color: #000;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .cta a:hover {
-      background: #00cba4;
-    }
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .features, .about, .contact {
-      background: #111;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    section ul {
-      list-style: none;
-      padding: 0;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    section li {
-      margin: 1rem 0;
-      font-size: 1.1rem;
-    }
-
-    .glider-contain {
-      margin-top: 2rem;
-    }
-    .glider-slide img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .glider-track {
-      align-items: center;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.8rem;
-      opacity: 0.5;
-    }
-
-    @media (min-width: 768px) {
-      .glider-slide img {
-        width: 300px;
-      }
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      padding: 12px 18px;
-      border-radius: 50px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      text-decoration: none;
-      z-index: 999;
-      transition: background 0.3s;
-    }
-    .whatsapp-float:hover {
-      background-color: #128C7E;
-    }
-  </style>
+  <title>CiwAI™ Smart Digital</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta name="description" content="CiwAI™ Smart Digital - Modern Solutions: Apps, Web, VPS/VPN, AI Bots" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-  <header>
-    <img src="logo_ai.png" alt="WaaAi Logo" class="logo" />
-    <p class="description">All-in-One Network Tools for Android: Ping, Traceroute, Port Scanner, Speed Test, DNS, IP Geolocation — everything in one smart toolkit.</p>
-    <div class="cta">
-      <a href="#features">Explore Features</a>
-      <a href="https://play.google.com/store/apps/details?id=com.waaai.app" target="_blank">Play Store</a>
-      <a href="https://drive.google.com/uc?export=download&id=1h31rDSKdgAwKnO-OKyfhjRWIrjMOSifa" target="_blank">Download APK</a>
+<body class="bg-[#f9fafb] text-gray-900 font-sans scroll-smooth">
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-gradient-to-b from-gray-50 to-white">
+    <img src="logo_ai.png" alt="WaaAi Logo" class="w-52 md:w-64 lg:w-72 mb-6 drop-shadow-xl" />
+
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">CiwAI™ Smart Digital</h1>
+    <p class="text-lg md:text-xl max-w-xl mb-6 text-gray-600">
+      Simplifying modern technology for everyone — Mobile Apps, Web Design, VPS/VPN, and AI Chatbots.
+    </p>
+
+    <!-- Tombol CTA -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#services"
+        class="px-6 py-3 bg-indigo-600 text-white rounded-xl shadow-md hover:bg-indigo-700 transition">Explore
+        Services</a>
+      <a href="https://drive.google.com/uc?export=download&id=1h31rDSKdgAwKnO-OKyfhjRWIrjMOSifa" download
+        class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 transition">Download APK</a>
+      <a href="https://play.google.com/store/apps/details?id=com.waaai.smarttools" target="_blank"
+        class="px-6 py-3 bg-gray-900 text-white rounded-xl shadow-md hover:bg-gray-800 transition">Get on Play Store</a>
     </div>
-  </header>
-
-  <section class="features" id="features">
-    <h2>Key Features</h2>
-    <ul>
-      <li>✅ Speed Test with real-time graph</li>
-      <li>✅ Ping utility with detailed output</li>
-      <li>✅ Port Scanner for any IP or domain</li>
-      <li>✅ IP Geolocation with map</li>
-      <li>✅ DNS Lookup & WHOIS search</li>
-      <li>✅ Domain Checker with name suggestions</li>
-      <li>✅ Web Insight (SSL, server info, performance)</li>
-      <li>✅ Modern dark mode UI</li>
-      <li>✅ AdMob monetized (no locked features)</li>
-    </ul>
   </section>
 
-  <section class="about" id="about">
-    <h2>About WaaAi™</h2>
-    <p class="description">WaaAi™ is a lightweight yet powerful all-in-one networking toolkit designed for Android. Built with speed, clarity, and professionalism in mind, it's your everyday companion for network diagnostics and analysis — whether you're a casual user or an IT professional.</p>
+  <!-- About Us -->
+  <section id="about" class="py-16 px-6 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-4 text-center">About CiwAI™</h2>
+    <p class="text-gray-700 text-lg leading-relaxed text-center">
+      CiwAI™ is a passionate digital team from Indonesia building smart, lightweight, and human-friendly tech.
+      We focus on Android/iOS apps, web development, private VPS/VPN solutions, and custom AI bots.
+    </p>
   </section>
 
-  <section id="screenshots">
-    <h2>Screenshot</h2>
-    <div class="glider-contain">
-      <div class="glider">
-        <div class="glider-slide"><img src="Screenshot_HomeScreen.png" alt="Home" /></div>
-        <div class="glider-slide"><img src="Screenshot_NativeScreen.png" alt="Native Tools" /></div>
-        <div class="glider-slide"><img src="Screenshot_PingTool.png" alt="Ping Tool" /></div>
-        <div class="glider-slide"><img src="Screenshot_PortScanner.png" alt="Port Scanner" /></div>
-        <div class="glider-slide"><img src="Screenshot_SpeedTest.png" alt="Speed Test" /></div>
-        <div class="glider-slide"><img src="Screenshot_DomainAvaliable.png" alt="Domain Checker" /></div>
-        <div class="glider-slide"><img src="Screenshot_DNS.png" alt="DNS" /></div>
-        <div class="glider-slide"><img src="Screenshot_IpGeolocation.png" alt="Geo IP" /></div>
-        <div class="glider-slide"><img src="Screenshot_WhoIs.png" alt="Whois" /></div>
-        <div class="glider-slide"><img src="Screenshot_WebInsight.png" alt="WebInsight" /></div>
+  <!-- Our Vision -->
+  <section id="vision" class="py-20 px-6 bg-[#f0f4fa] text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
+    <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
+      At CiwAI™, we believe that technology should be simple, empowering, and accessible to everyone — from remote
+      villages to smart cities.
+      <br /><br />
+      Our vision is to become a trusted digital ally, building lightweight tools, private systems, and intuitive
+      solutions
+      that make everyday tasks smarter, not harder.
+    </p>
+  </section>
+
+  <!-- Our Services -->
+  <section id="services" class="py-16 bg-[#f3f6fc] text-center">
+    <h2 class="text-3xl font-bold text-center mb-10">What We Do</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div class="bg-white shadow-lg rounded-xl p-6 text-center">
+        <h3 class="text-xl font-semibold mb-2">Mobile Apps</h3>
+        <p>We build modern Android/iOS tools like WaaAi™, network utilities, and more.</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-6 text-center">
+        <h3 class="text-xl font-semibold mb-2">Web Design & Hosting</h3>
+        <p>Clean, lightweight websites with secure and scalable hosting.</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-6 text-center">
+        <h3 class="text-xl font-semibold mb-2">Custom VPS & VPN</h3>
+        <p>Private, tailored server solutions for business or privacy needs.</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-6 text-center">
+        <h3 class="text-xl font-semibold mb-2">AI Chatbots</h3>
+        <p>Telegram and WhatsApp bots for automation and digital support.</p>
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p class="description">
-      Want to collaborate, feedback, or discuss a custom solution?<br>
-      Email : <a href="mailto:ciwaidevtools@gmail.com" style="color:#00ffc8; text-decoration: none;">ciwaidevtools@gmail.com</a><br>
-      Website : <a href="ciwaidevtools.netlify.app" style="color:#00ffc8; text-decoration: none;">ciwaidevtools.netlify.app</a><br>
-      Let’s Build Something Smart Together!
+  <!-- Contact Us - Let’s Talk Style -->
+  <section id="contact" class="py-20 px-6 text-center bg-[#edf2f7]">
+    <h2 class="text-4xl font-bold mb-4">☕ Let’s Talk!</h2>
+    <p class="text-gray-700 max-w-xl mx-auto mb-8">
+      Got an idea, project, or something you want? or just wanna say hi?
+      We’re open for collabs, custom apps and craft something meaningful.
     </p>
+
+    <div class="text-lg text-gray-800 space-y-2">
+      <p>📩 Email: <strong><a href="mailto:ciwaismartdigital@gmail.com"
+            class="text-indigo-600 hover:underline">ciwaismartdigital@gmail.com</a></strong></p>
+    </div>
   </section>
 
-  <footer>
-    © 2025 WaaAi™. by CiwAI Smart Digital
+  <!-- Footer -->
+  <footer class="py-8 bg-black text-white text-center mt-10">
+    <p>&copy; 2025 CiwAI™ Smart Digital. All rights reserved.</p>
   </footer>
 
-  <!-- WA Chat Button -->
-  <a href="https://wa.me/6282260383973" class="whatsapp-float" target="_blank" title="Chat via WhatsApp">
-    💬 Chat WA
+  <!-- Floating WhatsApp Button - Mobile Only -->
+  <a href="https://wa.me/6282260383973" target="_blank"
+    class="block md:hidden fixed bottom-5 right-5 z-50 animate-bounce">
+    <div class="bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition animate-pulse">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32" class="w-6 h-6">
+        <path
+          d="M16 .3C7.3.3.2 7.4.2 16.1c0 2.8.7 5.5 2.1 7.9L0 32l8.2-2.1c2.3 1.2 4.9 1.8 7.5 1.8 8.7 0 15.8-7.1 15.8-15.9S24.7.3 16 .3zm0 29.3c-2.4 0-4.8-.6-6.9-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5c-1.2-2.1-1.9-4.5-1.9-6.9 0-7.5 6.1-13.6 13.6-13.6 3.6 0 7 1.4 9.5 3.9 2.5 2.5 3.9 5.9 3.9 9.5 0 7.5-6.1 13.6-13.8 13.6zm7.5-10.1c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.7-.2-1 .2s-1.2 1.3-1.5 1.5c-.3.2-.6.3-1 .1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.9.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6.1-.2 0-.5 0-.7s-.9-2.2-1.2-3c-.3-.7-.7-.6-1-.6-.2 0-.5 0-.7 0-.2 0-.5.1-.7.3-.2.2-1 1-1 2.5 0 1.5 1 3 1.1 3.2.1.2 2 3.4 4.9 4.8 1.8.9 2.5 1 3.4.9.6-.1 1.8-.7 2-1.4.3-.6.3-1.1.2-1.3-.1-.1-.4-.2-.8-.4z" />
+      </svg>
+    </div>
   </a>
-
-  <!-- Glider Script + Autoplay -->
-  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-  <script>
-    window.addEventListener('load', function(){
-      const gliderEl = document.querySelector('.glider');
-      const glider = new Glider(gliderEl, {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        draggable: true,
-        dots: false,
-        arrows: false,
-        rewind: true,
-        duration: 0.5,
-        scrollLock: true
-      });
-
-      let currentIndex = 0;
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % glider.slideEls.length;
-        glider.scrollItem(currentIndex);
-      }, 2500);
-    });
-  </script>
-
 </body>
+
 </html>
