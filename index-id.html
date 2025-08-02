@@ -7,10 +7,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#f9fafb] text-gray-900 font-sans scroll-smooth">
-<div class="absolute top-4 right-4 text-sm space-x-2">
-  <a href="/index.html" class="text-gray-600 hover:underline">🇬🇧 English</a>
+<div class="absolute top-4 right-4 text-sm space-x-2 z-50">
+  <a href="/index.html" onclick="localStorage.setItem('chosenLang', 'en')" class="text-gray-600 hover:underline">🇬🇧 English</a>
   <span>|</span>
-  <a href="/index-id.html" class="text-gray-600 hover:underline">🇮🇩 Bahasa</a>
+  <a href="/index-id.html" onclick="localStorage.setItem('chosenLang', 'id')" class="text-gray-600 hover:underline">🇮🇩 Bahasa</a>
 </div>
 
   <!-- Hero Section -->
@@ -32,7 +32,6 @@
         class="px-6 py-3 bg-orange-300 text-white rounded-xl shadow-md hover:bg-orange-400 transition text-center">Unduh APK</a>
       <a href="https://play.google.com/store/apps/details?id=com.waaai.smarttools" target="_blank"
         class="px-6 py-3 bg-rose-400 text-white rounded-xl shadow-md hover:bg-rose-500 transition text-center">Play Store</a>
-      <a href="/pricing.html"
     </div>
   </section>
 
