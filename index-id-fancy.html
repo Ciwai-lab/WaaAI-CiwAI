@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CiwAI™ Smart Digital</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="description" content="CiwAI™ Smart Digital - Solusi Modern: Aplikasi, Web, VPS/VPN, Bot AI" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body
+    class="flex flex-col min-h-screen bg-gradient-to-b from-sky-50 via-white to-white text-gray-900 font-sans scroll-smooth">
+
+    <!-- Pilihan Bahasa -->
+    <div class="absolute top-4 right-4 text-sm space-x-2 z-50">
+        <a href="/index.html" onclick="localStorage.setItem('chosenLang', 'en')"
+            class="text-gray-600 hover:underline">🇬🇧 English</a>
+        <span>|</span>
+        <a href="/index-id.html" onclick="localStorage.setItem('chosenLang', 'id')"
+            class="text-gray-600 hover:underline">🇮🇩 Bahasa</a>
+    </div>
+
+    <!-- Hero -->
+    <section id="home" class="pt-24 pb-32 flex flex-col justify-center items-center text-center px-6">
+        <img src="logo_ai.png" alt="Logo WaaAi" class="w-52 md:w-64 lg:w-72 mb-6 drop-shadow-xl" data-aos="fade-down" />
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 max-w-2xl" data-aos="fade-up">
+            CiwAI™ Smart Digital
+        </h1>
+        <p class="text-lg md:text-xl max-w-xl mb-6 text-gray-600" data-aos="fade-up" data-aos-delay="100">
+            Menyederhanakan teknologi modern untuk semua orang — Aplikasi Mobile, Desain Web, VPS/VPN, dan Chatbot AI.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl mx-auto mt-6" data-aos="zoom-in-up"
+            data-aos-delay="200">
+            <a href="#services"
+                class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow-lg hover:bg-blue-700 transform hover:scale-105 transition text-center">Lihat
+                Layanan</a>
+            <a href="https://drive.google.com/file/d/1-QsFdDV1wf4yWX9-8HVNGrGve6oGome-/view?usp=sharing" download
+                class="px-6 py-3 bg-orange-400 text-white rounded-xl shadow-lg hover:bg-orange-500 transform hover:scale-105 transition text-center">Unduh
+                APK</a>
+            <a href="https://play.google.com/store/apps/details?id=com.waaai.smarttools" target="_blank"
+                class="px-6 py-3 bg-rose-500 text-white rounded-xl shadow-lg hover:bg-rose-600 transform hover:scale-105 transition text-center">Play
+                Store</a>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="about" class="py-20 px-6 max-w-3xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-semibold mb-4">Tentang CiwAI™</h2>
+        <p class="text-gray-700 text-lg leading-relaxed">
+            CiwAI™ adalah tim digital kreatif penuh semangat dari Indonesia yang membangun teknologi pintar, ringan,
+            cerdas, dan
+            ramah pengguna. Kami fokus pada pengembangan aplikasi Android/iOS, pengenbangan website, server VPS/VPN, dan
+            bot AI
+            custom.
+        </p>
+    </section>
+
+    <!-- Visi -->
+    <section id="vision" class="py-24 px-6 bg-gradient-to-br from-[#e0f2f1] to-[#f0fdfa] text-center"
+        data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Visi Kami</h2>
+        <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
+            Di CiwAI™, kami percaya bahwa teknologi seharusnya sederhana, memberdayakan, dan dapat diakses oleh siapa
+            saja —
+            mulai dari pelosok desa hingga kota pintar.
+            <br /><br />
+            Visi kami adalah menjadi mitra digital terpercaya, membangun teknologi ringan, sistem pribadi, dan solusi
+            intuitif
+            yang membuat pekerjaan sehari-hari menjadi lebih mudah dan cerdas.
+        </p>
+    </section>
+
+    <!-- Layanan Kami -->
+    <section id="services" class="py-24 bg-[#f0f4fa] text-center">
+        <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Layanan Kami</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
+            <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
+                data-aos="zoom-in">
+                <h3 class="text-xl font-semibold mb-2">Aplikasi Mobile</h3>
+                <p>Kami membangun aplikasi modern Android/iOS seperti WaaAi™, tools jaringan, dan lainnya.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
+                data-aos="zoom-in" data-aos-delay="100">
+                <h3 class="text-xl font-semibold mb-2">Desain Web & Hosting</h3>
+                <p>Website ringan dan bersih dengan hosting yang aman dan dapat diskalakan.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
+                data-aos="zoom-in" data-aos-delay="200">
+                <h3 class="text-xl font-semibold mb-2">Server VPS & VPN</h3>
+                <p>Solusi server pribadi yang disesuaikan untuk kebutuhan bisnis atau privasi.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
+                data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-xl font-semibold mb-2">Bot AI</h3>
+                <p>Bot Telegram dan WhatsApp untuk otomatisasi dan bantuan digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" class="py-24 px-6 text-center bg-[#cbd5e1]" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4">☕ Ayo Ngobrol!</h2>
+        <p class="text-gray-700 max-w-xl mx-auto mb-8">
+            Punya ide, proyek, atau sekadar mau kenalan?
+            Kami terbuka untuk kolaborasi, pengembangan aplikasi pilihan, dan solusi digital lainnya. </p>
+        <div class="text-lg text-gray-800 space-y-2">
+            <p>📩 Email: <strong><a href="mailto:ciwaismartdigital@gmail.com" class="text-indigo-600 hover:underline">
+                        ciwaismartdigital@gmail.com</a></strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-8 bg-black text-white text-center" data-aos="fade-in">
+        <p>&copy; 2025 CiwAI™ Smart Digital. Seluruh hak cipta dilindungi.</p>
+    </footer>
+
+    <!-- Tombol WhatsApp -->
+    <a href="https://wa.me/6282260383973" target="_blank"
+        class="block md:hidden fixed bottom-5 right-5 z-50 animate-bounce">
+        <div class="bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32" class="w-6 h-6">
+                <path d="M16 .3C7.3.3.2 7.4.2 16.1c0 2.8.7 5.5 2.1 7.9L0 32l8.2-2.1c2.3 1.2 4.9 1.8 7.5 1.8
+        8.7 0 15.8-7.1 15.8-15.9S24.7.3 16 .3zm0 29.3c-2.4 0-4.8-.6-6.9-1.8l-.5-.3-4.9 1.3
+        1.3-4.8-.3-.5c-1.2-2.1-1.9-4.5-1.9-6.9 0-7.5 6.1-13.6 13.6-13.6
+        3.6 0 7 1.4 9.5 3.9 2.5 2.5 3.9 5.9 3.9 9.5
+        0 7.5-6.1 13.6-13.8 13.6zm7.5-10.1c-.4-.2-2.4-1.2-2.7-1.3
+        -.4-.1-.7-.2-1 .2s-1.2 1.3-1.5 1.5c-.3.2-.6.3-1 .1
+        -.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8
+        -.2-.4 0-.6.2-.9.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6
+        .1-.2 0-.5 0-.7s-.9-2.2-1.2-3c-.3-.7-.7-.6-1-.6
+        -.2 0-.5 0-.7 0-.2 0-.5.1-.7.3-.2.2-1 1-1 2.5
+        0 1.5 1 3 1.1 3.2.1.2 2 3.4 4.9 4.8
+        1.8.9 2.5 1 3.4.9.6-.1 1.8-.7 2-1.4
+        .3-.6.3-1.1.2-1.3-.1-.1-.4-.2-.8-.4z" />
+            </svg>
+        </div>
+    </a>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+
+</html>
