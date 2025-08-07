@@ -232,13 +232,55 @@
       </svg>
     </div>
   </a>
-  <!-- AOS Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" id="backToTopBtn"
+    class="hidden fixed top-1/2 right-2 transform -translate-y-1/2 z-50 bg-white/40 hover:bg-white/60 backdrop-blur-sm text-blue-800 hover:text-blue-900 p-3 rounded-full shadow-md transition duration-300 border border-white/50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd"
+        d="M10 4a1 1 0 01.894.553l5 10a1 1 0 01-1.788.894L10 6.618 5.894 15.447a1 1 0 01-1.788-.894l5-10A1 1 0 0110 4z"
+        clip-rule="evenodd" />
+    </svg>
+  </button>
+
+  <!-- Tailwind Config (sebelum script lainnya) -->
   <script>
+    tailwind.config = {
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+      corePlugins: {
+        backdropBlur: true,
+      },
+    }
+  </script>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Script Section -->
+  <script>
+    // ✅ Init AOS (Animate On Scroll)
     AOS.init({
       duration: 800,
-      once: true
+      once: true,
     });
+
+    // ✅ Scroll-to-top button logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.remove("hidden");
+      } else {
+        backToTopBtn.classList.add("hidden");
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   </script>
 </body>
 
