@@ -1,43 +1,55 @@
-# WaaAi™ – AllNetTools
+# 🌐 WaaAi™ – Smart Digital Tools for Everyone
 
-🚀 **WaaAi™** is an all-in-one smart networking toolkit for Android, built with performance, simplicity, and professionals in mind.
+🚀 **WaaAi™** is your trusted source for smart, lightweight, and privacy-friendly digital tools, built to empower users with performance, simplicity, and professionals in mind.
+
+![GitHub stars](https://img.shields.io/github/stars/ciwai-lab/WaaAI-AllNetTools)
+![GitHub license](https://img.shields.io/github/license/ciwai-lab/WaaAI-AllNetTools)
+![GitHub last commit](https://img.shields.io/github/last-commit/ciwai-lab/WaaAI-AllNetTools)
 
 ---
 
 ## 🔧 Key Features
 
-- ✅ **Speed Test** with real-time graph  
-- ✅ **Ping utility** with detailed output  
-- ✅ **Port Scanner** for any IP or domain  
-- ✅ **IP Geolocation** with map  
-- ✅ **DNS Lookup** & **WHOIS** search  
-- ✅ **Domain Checker** with name suggestions  
-- ✅ **Web Insight** (SSL, server info, performance)  
-- ✅ **Modern dark mode UI**  
-- ✅ **AdMob monetized** (no locked features)  
+- ✨ Beautiful, modern & responsive web design
+- 🌙 Dark & Light mode support
+- 🌐 Multi-language (English & Bahasa Indonesia)
+- 📱 Easy access to tools & mobile apps (APK / Play Store)
+- 📩 Contact support via WhatsApp or Email
 
+## 🛠️ Built With
+
+- **Flutter Web**
+- **Tailwind CSS**
+- **GitHub Pages / Netlify Hosting**
+- **obile-First & Responsive Design**
+- **HTML + CSS**
+- **Google Fonts (Inter)**
+- **Netlify / GitHub Pages**
+- **Designed by CiwAI Smart Digital**
+
+---
+
+## 💻 Run Locally
+
+To build or run locally:
+
+```bash
+flutter build web
+# or for development:
+flutter run -d chrome
+```
 ---
 
 ## 📱 Download
 
-- 👉 [Google Play Store](https://play.google.com/store/apps/details?id=com.waaai.app)  
-- 📦 [Download APK](https://drive.google.com/uc?export=download&id=1h31rDSKdgAwKnO-OKyfhjRWIrjMOSifa)
+🔗 [Visit WaaAi™ Website](https://ciwaidevtools.netlify.app/#projects)
 
 ---
 
 ## 🌐 Live Demo
 
 🖥️ Visit the landing page here:  
-👉 [https://ciwai-lab.github.io/WaaAI-AllNetTools](https://ciwai-lab.github.io/WaaAI-AllNetTools)
-
----
-
-## 👨‍💻 Built With
-
-- HTML + CSS  
-- Google Fonts (Inter)  
-- Netlify / GitHub Pages  
-- Designed by **CiwAI Smart Digital**
+👉 [https://ciwai-lab.github.io/CiwaaAI-WaaAI](https://ciwai-lab.github.io/CiwaaAI-WaaAI)
 
 ---
 
@@ -45,7 +57,14 @@
 
 📧 [ciwaismartdigital@gmail.com](mailto:ciwaismartdigital@gmail.com)  
 🔗 [CiwAI-lab GitHub](https://github.com/Ciwai-lab)
+💬 WhatsApp: [Chat Now](https://wa.me/6282260383973)
 
 ---
 
-© 2025 WaaAi™ – by CiwAI Smart Digital
+## 🏁 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+© 2025 WaaAi™ | CiwAI™ Smart Digital. All rights reserved.
