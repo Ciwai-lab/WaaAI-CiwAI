@@ -10,11 +10,17 @@
 
 ## 🔧 Key Features
 
-- ✨ Beautiful, modern & responsive web design
-- 🌙 Dark & Light mode support
-- 🌐 Multi-language (English & Bahasa Indonesia)
-- 📱 Easy access to tools & mobile apps (APK / Play Store)
-- 📩 Contact support via WhatsApp or Email
+- ⚡ **Super Lightweight** — Built with performance in mind, optimized for speed and smooth user experience
+- 🎨 **Modern UI/UX** — Clean layout, responsive design, and dark/light mode support
+- 🌐 **Multilingual Support** — Available in English & Bahasa Indonesia
+- 📱 **Mobile-First Design** — Looks great on any device, from desktop to smartphone
+- 🛠️ **Developer-Friendly** — Fully open-source, easy to modify and extend
+- 🔐 **Privacy-Focused** — No trackers, no analytics, just tools that work
+- 🧰 **Modular Structure** — Designed to scale with future WaaAi™ tools and features
+- 🧭 **Clear Navigation** — Smooth scroll, section highlights, and clear CTA for users
+- 📦 **Easy Deployment** — Hosted on GitHub Pages / Netlify for instant access
+- 💬 **Direct Support** — Integrated WhatsApp & Email contact options for user engagement
+
 
 ## 🛠️ Built With
 
@@ -49,7 +55,7 @@ flutter run -d chrome
 ## 🌐 Live Demo
 
 🖥️ Visit the landing page here:  
-👉 [https://ciwai-lab.github.io/CiwaaAI-WaaAI](https://ciwai-lab.github.io/CiwaaAI-WaaAI)
+👉 [https://ciwai-lab.github.io/WaaAI-CiwAI/](https://ciwai-lab.github.io/WaaAI-CiwAI/)
 
 ---
 
