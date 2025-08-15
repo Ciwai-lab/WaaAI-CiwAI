@@ -2,23 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta name="google-site-verification" content="SVtVNUIZaRepMzsDg78cYeorwSS5R-XdDomMFLbHllY" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CiwAI™ Smart Digital</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <meta name="description" content="CiwAI™ Smart Digital - Modern Solutions: Apps, Web, VPS/VPN, AI Bots" />
 
+  <script src="/assets/env.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Animate on Scroll -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Smooth Scroll -->
   <style>
     html {
       scroll-behavior: smooth;
     }
   </style>
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Markdown Renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 </head>
 
 <body class="flex flex-col min-h-screen bg-gradient-to-b from-sky-50 via-white to-white text-gray-900 font-sans">
@@ -33,7 +43,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section id="home" class="pt-10 pb-14 flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-gray-50 to-white">
+  <section id="home" class="pt-24 pb-32 flex flex-col justify-center items-center text-center px-6">
     <img src="logo_ai.png" alt="WaaAi Logo" class="w-52 md:w-64 lg:w-72 mb-6 drop-shadow-xl animate-fade-in"
       data-aos="fade-down" />
 
@@ -60,157 +70,211 @@
   </section>
 
   <!-- About Us -->
-  <section id="about" class="py-20 px-6 max-w-3xl mx-auto text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-4">About CiwAI™</h2>
-    <p class="text-gray-700 text-lg leading-relaxed">
-      CiwAI™ is a passionate digital team from Indonesia building smart, lightweight, and human-friendly tech.
-      We focus on Android/iOS apps, web development, private VPS/VPN solutions, and custom AI bots.
-    </p>
+  <section id="about" class="py-20 px-6 text-center bg-[#f9fafb]" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-4">About CiwAI™</h2>
+      <p class="text-gray-700 text-lg leading-relaxed">
+        CiwAI™ is a passionate digital team from Indonesia building smart, lightweight, and human-friendly tech.
+        We focus on Android/iOS apps, web development, private VPS/VPN solutions, and custom AI bots.
+      </p>
+    </div>
   </section>
 
-  <!-- Our Vision -->
-  <section id="vision" class="py-24 px-6 bg-gradient-to-br from-[#e0f2f1] to-[#f0fdfa] text-center" data-aos="fade-up">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
-    <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
-      At CiwAI™, we believe that technology should be simple, empowering, and accessible to everyone — from remote
-      villages to smart cities.
-      <br /><br />
-      Our vision is to become a trusted digital ally, building lightweight tools, private systems, and intuitive
-      solutions that make everyday tasks smarter, not harder.
-    </p>
+
+  <section id="vision" class="py-20 px-6 text-center bg-gradient-to-br from-[#fafefe] to-[#ffffff]" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
+      <p class="text-gray-700 text-lg leading-relaxed">
+        At CiwAI™, we believe that technology should be simple, empowering, and accessible to everyone —
+        from remote villages to smart cities.
+        <br /><br />
+        Our vision is to become a trusted digital ally, building lightweight tools, private systems, and intuitive
+        solutions that make everyday tasks smarter, not harder.
+      </p>
+    </div>
   </section>
   <!-- Our Services -->
-  <section id="services" class="py-24 bg-[#f0f4fa] text-center">
-    <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">What We Do</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
-      <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-        data-aos="zoom-in">
-        <h3 class="text-xl font-semibold mb-2">Mobile Apps</h3>
-        <p>We build modern Android/iOS tools like WaaAi™, network utilities, and more.</p>
+  <section id="services" class="py-20 px-6 text-center bg-gradient-to-br from-[#f0f4fa] to-[#e8f0fe]"
+    data-aos="fade-up">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">What We Do</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
+          data-aos="zoom-in">
+          <h3 class="text-xl font-semibold mb-2">Mobile Apps</h3>
+          <p>We build modern Android/iOS tools like WaaAi™, network utilities, and more.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
+          data-aos="zoom-in" data-aos-delay="100">
+          <h3 class="text-xl font-semibold mb-2">Web Design & Hosting</h3>
+          <p>Clean, lightweight websites with secure and scalable hosting.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
+          data-aos="zoom-in" data-aos-delay="200">
+          <h3 class="text-xl font-semibold mb-2">Custom VPS & VPN</h3>
+          <p>Private, tailored server solutions for business or privacy needs.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
+          data-aos="zoom-in" data-aos-delay="300">
+          <h3 class="text-xl font-semibold mb-2">AI Chatbots</h3>
+          <p>Telegram and WhatsApp bots for automation and digital support.</p>
+        </div>
       </div>
-      <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-        data-aos="zoom-in" data-aos-delay="100">
-        <h3 class="text-xl font-semibold mb-2">Web Design & Hosting</h3>
-        <p>Clean, lightweight websites with secure and scalable hosting.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-        data-aos="zoom-in" data-aos-delay="200">
-        <h3 class="text-xl font-semibold mb-2">Custom VPS & VPN</h3>
-        <p>Private, tailored server solutions for business or privacy needs.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-        data-aos="zoom-in" data-aos-delay="300">
-        <h3 class="text-xl font-semibold mb-2">AI Chatbots</h3>
-        <p>Telegram and WhatsApp bots for automation and digital support.</p>
-      </div>
-    </div>
   </section>
 
   <!-- Our Projects -->
-  <section id="projects" class="py-20 px-6 bg-gradient-to-b from-[#fefce8] to-[#fef9c3] text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-10" data-aos="fade-up">🚀 Our Projects</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto" data-aos="fade-up">
+  <section id="projects" class="py-20 px-6 text-center bg-gradient-to-b from-[#fefce8] to-[#fef9c3]" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Our Projects</h2>
 
-      <!-- AllNetTools -->
-      <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-        <h3 class="text-xl font-semibold mb-2">AllNetTools</h3>
-        <p class="text-gray-600 mb-4 text-sm">Android app packed with essential networking tools like Ping,
-          Port Scanning, Speed Test, and more.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1fIU3FQEwCmx7eQ8IzXQnfFHQsC2UufeI"
-          class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-          📥 Download APK
-        </a>
-      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- AllNetTools -->
+        <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
+          <h3 class="text-xl font-semibold mb-2">AllNetTools</h3>
+          <p class="text-gray-600 mb-4 text-sm">Android app packed with essential networking tools like Ping,
+            Traceroute, Speed Test, and more.
+          </p>
+          <a href="https://drive.google.com/uc?export=download&id=1h31rDSKdgAwKnO-OKyfhjRWIrjMOSifa"
+            class="inline-block bg-blue-300 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+            📥 Download APK
+          </a>
+        </div>
 
-      <!-- GarageCars -->
-      <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-        <h3 class="text-xl font-semibold mb-2">GarageCars</h3>
-        <p class="text-gray-600 mb-4 text-sm">Smart inventory management for car dealerships — flexible,
-          powerful, and ready to scale.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1-QsFdDV1wf4yWX9-8HVNGrGve6oGome-"
-          class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-          📥 Download APK
-        </a>
-      </div>
+        <!-- GarageCars -->
+        <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
+          <h3 class="text-xl font-semibold mb-2">GarageCars</h3>
+          <p class="text-gray-600 mb-4 text-sm">Smart inventory management for car dealerships — flexible,
+            powerful, and ready to scale.
+          </p>
+          <a href="https://drive.google.com/uc?export=download&id=1-QsFdDV1wf4yWX9-8HVNGrGve6oGome-"
+            class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+            📥 Download APK
+          </a>
+        </div>
 
-      <!-- Website SKH -->
-      <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-        <h3 class="text-xl font-semibold mb-2">Website SKH JA</h3>
-        <p class="text-gray-600 mb-4 text-sm">A modern website for schools — lightweight, responsive, and easy
-          to access.
-        </p>
-        <a href="target="_blank"
-          class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm">
-          🌐 Visit Site
-        </a>
-      </div>
+        <!-- Website SKH -->
+        <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
+          <h3 class="text-xl font-semibold mb-2">Website SKH Jannatul Aulad</h3>
+          <p class="text-gray-600 mb-4 text-sm">A modern website for schools — lightweight, responsive, and easy
+            to access.
+          </p>
+          <a href="https://jannatulaulad.netlify.app/" target="_blank"
+            class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm">
+            🌐 Lihat Website
+          </a>
+        </div>
 
-      <!-- SayurIn (Coming Soon...) -->
-      <div
-        class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-        <h3 class="text-xl font-semibold mb-2">SayurIn™</h3>
-        <p class="text-gray-600 mb-3 text-sm leading-snug">
-          <strong>
-            ⚠️ Coming Soon...<br />
-            We're building something cool!
-          </strong>
-        </p>
-        <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-          🔧 Coming Soon
-        </button>
-      </div>
+        <!-- SayurIn (Coming Soon...) -->
+        <div
+          class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
+          <h3 class="text-xl font-semibold mb-2">SayurIn™</h3>
+          <p class="text-gray-600 mb-3 text-sm leading-snug">
+            <strong>
+              ⚠️ Coming Soon...<br />
+              We're building something cool!
+            </strong>
+          </p>
+          <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
+            🔧 Coming Soon
+          </button>
+        </div>
 
-      <!-- Coming Soon... -->
-      <div
-        class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-        <h3 class="text-xl font-semibold mb-2">Coming Soon App</h3>
-        <p class="text-gray-600 mb-3 text-sm leading-snug">
-          <strong>
-            ⚠️ Coming Soon...<br />
-            We're building something cool!
-          </strong>
-        </p>
-        <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-          🔧 Coming Soon
-        </button>
-      </div>
+        <!-- Coming Soon... -->
+        <div
+          class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
+          <h3 class="text-xl font-semibold mb-2">Coming Soon App</h3>
+          <p class="text-gray-600 mb-3 text-sm leading-snug">
+            <strong>
+              ⚠️ Coming Soon...<br />
+              We're building something cool!
+            </strong>
+          </p>
+          <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
+            🔧 Coming Soon
+          </button>
+        </div>
 
-      <!-- Coming Soon... -->
-      <div
-        class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-        <h3 class="text-xl font-semibold mb-2">Coming Soon App</h3>
-        <p class="text-gray-600 mb-3 text-sm leading-snug">
-          <strong>
-            ⚠️ Coming Soon...<br />
-            We're building something cool!
-          </strong>
-        </p>
-        <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-          🔧 Coming Soon
-        </button>
+        <!-- Coming Soon... -->
+        <div
+          class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
+          <h3 class="text-xl font-semibold mb-2">Coming Soon App</h3>
+          <p class="text-gray-600 mb-3 text-sm leading-snug">
+            <strong>
+              ⚠️ Coming Soon...<br />
+              We're building something cool!
+            </strong>
+          </p>
+          <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
+            🔧 Coming Soon
+          </button>
+        </div>
       </div>
-    </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-24 px-6 text-center bg-gradient-to-br from-[#e0f7fa] to-[#e0f2f1]" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-4">☕ Let’s Talk!</h2>
-    <p class="text-gray-700 max-w-xl mx-auto mb-8">
-      Got an idea, project, or something you want? or just wanna say hi?
-      We’re open for collabs, custom apps and craft something meaningful.
-    </p>
-    <div class="text-lg text-gray-800 space-y-2">
-      <p>📩 Email: <strong><a href="mailto:ciwaismartdigital@gmail.com"
-            class="text-indigo-600 hover:underline">ciwaismartdigital@gmail.com</a></strong></p>
+  <section id="contact" class="py-20 px-6 text-center bg-gradient-to-br from-[#e0f7fa] to-[#e0f2f1]" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Let’s Talk!</h2>
+      <p class="text-gray-700 max-w-xl mx-auto mb-8">
+        Got an idea, project, or something you want? or just wanna say hi?
+        We’re open for collabs, custom apps and craft something meaningful.
+      </p>
+      <div class="text-lg text-gray-800 space-y-2">
+        <p>📩 Email: <strong><a href="mailto:ciwaismartdigital@gmail.com"
+              class="text-indigo-600 hover:underline">ciwaismartdigital@gmail.com</a></strong></p>
+      </div>
+  </section>
+
+  <section id="latest-updates" class="py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6">Latest Updates</h2>
+      <div id="updates-list" class="grid gap-6 md:grid-cols-3"></div>
+      <div class="mt-6">
+        <a href="/updates.html" class="text-blue-600 hover:underline">View all updates →</a>
+      </div>
     </div>
   </section>
 
+  <script>
+    const supabaseClient = supabase.createClient(
+      window.SUPABASE_URL || '{{SUPABASE_URL}}',
+      window.SUPABASE_ANON_KEY || '{{SUPABASE_ANON_KEY}}'
+    );
+
+    async function loadLatestUpdates() {
+      const { data, error } = await supabaseClient
+        .from('posts')
+        .select('title, slug, excerpt, cover_url, published_at')
+        .eq('status', 'published')
+        .lte('published_at', new Date().toISOString())
+        .order('published_at', { ascending: false })
+        .limit(3);
+
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      const container = document.getElementById('updates-list');
+      container.innerHTML = data.map(post => `
+      <div class="bg-white rounded-lg shadow p-4 flex flex-col">
+        ${post.cover_url ? `<img src="${post.cover_url}" alt="" class="rounded mb-3">` : ''}
+        <h3 class="font-semibold text-lg mb-2">${post.title}</h3>
+        <p class="text-sm text-gray-600 mb-4">${post.excerpt || ''}</p>
+        <a href="/updates.html?slug=${post.slug}" class="mt-auto text-blue-500 hover:underline">Read more</a>
+      </div>
+    `).join('');
+    }
+
+    loadLatestUpdates();
+  </script>
+
+
   <!-- Footer -->
   <footer class="mt-auto py-4 bg-gradient-to-tr from-gray-800 to-gray-900 text-white text-xs text-center">
-    <p>&copy; 2025 CiwAI™ Smart Digital. All rights reserved.</p>
+    <p class="text-sm">&copy; 2025 CiwAI™ Smart Digital. All rights reserved.</p>
   </footer>
+
 
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/6282260383973" target="_blank"
@@ -233,7 +297,7 @@
       </svg>
     </div>
   </a>
-  
+
   <!-- Back to Top Button -->
   <button onclick="scrollToTop()" id="backToTopBtn"
     class="hidden fixed top-1/2 right-2 transform -translate-y-1/2 z-50 bg-white/40 hover:bg-white/60 backdrop-blur-sm text-blue-800 hover:text-blue-900 p-3 rounded-full shadow-md transition duration-300 border border-white/50">

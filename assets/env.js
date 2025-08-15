@@ -1,0 +1,3 @@
+// assets/env.js
+window.SUPABASE_URL = "https://falvsflagkhjmkyuhqis.supabase.co";
+window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZhbHZzZmxhZ2toam1reXVocWlzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUyODkyMzEsImV4cCI6MjA3MDg2NTIzMX0._q4p-Hu-BtpzBfnTfeLaUMG43ItEzevVELL6r4BoYno";

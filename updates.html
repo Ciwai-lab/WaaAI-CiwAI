@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Updates - CiwAI</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="/assets/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+
+    <main class="max-w-4xl mx-auto py-8 px-4" id="updates-container"></main>
+
+    <script>
+        const supabaseClient = supabase.createClient(
+            window.SUPABASE_URL || '{{SUPABASE_URL}}',
+            window.SUPABASE_ANON_KEY || '{{SUPABASE_ANON_KEY}}'
+        );
+
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('slug');
+
+        if (slug) {
+            // Detail page
+            supabaseClient.from('posts')
+                .select('*')
+                .eq('slug', slug)
+                .eq('status', 'published')
+                .single()
+                .then(({ data, error }) => {
+                    if (error || !data) {
+                        document.getElementById('updates-container').innerHTML = `<p>Post not found.</p>`;
+                        return;
+                    }
+                    document.getElementById('updates-container').innerHTML = `
+        <h1 class="text-3xl font-bold mb-2">${data.title}</h1>
+        <p class="text-gray-500 text-sm mb-4">${new Date(data.published_at).toLocaleDateString()}</p>
+        ${data.cover_url ? `<img src="${data.cover_url}" class="rounded mb-4"/>` : ''}
+        <div class="prose">${marked.parse(data.content_md)}</div>
+        <div class="mt-6"><a href="/updates.html" class="text-blue-600">← Back to all updates</a></div>
+      `;
+                });
+        } else {
+            // List page
+            supabaseClient.from('posts')
+                .select('title, slug, excerpt, published_at, cover_url')
+                .eq('status', 'published')
+                .lte('published_at', new Date().toISOString())
+                .order('published_at', { ascending: false })
+                .then(({ data, error }) => {
+                    if (error) {
+                        document.getElementById('updates-container').innerHTML = `<p>Error loading posts.</p>`;
+                        return;
+                    }
+                    document.getElementById('updates-container').innerHTML = `
+        <h1 class="text-3xl font-bold mb-6">All Updates</h1>
+        <div class="grid gap-6">
+          ${data.map(post => `
+            <div class="bg-white p-4 rounded shadow">
+              ${post.cover_url ? `<img src="${post.cover_url}" class="rounded mb-3"/>` : ''}
+              <h2 class="text-xl font-semibold">${post.title}</h2>
+              <p class="text-sm text-gray-500 mb-2">${new Date(post.published_at).toLocaleDateString()}</p>
+              <p class="mb-3">${post.excerpt || ''}</p>
+              <a href="/updates.html?slug=${post.slug}" class="text-blue-500 hover:underline">Read more</a>
+            </div>
+          `).join('')}
+        </div>
+      `;
+                });
+        }
+    </script>
+
+</body>
+
+</html>
