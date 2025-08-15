@@ -2,40 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Support Article - CiwAI Smart Digital</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CiwAI Smart Digital — Support Article</title>
+    <meta name="description"
+        content="Official Support Center for CiwAI Smart Digital: FAQ, guides, and support form for AllNetTools, GarageCars, and WaaAI Tools.">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/favicon.ico">
+    <meta property="og:title" content="CiwAI Smart Digital — Support">
+    <meta property="og:description" content="Need help? Reach our team.">
+    <meta property="og:url" content="https://ciwaidevtools.netlify.app/support">
+    <meta property="og:type" content="website">
 
-    <!-- Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css"> <!-- kalau ada style custom -->
-
-    <!-- Scripts -->
     <script src="/assets/env.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CiwAI Smart Digital",
+    "url": "https://ciwaidevtools.netlify.app",
+    "logo": "https://ciwaidevtools.netlify.app/icon.png",
+    "sameAs": [],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "availableLanguage": ["en","id"],
+      "url": "https://ciwaidevtools.netlify.app/support"
+    }]
+  }
+  </script>
 </head>
 
-<body class="bg-gray-50">
-
-    <!-- ======= Header sama seperti /support ======= -->
-    <header class="bg-gray-900 text-white">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="bg-white text-gray-900 font-bold rounded-full w-10 h-10 flex items-center justify-center">CI
-                </div>
+<body class="bg-slate-50 text-slate-800">
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-2xl bg-slate-900 text-white grid place-items-center font-semibold">CI</div>
                 <div>
                     <h1 class="text-lg font-semibold">CiwAI Smart Digital</h1>
-                    <p class="text-sm text-gray-400">“Simplifying Modern Technology for Everyone”</p>
+                    <p class="text-xs text-slate-500">“Simplifying Modern Technology for Everyone”</p>
                 </div>
-            </div>
-            <nav class="space-x-6">
-                <a href="/" class="hover:underline">Home</a>
-                <a href="/support" class="hover:underline">Support</a>
-                <a href="/app-ads.txt" class="hover:underline">app-ads.txt</a>
+            </a>
+            <nav class="hidden sm:flex items-center gap-6 text-sm">
+                <a href="/" class="hover:text-slate-900 text-slate-600">Home</a>
+                <a href="/support" class="text-slate-900 font-medium">Support</a>
+                <a href="/app-ads.txt" class="text-slate-600 hover:text-slate-900">app-ads.txt</a>
             </nav>
         </div>
     </header>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">CiwAI Support Article</h2>
+                <p class="mt-3 text-slate-300">Support Article For AllNetTools, GarageCars, or WaaAI Tools? Check the
+                    FAQ
+                    below or
+                    send us a message.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- ======= Content ======= -->
     <main class="max-w-4xl mx-auto py-10 px-4" id="article-content">
