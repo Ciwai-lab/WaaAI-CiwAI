@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Support Article</title>
+    <div class="mb-4 text-sm">
+        <a href="/support" class="text-blue-600 hover:underline">Support</a>
+        <span class="mx-1 text-gray-400">/</span>
+        <span>${data.title}</span>
+    </div>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/assets/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <main class="max-w-3xl mx-auto py-10 px-4" id="article"></main>
+
+    <header class="bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white text-gray-900 font-bold rounded-full w-10 h-10 flex items-center justify-center">CI
+                </div>
+                <div>
+                    <h1 class="text-lg font-semibold">CiwAI Smart Digital</h1>
+                    <p class="text-sm text-gray-400">“Simplifying Modern Technology for Everyone”</p>
+                </div>
+            </div>
+            <nav class="space-x-6">
+                <a href="/" class="hover:underline">Home</a>
+                <a href="/support" class="hover:underline">Support</a>
+                <a href="/app-ads.txt" class="hover:underline">app-ads.txt</a>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const s = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+        const q = new URLSearchParams(location.search);
+        const slug = q.get('slug');
+
+        async function load() {
+            if (!slug) { document.getElementById('article').innerHTML = '<p>Article not found.</p>'; return; }
+            const { data, error } = await s.from('support_articles')
+                .select('*').eq('slug', slug).eq('status', 'published').single();
+            if (error || !data) { document.getElementById('article').innerHTML = '<p>Article not found.</p>'; return; }
+            document.title = `${data.title} – Support`;
+            document.getElementById('article').innerHTML = `
+        <h1 class="text-3xl font-bold mb-2">${data.title}</h1>
+        <p class="text-sm text-gray-500 mb-6">${data.category} • ${new Date(data.published_at).toLocaleDateString()}</p>
+        ${data.cover_url ? `<img src="${data.cover_url}" class="rounded mb-6" />` : ''}
+        <article class="prose max-w-none">${marked.parse(data.content_md)}</article>
+        <div class="mt-8"><a href="/support/" class="text-blue-600">← Back to Support</a></div>
+      `;
+        }
+        load();
+    </script>
+</body>
+
+</html>

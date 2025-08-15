@@ -149,8 +149,7 @@
 
           const container = document.getElementById('support-list');
           container.innerHTML = data.map(a => `
-          <div class="bg-white p-4 rounded shadow">
-            <h3 class="font-semibold text-lg">${a.title}</h3>
+          <a href="/support/article.html?slug=${a.slug}" class="block bg-white p-4 rounded shadow hover:shadow-md transition">            <h3 class="font-semibold text-lg">${a.title}</h3>
             <p class="text-sm text-gray-500 mb-2">${a.category} – ${new Date(a.published_at).toLocaleDateString()}</p>
             <p class="mb-2">${a.excerpt || ''}</p>
           </div>
