@@ -3,41 +3,34 @@
 
 <head>
   <script>
-    (function () {
-      const PATH_EN = '/index.html';      // atau '/' kalau root langsung serve index.html
+    document.addEventListener('DOMContentLoaded', function () {
+      // ⚠️ Kalau root situs serve langsung index.html di path "/",
+      // pakai PATH_EN = '/' biar pasti kebuka halaman EN.
+      const PATH_EN = '/';               // alternatif: '/index.html'
       const PATH_ID = '/index-id.html';
 
-      const here = window.location.pathname;
-      const url = new URL(window.location.href);
-      const qp = url.searchParams.get('lang');
-
-      // 1) Force via query ?lang=xx (langsung save & redirect bila perlu)
-      if (qp === 'en' || qp === 'id') {
-        localStorage.setItem('chosenLang', qp);
-        const wantID = qp === 'id';
-        const onID = here.endsWith('index-id.html');
-        const onEN = here.endsWith('index.html') || here === '/';
-        if (wantID && !onID) return window.location.replace(PATH_ID);
-        if (!wantID && !onEN) return window.location.replace(PATH_EN);
-        return; // sudah di halaman yang tepat
-      }
-
-      // 2) Pakai yang pernah dipilih user
+      // Ambil preferensi user / auto-detect
       let target = localStorage.getItem('chosenLang');
-
-      // 3) Kalau belum ada, deteksi dari browser/device
       if (!target) {
         const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
         target = lang.toLowerCase().startsWith('id') ? 'id' : 'en';
         localStorage.setItem('chosenLang', target);
       }
 
-      // 4) Redirect hanya jika tidak di halaman yang sesuai
-      const onID = here.endsWith('index-id.html');
-      const onEN = here.endsWith('index.html') || here === '/';
-      if (target === 'id' && !onID) return window.location.replace(PATH_ID);
-      if (target === 'en' && !onEN) return window.location.replace(PATH_EN);
-    })();
+      // Set dropdown sesuai preferensi
+      const select = document.getElementById('langSwitcher');
+      if (select) {
+        select.value = target;
+
+        // Ganti bahasa → simpan & redirect
+        select.addEventListener('change', function () {
+          const val = this.value;
+          localStorage.setItem('chosenLang', val);
+          if (val === 'id') window.location.href = PATH_ID;
+          else window.location.href = PATH_EN;
+        });
+      }
+    });
   </script>
 
   <script>
