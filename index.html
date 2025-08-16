@@ -238,52 +238,7 @@
       </div>
   </section>
 
-  <section id="latest-updates" class="py-12 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6">Latest Updates</h2>
-      <div id="updates-list" class="grid gap-6 md:grid-cols-3"></div>
-      <div class="mt-6">
-        <a href="/updates.html" class="text-blue-600 hover:underline">View all updates →</a>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const supabaseClient = supabase.createClient(
-      window.SUPABASE_URL || '{{SUPABASE_URL}}',
-      window.SUPABASE_ANON_KEY || '{{SUPABASE_ANON_KEY}}'
-    );
-
-    async function loadLatestUpdates() {
-      const { data, error } = await supabaseClient
-        .from('posts')
-        .select('title, slug, excerpt, cover_url, published_at')
-        .eq('status', 'published')
-        .lte('published_at', new Date().toISOString())
-        .order('published_at', { ascending: false })
-        .limit(3);
-
-      if (error) {
-        console.error(error);
-        return;
-      }
-
-      const container = document.getElementById('updates-list');
-      container.innerHTML = data.map(post => `
-      <div class="bg-white rounded-lg shadow p-4 flex flex-col">
-        ${post.cover_url ? `<img src="${post.cover_url}" alt="" class="rounded mb-3">` : ''}
-        <h3 class="font-semibold text-lg mb-2">${post.title}</h3>
-        <p class="text-sm text-gray-600 mb-4">${post.excerpt || ''}</p>
-        <a href="/updates.html?slug=${post.slug}" class="mt-auto text-blue-500 hover:underline">Read more</a>
-      </div>
-    `).join('');
-    }
-
-    loadLatestUpdates();
-  </script>
-
-
-  <!-- Footer -->
+    <!-- Footer -->
   <footer class="mt-auto py-4 bg-gradient-to-tr from-gray-800 to-gray-900 text-white text-xs text-center">
     <p class="text-sm">&copy; 2025 CiwAI™ Smart Digital. All rights reserved.</p>
   </footer>
