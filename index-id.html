@@ -103,13 +103,11 @@
 <body class="flex flex-col min-h-screen bg-gradient-to-b from-sky-50 via-white to-white text-gray-900 font-sans">
 
   <!-- Pilihan Bahasa -->
-  <div class="absolute top-4 right-4 text-sm space-x-2 z-50">
-    <a href="/index.html" onclick="localStorage.setItem('chosenLang', 'en')" class="text-gray-600 hover:underline">🇬🇧
-      English</a>
-    <span>|</span>
-    <a href="/index-id.html" onclick="localStorage.setItem('chosenLang', 'id')"
-      class="text-gray-600 hover:underline">🇮🇩 Bahasa</a>
-  </div>
+  <!-- di kedua file -->
+  <a href="/?lang=en" class="text-gray-600 hover:underline">🇬🇧 English</a>
+  <span>|</span>
+  <a href="/index-id.html?lang=id" class="text-gray-600 hover:underline">🇮🇩 Bahasa</a>
+
 
   <!-- Hero -->
   <section id="home" class="pt-24 pb-32 flex flex-col justify-center items-center text-center px-6">
