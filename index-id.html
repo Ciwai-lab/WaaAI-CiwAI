@@ -40,6 +40,35 @@
     })();
   </script>
 
+  <script>
+    (function () {
+      const PATH_EN = '/index.html';      // ganti '/' kalau root serve index.html
+      const PATH_ID = '/index-id.html';
+
+      // Ambil preferensi
+      let target = localStorage.getItem('chosenLang');
+      if (!target) {
+        const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+        target = lang.toLowerCase().startsWith('id') ? 'id' : 'en';
+        localStorage.setItem('chosenLang', target);
+      }
+
+      // Set dropdown sesuai pilihan
+      const select = document.getElementById('langSwitcher');
+      if (select) select.value = target;
+
+      // Redirect saat ganti
+      if (select) {
+        select.addEventListener('change', function () {
+          const val = this.value;
+          localStorage.setItem('chosenLang', val);
+          if (val === 'id') window.location.href = PATH_ID;
+          else window.location.href = PATH_EN;
+        });
+      }
+    })();
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -103,10 +132,15 @@
 <body class="flex flex-col min-h-screen bg-gradient-to-b from-sky-50 via-white to-white text-gray-900 font-sans">
 
   <!-- Pilihan Bahasa -->
-  <!-- di kedua file -->
-  <a href="/?lang=en" class="text-gray-600 hover:underline">🇬🇧 English</a>
-  <span>|</span>
-  <a href="/index-id.html?lang=id" class="text-gray-600 hover:underline">🇮🇩 Bahasa</a>
+  <!-- Language Switcher (Dropdown) -->
+  <div class="absolute top-4 right-4 z-50">
+    <select id="langSwitcher"
+      class="bg-white border border-gray-300 rounded-md text-sm px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-500">
+      <option value="en">🇬🇧 English</option>
+      <option value="id">🇮🇩 Bahasa</option>
+    </select>
+  </div>
+
 
 
   <!-- Hero -->
