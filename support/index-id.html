@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="id">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CiwAI Smart Digital — Support</title>
-  <meta name="description" content="Pusat bantuan resmi CiwAI Smart Digital: FAQ, panduan, dan form dukungan untuk AllNetTools, GarageCars, dan produk WaaAI Tools.">
+  <meta name="description"
+    content="Pusat bantuan resmi CiwAI Smart Digital: FAQ, panduan, dan form dukungan untuk AllNetTools, GarageCars, dan produk WaaAI Tools.">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="/favicon.ico">
@@ -29,6 +31,7 @@
   }
   </script>
 </head>
+
 <body class="bg-slate-50 text-slate-800">
   <!-- Header -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-20">
@@ -53,7 +56,8 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
       <div class="max-w-3xl">
         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Pusat Bantuan CiwAI</h2>
-        <p class="mt-3 text-slate-300">Butuh bantuan untuk AllNetTools, GarageCars, atau WaaAI Tools? Cek FAQ di bawah atau kirim pesan ke tim kami.</p>
+        <p class="mt-3 text-slate-300">Butuh bantuan untuk AllNetTools, GarageCars, atau WaaAI Tools? Cek FAQ di bawah
+          atau kirim pesan ke tim kami.</p>
       </div>
     </div>
   </section>
@@ -74,7 +78,8 @@
               <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
             </summary>
             <div class="mt-3 text-sm text-slate-600">
-              Iklan dikelola oleh Google AdMob. Kami mengikuti kebijakan privasi dan menampilkan iklan yang tidak mengganggu pengalaman pengguna.
+              Iklan dikelola oleh Google AdMob. Kami mengikuti kebijakan privasi dan menampilkan iklan yang tidak
+              mengganggu pengalaman pengguna.
               Lihat file verifikasi <a href="/app-ads.txt" class="text-slate-900 underline">app-ads.txt</a>.
             </div>
           </details>
@@ -95,7 +100,8 @@
               <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
             </summary>
             <div class="mt-3 text-sm text-slate-600">
-              Kami mengumpulkan data minimal yang diperlukan untuk analitik dan perbaikan aplikasi sesuai kebijakan privasi platform.
+              Kami mengumpulkan data minimal yang diperlukan untuk analitik dan perbaikan aplikasi sesuai kebijakan
+              privasi platform.
             </div>
           </details>
 
@@ -129,11 +135,13 @@
             </p>
             <div>
               <label class="block text-sm mb-1">Nama</label>
-              <input name="name" required class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+              <input name="name" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
             </div>
             <div>
               <label class="block text-sm mb-1">Email</label>
-              <input type="email" name="email" required class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+              <input type="email" name="email" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
             </div>
             <div>
               <label class="block text-sm mb-1">Aplikasi</label>
@@ -145,9 +153,11 @@
             </div>
             <div>
               <label class="block text-sm mb-1">Pesan</label>
-              <textarea name="message" rows="4" required class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500"></textarea>
+              <textarea name="message" rows="4" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500"></textarea>
             </div>
-            <button class="w-full rounded-xl bg-slate-900 text-white py-2.5 font-medium hover:bg-slate-800">Kirim</button>
+            <button
+              class="w-full rounded-xl bg-slate-900 text-white py-2.5 font-medium hover:bg-slate-800">Kirim</button>
             <p class="text-xs text-slate-500">Dengan mengirim form ini, Anda setuju dengan kebijakan privasi kami.</p>
           </form>
         </div>
@@ -164,11 +174,11 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-sm text-slate-500 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
-      <p>© <span id="y"></span> CiwAI Smart Digital — WaaAI Tools • WooOI</p>
-    </div>
-  </footer>
+  <div id="ciwai-footer"></div>
+
+  <script src="/footer.js"></script>
+
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
+
 </html>
