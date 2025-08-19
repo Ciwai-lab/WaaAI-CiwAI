@@ -1,0 +1,50 @@
+<!-- /header.html -->
+<header id="ciwai-header"
+    class="sticky top-0 z-40 bg-gray-900/80 text-white backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 shadow-none transition-shadow">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="h-14 flex items-center justify-between">
+
+            <!-- Brand -->
+            <a href="/" class="inline-flex items-center gap-2 group">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-500 group-hover:scale-110 transition"></span>
+                <span class="text-sm font-semibold tracking-wide">CiwAI™ Smart Digital</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+                <a href="/" data-link="home" class="text-white/80 hover:text-white hover:underline">Home</a>
+                <a href="/article.html" data-link="article"
+                    class="text-white/80 hover:text-white hover:underline">Article</a>
+                <a href="/privacy.html" data-link="privacy"
+                    class="text-white/80 hover:text-white hover:underline">Privacy</a>
+                <a href="/support.html" data-link="support"
+                    class="text-white/80 hover:text-white hover:underline">Support</a>
+                <a href="/updates.html" data-link="updates"
+                    class="text-white/80 hover:text-white hover:underline">Updates</a>
+                <a href="mailto:hello@ciwai.dev" data-link="contact"
+                    class="text-white/80 hover:text-white hover:underline">Contact</a>
+            </nav>
+
+            <!-- Mobile Burger -->
+            <button type="button" id="ciwai-burger" aria-label="Toggle menu" aria-expanded="false"
+                class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="ciwai-mobile-menu" class="md:hidden hidden border-t border-white/10">
+        <nav class="max-w-6xl mx-auto px-4 py-3 grid gap-2 text-sm">
+            <a href="/" data-link="home" class="block px-2 py-2 rounded hover:bg-white/10">Home</a>
+            <a href="/article.html" data-link="article" class="block px-2 py-2 rounded hover:bg-white/10">Article</a>
+            <a href="/privacy.html" data-link="privacy" class="block px-2 py-2 rounded hover:bg-white/10">Privacy</a>
+            <a href="/support.html" data-link="support" class="block px-2 py-2 rounded hover:bg-white/10">Support</a>
+            <a href="/updates.html" data-link="updates" class="block px-2 py-2 rounded hover:bg-white/10">Updates</a>
+            <a href="mailto:ciwaismartdigital@gmail.com" data-link="contact"
+                class="block px-2 py-2 rounded hover:bg-white/10">Contact</a>
+        </nav>
+    </div>
+</header>
