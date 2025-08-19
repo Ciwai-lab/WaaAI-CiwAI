@@ -1,428 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 
 <head>
-  <link rel="alternate" hreflang="en" href="https://ciwaidevtools.netlify.app/index.html" />
-  <link rel="alternate" hreflang="id" href="https://ciwaidevtools.netlify.app/index-id.html" />
-  <link rel="alternate" hreflang="x-default" href="https://ciwaidevtools.netlify.app/" />
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // ⚠️ Kalau root situs serve langsung index.html di path "/",
-      // pakai PATH_EN = '/' biar pasti kebuka halaman EN.
-      const PATH_EN = '/';               // alternatif: '/index.html'
-      const PATH_ID = '/index-id.html';
-
-      // Ambil preferensi user / auto-detect
-      let target = localStorage.getItem('chosenLang');
-      if (!target) {
-        const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-        target = lang.toLowerCase().startsWith('id') ? 'id' : 'en';
-        localStorage.setItem('chosenLang', target);
-      }
-
-      // Set dropdown sesuai preferensi
-      const select = document.getElementById('langSwitcher');
-      if (select) {
-        select.value = target;
-
-        // Ganti bahasa → simpan & redirect
-        select.addEventListener('change', function () {
-          const val = this.value;
-          localStorage.setItem('chosenLang', val);
-          if (val === 'id') window.location.href = PATH_ID;
-          else window.location.href = PATH_EN;
-        });
-      }
-    });
-  </script>
-
-  <script>
-    (function () {
-      const PATH_EN = '/index.html';      // ganti '/' kalau root serve index.html
-      const PATH_ID = '/index-id.html';
-
-      // Ambil preferensi
-      let target = localStorage.getItem('chosenLang');
-      if (!target) {
-        const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-        target = lang.toLowerCase().startsWith('id') ? 'id' : 'en';
-        localStorage.setItem('chosenLang', target);
-      }
-
-      // Set dropdown sesuai pilihan
-      const select = document.getElementById('langSwitcher');
-      if (select) select.value = target;
-
-      // Redirect saat ganti
-      if (select) {
-        select.addEventListener('change', function () {
-          const val = this.value;
-          localStorage.setItem('chosenLang', val);
-          if (val === 'id') window.location.href = PATH_ID;
-          else window.location.href = PATH_EN;
-        });
-      }
-    })();
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>CiwAI™ Smart Digital — Aplikasi, Web, VPS/VPN, Bot AI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CiwAI Smart Digital — Support</title>
   <meta name="description"
-    content="CiwAI™ Smart Digital — Teknologi pintar, ringan, dan ramah pengguna: Aplikasi Mobile, Desain Web, VPS/VPN, dan Bot AI." />
-  <link rel="canonical" href="https://ciwaidevtools.netlify.app/index-id.html" />
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="CiwAI™ Smart Digital — Aplikasi, Web, VPS/VPN, Bot AI" />
-  <meta property="og:description"
-    content="Teknologi pintar, ringan, dan ramah pengguna untuk semua. Jelajahi aplikasi, website, VPS/VPN, dan bot AI kami." />
-  <meta property="og:image" content="https://ciwaidevtools.netlify.app/assets/images/logo_ciwai_512.webp" />
-  <meta property="og:url" content="https://ciwaidevtools.netlify.app/index-id.html" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CiwAI™ Smart Digital — Aplikasi, Web, VPS/VPN, Bot AI" />
-  <meta name="twitter:description"
-    content="Teknologi pintar, ringan, dan ramah pengguna untuk semua. Jelajahi aplikasi, website, VPS/VPN, dan bot AI kami." />
-  <meta name="twitter:image" content="https://ciwaidevtools.netlify.app/assets/images/logo_ciwai_512.webp" />
-
-  <!-- Tailwind -->
+    content="Pusat bantuan resmi CiwAI Smart Digital: FAQ, panduan, dan form dukungan untuk AllNetTools, GarageCars, dan produk WaaAI Tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Animate on Scroll -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <!-- Smooth Scroll -->
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-
-  <!-- Schema.org: Organization (CiwAI Smart Digital) -->
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:title" content="CiwAI Smart Digital — Support">
+  <meta property="og:description" content="Butuh bantuan? Hubungi tim CiwAI.">
+  <meta property="og:url" content="https://ciwaidevtools.netlify.app/support">
+  <meta property="og:type" content="website">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "CiwAI™ Smart Digital",
-    "url": "https://ciwaidevtools.netlify.app/",
-    "logo": "https://ciwaidevtools.netlify.app/assets/images/logo_ciwai_512.webp",
-    "sameAs": [
-      "https://github.com/Ciwai-lab",
-      "https://instagram.com/",
-      "https://www.linkedin.com/"
-    ],
+    "name": "CiwAI Smart Digital",
+    "url": "https://ciwaidevtools.netlify.app",
+    "logo": "https://ciwaidevtools.netlify.app/icon.png",
+    "sameAs": [],
     "contactPoint": [{
       "@type": "ContactPoint",
-      "email": "ciwaismartdigital@gmail.com",
       "contactType": "customer support",
-      "availableLanguage": ["Indonesian", "English"]
+      "availableLanguage": ["id","en"],
+      "url": "https://ciwaidevtools.netlify.app/support"
     }]
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "AllNetTools",
-        "operatingSystem": "Android",
-        "applicationCategory": "UtilitiesApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "downloadUrl": "https://drive.google.com/uc?export=download&id=1h31rDSKdgAwKnO-OKyfhjRWIrjMOSifa",
-        "publisher": {
-          "@type": "Organization",
-          "name": "CiwAI™ Smart Digital",
-          "url": "https://ciwaidevtools.netlify.app/"
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "GarageCars",
-        "operatingSystem": "Android",
-        "applicationCategory": "BusinessApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "downloadUrl": "https://drive.google.com/uc?export=download&id=1-QsFdDV1wf4yWX9-8HVNGrGve6oGome-",
-        "publisher": {
-          "@type": "Organization",
-          "name": "CiwAI™ Smart Digital",
-          "url": "https://ciwaidevtools.netlify.app/"
-        }
-      }
-    ]
-  }
-  </script>
-
 </head>
 
-<body class="flex flex-col min-h-screen bg-gradient-to-b from-sky-50 via-white to-white text-gray-900 font-sans">
-
-  <!-- Pilihan Bahasa -->
-  <!-- Language Switcher (Dropdown) -->
-  <div class="absolute top-4 right-4 z-50">
-    <select id="langSwitcher"
-      class="bg-white border border-gray-300 rounded-md text-sm px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-500">
-      <option value="en">🇬🇧 English</option>
-      <option value="id">🇮🇩 Bahasa</option>
-    </select>
-  </div>
-
-
+<body class="bg-slate-50 text-slate-800">
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-2xl bg-slate-900 text-white grid place-items-center font-semibold">CI</div>
+        <div>
+          <h1 class="text-lg font-semibold">CiwAI Smart Digital</h1>
+          <p class="text-xs text-slate-500">“Simplifying Modern Technology for Everyone”</p>
+        </div>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="/" class="hover:text-slate-900 text-slate-600">Home</a>
+        <a href="/support" class="text-slate-900 font-medium">Support</a>
+        <a href="/app-ads.txt" class="text-slate-600 hover:text-slate-900">app-ads.txt</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero -->
-  <section id="home" class="pt-24 pb-32 flex flex-col justify-center items-center text-center px-6">
-    <img src="assets/images/logo_ciwai_512.webp" alt="Logo CiwAI Smart Digital"
-      class="w-40 md:w-48 lg:w-52 mb-6 drop-shadow-xl" data-aos="fade-down" />
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 max-w-2xl" data-aos="fade-up">
-      CiwAI™ Smart Digital
-    </h1>
-    <p class="text-lg md:text-xl max-w-xl mb-6 text-gray-600" data-aos="fade-up" data-aos-delay="100">
-      Menyederhanakan teknologi modern untuk semua orang — Aplikasi Mobile, Desain Web, VPS/VPN, dan Chatbot AI.
-    </p>
-
-    <!-- Tombol Aksi -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mt-6"> <a href="#projects"
-        class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 transition text-center">
-        Lihat Proyek
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.waaai.smarttools" target="_blank"
-        rel="noopener noreferrer"
-        class="px-6 py-3 bg-rose-500 text-white rounded-xl shadow-md hover:bg-rose-600 transition text-center">
-        Play Store
-      </a>
-      <a href="/support" target="_blank" rel="noopener noreferrer"
-        class="px-6 py-3 bg-green-600 text-white rounded-xl shadow-md hover:bg-green-600 transition text-center">
-        Dukungan
-      </a>
-
-      <a href="/updates.html" target="_blank" rel="noopener noreferrer"
-        class="px-6 py-3 bg-yellow-600 text-white rounded-xl shadow-md hover:bg-yellow-600 transition text-center">
-        Pembaruan
-      </a>
-    </div>
-  </section>
-
-  <!-- Tentang Kami -->
-  <section id="about" class="py-20 px-6 max-w-3xl mx-auto text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-4">Tentang CiwAI™</h2>
-    <p class="text-gray-700 text-lg leading-relaxed">
-      CiwAI™ adalah tim digital kreatif dari Indonesia yang membangun teknologi pintar, ringan, dan ramah pengguna.
-      Kami fokus pada pengembangan aplikasi Android/iOS, pengembangan website, solusi server pribadi VPS/VPN,
-      dan bot AI kustom.
-    </p>
-  </section>
-
-  <!-- Visi -->
-  <section id="vision" class="py-24 px-6 bg-[#f9fafb] text-center" data-aos="fade-up">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Visi Kami</h2>
-    <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
-      Di CiwAI™, kami percaya teknologi harus sederhana, memberdayakan, dan mudah diakses oleh siapa saja — dari pelosok
-      desa hingga kota pintar.
-      <br /><br />
-      Visi kami adalah menjadi mitra digital terpercaya, membangun alat ringan, sistem privat, dan solusi intuitif
-      yang membuat pekerjaan sehari-hari menjadi lebih cerdas, bukan lebih rumit.
-    </p>
-  </section>
-
-  <!-- Layanan Kami -->
-  <section id="services" class="py-24 bg-[#f0f4fa] text-center">
-    <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Layanan Kami</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
-      <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-        data-aos="zoom-in">
-        <h3 class="text-xl font-semibold mb-2">Aplikasi Mobile</h3>
-        <p>Kami membangun aplikasi Android/iOS modern seperti WaaAi™, tools jaringan, dan lainnya.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-        data-aos="zoom-in" data-aos-delay="100">
-        <h3 class="text-xl font-semibold mb-2">Desain Web & Hosting</h3>
-        <p>Website ringan dan bersih dengan hosting yang aman serta dapat diskalakan.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-        data-aos="zoom-in" data-aos-delay="200">
-        <h3 class="text-xl font-semibold mb-2">Server VPS & VPN</h3>
-        <p>Solusi server privat yang disesuaikan untuk kebutuhan bisnis maupun privasi.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-        data-aos="zoom-in" data-aos-delay="300">
-        <h3 class="text-xl font-semibold mb-2">Bot AI</h3>
-        <p>Bot Telegram dan WhatsApp untuk otomasi dan dukungan digital.</p>
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Pusat Bantuan CiwAI</h2>
+        <p class="mt-3 text-slate-300">Butuh bantuan untuk AllNetTools, GarageCars, atau WaaAI Tools? Cek FAQ di bawah
+          atau kirim pesan ke tim kami.</p>
       </div>
     </div>
   </section>
 
-  <!-- Proyek Kami -->
-  <section id="projects" class="py-20 px-6 bg-gradient-to-br from-[#e0f2f1] to-[#f0fdfa] text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-10" data-aos="fade-up">🚀 Proyek Kami</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto" data-aos="fade-up">
+  <!-- Content Grid -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid lg:grid-cols-3 gap-8">
+    <!-- FAQ -->
+    <section class="lg:col-span-2">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="px-6 py-5 border-b border-slate-200">
+          <h3 class="text-xl font-semibold">FAQ</h3>
+          <p class="text-sm text-slate-500">Pertanyaan umum tentang instalasi, iklan, dan privasi.</p>
+        </div>
+        <div class="divide-y divide-slate-200">
+          <details class="group px-6 py-5">
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              AllNetTools menampilkan iklan, apakah aman?
+              <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
+            </summary>
+            <div class="mt-3 text-sm text-slate-600">
+              Iklan dikelola oleh Google AdMob. Kami mengikuti kebijakan privasi dan menampilkan iklan yang tidak
+              mengganggu pengalaman pengguna.
+              Lihat file verifikasi <a href="/app-ads.txt" class="text-slate-900 underline">app-ads.txt</a>.
+            </div>
+          </details>
 
-      <!-- AllNetTools -->
-      <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-        <h3 class="text-xl font-semibold mb-2">AllNetTools</h3>
-        <p class="text-gray-600 mb-4 text-sm">
-          Aplikasi Android berisi tools jaringan seperti ping, traceroute, speed test, dan lainnya.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1h31rDSKdgAwKnO-OKyfhjRWIrjMOSifa"
-          class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm"
-          target="_blank" rel="noopener noreferrer">
-          📥 Download APK
-        </a>
+          <details class="group px-6 py-5">
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              Bagaimana cara melaporkan bug atau memberi masukan?
+              <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
+            </summary>
+            <div class="mt-3 text-sm text-slate-600">
+              Gunakan form dukungan di samping atau kirim email ke <span class="font-mono">support@ciwai.dev</span>
+            </div>
+          </details>
+
+          <details class="group px-6 py-5">
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              Apakah data saya dikumpulkan?
+              <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
+            </summary>
+            <div class="mt-3 text-sm text-slate-600">
+              Kami mengumpulkan data minimal yang diperlukan untuk analitik dan perbaikan aplikasi sesuai kebijakan
+              privasi platform.
+            </div>
+          </details>
+
+          <details class="group px-6 py-5">
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              Channel resmi CiwAI Smart Digital?
+              <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
+            </summary>
+            <div class="mt-3 text-sm text-slate-600">
+              Website: <a class="underline" href="/">ciwaidevtools.netlify.app</a>.
+              Semua aplikasi WaaAI Tools & WooOI akan diumumkan di sini.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Card -->
+    <aside class="space-y-8">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="px-6 py-5 border-b border-slate-200">
+          <h3 class="text-lg font-semibold">Hubungi Tim CiwAI</h3>
+          <p class="text-sm text-slate-500">Isi form, kami akan balas secepatnya.</p>
+        </div>
+        <div class="px-6 py-6">
+          <!-- Netlify Forms -->
+          <form name="support" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+            <input type="hidden" name="form-name" value="support">
+            <p class="hidden">
+              <label>Don’t fill this out: <input name="bot-field"></label>
+            </p>
+            <div>
+              <label class="block text-sm mb-1">Nama</label>
+              <input name="name" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Email</label>
+              <input type="email" name="email" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Aplikasi</label>
+              <select name="app" class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500">
+                <option>AllNetTools</option>
+                <option>GarageCars</option>
+                <option>Lainnya</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Pesan</label>
+              <textarea name="message" rows="4" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500"></textarea>
+            </div>
+            <button
+              class="w-full rounded-xl bg-slate-900 text-white py-2.5 font-medium hover:bg-slate-800">Kirim</button>
+            <p class="text-xs text-slate-500">Dengan mengirim form ini, Anda setuju dengan kebijakan privasi kami.</p>
+          </form>
+        </div>
       </div>
 
-      <!-- GarageCars -->
-      <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-        <h3 class="text-xl font-semibold mb-2">GarageCars</h3>
-        <p class="text-gray-600 mb-4 text-sm">
-          Aplikasi kelola inventaris mobil showroom yang fleksibel, powerful, dan siap diskalakan.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1-QsFdDV1wf4yWX9-8HVNGrGve6oGome-"
-          class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm"
-          target="_blank" rel="noopener noreferrer">
-          📥 Download APK
-        </a>
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+        <h4 class="font-semibold">Dokumen</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="underline" href="/app-ads.txt">app-ads.txt</a></li>
+          <li><a class="underline" href="/">Homepage</a></li>
+        </ul>
       </div>
-
-      <!-- Website SKH -->
-      <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-        <h3 class="text-xl font-semibold mb-2">Website SKH Jannatul Aulad</h3>
-        <p class="text-gray-600 mb-4 text-sm">
-          Website modern untuk sekolah — ringan, responsif, dan mudah diakses.
-        </p>
-        <a href="https://jannatulaulad.netlify.app/" target="_blank" rel="noopener noreferrer"
-          class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm">
-          🌐 Lihat Website
-        </a>
-      </div>
-
-      <!-- SayurIn (Sedang Dikembangkan) -->
-      <div
-        class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-        <h3 class="text-xl font-semibold mb-2">SayurIn™</h3>
-        <p class="text-gray-600 mb-3 text-sm leading-snug">
-          <strong>⚠️ Masih dalam proses pengembangan.</strong>
-        </p>
-        <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-          🔧 Coming Soon
-        </button>
-      </div>
-
-      <!-- Placeholder -->
-      <div
-        class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-        <h3 class="text-xl font-semibold mb-2">Coming Soon App</h3>
-        <p class="text-gray-600 mb-3 text-sm leading-snug">
-          <strong>⚠️ Masih dalam proses pengembangan.</strong>
-        </p>
-        <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-          🔧 Coming Soon
-        </button>
-      </div>
-
-      <!-- Placeholder -->
-      <div
-        class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-        <h3 class="text-xl font-semibold mb-2">Coming Soon App</h3>
-        <p class="text-gray-600 mb-3 text-sm leading-snug">
-          <strong>⚠️ Masih dalam proses pengembangan.</strong>
-        </p>
-        <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-          🔧 Coming Soon
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontak -->
-  <section id="contact" class="py-24 px-6 text-center bg-[#cbd5e1]" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-4">☕ Ayo Ngobrol!</h2>
-    <p class="text-gray-700 max-w-xl mx-auto mb-8">
-      Punya ide, proyek, atau sekadar mau kenalan?
-      Kami terbuka untuk kolaborasi, pengembangan aplikasi pilihan, dan solusi digital lainnya.
-    </p>
-    <div class="text-lg text-gray-800 space-y-2">
-      <p>📩 Email: <strong>
-          <a href="mailto:ciwaismartdigital@gmail.com" class="text-indigo-600 hover:underline">
-            ciwaismartdigital@gmail.com
-          </a></strong>
-      </p>
-    </div>
-  </section>
+    </aside>
+  </main>
 
   <!-- Footer -->
-  <footer class="mt-auto py-8 bg-gradient-to-tr from-gray-800 to-gray-900 text-white text-center">
-    <p>&copy; 2025 CiwAI™ Smart Digital. Seluruh hak cipta dilindungi.</p>
-  </footer>
+  <div id="ciwai-footer"></div>
 
-  <!-- Tombol WhatsApp -->
-  <a href="https://wa.me/6282260383973" target="_blank" rel="noopener noreferrer" aria-label="Buka WhatsApp CiwAI"
-    class="block md:hidden fixed bottom-5 right-5 z-50 animate-bounce">
-    <div class="bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-110">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32" class="w-6 h-6" aria-hidden="true">
-        <path d="M16 .3C7.3.3.2 7.4.2 16.1c0 2.8.7 5.5 2.1 7.9L0 32l8.2-2.1c2.3 1.2 4.9 1.8 7.5 1.8
-        8.7 0 15.8-7.1 15.8-15.9S24.7.3 16 .3zm0 29.3c-2.4 0-4.8-.6-6.9-1.8l-.5-.3-4.9 1.3
-        1.3-4.8-.3-.5c-1.2-2.1-1.9-4.5-1.9-6.9 0-7.5 6.1-13.6 13.6-13.6
-        3.6 0 7 1.4 9.5 3.9 2.5 2.5 3.9 5.9 3.9 9.5
-        0 7.5-6.1 13.6-13.8 13.6zm7.5-10.1c-.4-.2-2.4-1.2-2.7-1.3
-        -.4-.1-.7-.2-1 .2s-1.2 1.3-1.5 1.5c-.3.2-.6.3-1 .1
-        -.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8
-        -.2-.4 0-.6.2-.9.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6
-        .1-.2 0-.5 0-.7s-.9-2.2-1.2-3c-.3-.7-.7-.6-1-.6
-        -.2 0-.5 0-.7 0-.2 0-.5.1-.7.3-.2.2-1 1-1 2.5
-        0 1.5 1 3 1.1 3.2.1.2 2 3.4 4.9 4.8
-        1.8.9 2.5 1 3.4.9.6-.1 1.8-.7 2-1.4
-        .3-.6.3-1.1.2-1.3-.1-.1-.4-.2-.8-.4z" />
-      </svg>
-    </div>
-  </a>
+  <script src="/footer.js"></script>
 
-  <!-- Tombol Back to Top -->
-  <button onclick="scrollToTop()" id="backToTopBtn" aria-label="Kembali ke atas"
-    class="hidden fixed top-1/2 right-2 transform -translate-y-1/2 z-50 bg-white/40 hover:bg-white/60 backdrop-blur-sm text-blue-800 hover:text-blue-900 p-3 rounded-full shadow-md transition duration-300 border border-white/50">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path fill-rule="evenodd"
-        d="M10 4a1 1 0 01.894.553l5 10a1 1 0 01-1.788.894L10 6.618 5.894 15.447a1 1 0 01-1.788-.894l5-10A1 1 0 0110 4z"
-        clip-rule="evenodd" />
-    </svg>
-  </button>
-
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: { extend: {} },
-      plugins: [],
-      corePlugins: { backdropBlur: true }
-    }
-  </script>
-
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <!-- Script Section -->
-  <script>
-    // Init AOS (Animate On Scroll)
-    AOS.init({ duration: 800, once: true });
-
-    // Scroll-to-top button logic
-    const backToTopBtn = document.getElementById("backToTopBtn");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) backToTopBtn.classList.remove("hidden");
-      else backToTopBtn.classList.add("hidden");
-    });
-    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>

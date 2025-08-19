@@ -1,467 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <link rel="alternate" hreflang="en" href="https://ciwaidevtools.netlify.app/index.html" />
-  <link rel="alternate" hreflang="id" href="https://ciwaidevtools.netlify.app/index-id.html" />
-  <link rel="alternate" hreflang="x-default" href="https://ciwaidevtools.netlify.app/" />
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // ⚠️ Kalau root situs serve langsung index.html di path "/",
-      // pakai PATH_EN = '/' biar pasti kebuka halaman EN.
-      const PATH_EN = '/';               // alternatif: '/index.html'
-      const PATH_ID = '/index-id.html';
-
-      // Ambil preferensi user / auto-detect
-      let target = localStorage.getItem('chosenLang');
-      if (!target) {
-        const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-        target = lang.toLowerCase().startsWith('id') ? 'id' : 'en';
-        localStorage.setItem('chosenLang', target);
-      }
-
-      // Set dropdown sesuai preferensi
-      const select = document.getElementById('langSwitcher');
-      if (select) {
-        select.value = target;
-
-        // Ganti bahasa → simpan & redirect
-        select.addEventListener('change', function () {
-          const val = this.value;
-          localStorage.setItem('chosenLang', val);
-          if (val === 'id') window.location.href = PATH_ID;
-          else window.location.href = PATH_EN;
-        });
-      }
-    });
-  </script>
-
-  <script>
-    (function () {
-      const PATH_EN = '/index.html';      // ganti '/' kalau root serve index.html
-      const PATH_ID = '/index-id.html';
-
-      // Ambil preferensi
-      let target = localStorage.getItem('chosenLang');
-      if (!target) {
-        const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-        target = lang.toLowerCase().startsWith('id') ? 'id' : 'en';
-        localStorage.setItem('chosenLang', target);
-      }
-
-      // Set dropdown sesuai pilihan
-      const select = document.getElementById('langSwitcher');
-      if (select) select.value = target;
-
-      // Redirect saat ganti
-      if (select) {
-        select.addEventListener('change', function () {
-          const val = this.value;
-          localStorage.setItem('chosenLang', val);
-          if (val === 'id') window.location.href = PATH_ID;
-          else window.location.href = PATH_EN;
-        });
-      }
-    })();
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CiwAI™ Smart Digital — Apps, Web, VPS/VPN, AI Bots</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CiwAI Smart Digital — Support</title>
   <meta name="description"
-    content="CiwAI™ Smart Digital - Smart, Lightweight, Human-Friendly Technology: Mobile Apps, Web Design, VPS/VPN, AI Bots." />
-  <link rel="canonical" href="https://ciwaidevtools.netlify.app/" />
-  <link rel="icon" type="image/webp" href="assets/images/favicon.webp" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="CiwAI™ Smart Digital — Apps, Web, VPS/VPN, AI Bots" />
-  <meta property="og:description"
-    content="Smart, Lightweight, Human-Friendly Technology for everyone. Explore our Apps, Websites, VPS/VPN, and AI Bots." />
-  <meta property="og:image" content="https://ciwaidevtools.netlify.app/assets/images/logo_ai.webp" />
-  <meta property="og:url" content="https://ciwaidevtools.netlify.app/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CiwAI™ Smart Digital — Apps, Web, VPS/VPN, AI Bots" />
-  <meta name="twitter:description"
-    content="Smart, Lightweight, Human-Friendly Technology for everyone. Explore our Apps, Websites, VPS/VPN, and AI Bots." />
-  <meta name="twitter:image" content="https://ciwaidevtools.netlify.app/assets/images/logo_ai.webp" />
+    content="Official Help Center for CiwAI Smart Digital: FAQ, guides, and support form for AllNetTools, GarageCars, and WaaAI Tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:title" content="CiwAI Smart Digital — Support">
+  <meta property="og:description" content="Need help? Reach our team.">
+  <meta property="og:url" content="https://ciwaidevtools.netlify.app/support">
+  <meta property="og:type" content="website">
 
   <script src="/assets/env.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Animate on Scroll -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <!-- Schema.org: Organization (CiwAI Smart Digital) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "CiwAI™ Smart Digital",
-    "url": "https://ciwaidevtools.netlify.app/",
-    "logo": "https://ciwaidevtools.netlify.app/assets/images/logo_ciwai_512.webp",
-    "sameAs": [
-      "https://github.com/Ciwai-lab",
-      "https://instagram.com/",
-      "https://www.linkedin.com/"
-    ],
+    "name": "CiwAI Smart Digital",
+    "url": "https://ciwaidevtools.netlify.app",
+    "logo": "https://ciwaidevtools.netlify.app/icon.png",
+    "sameAs": [],
     "contactPoint": [{
       "@type": "ContactPoint",
-      "email": "ciwaismartdigital@gmail.com",
       "contactType": "customer support",
-      "availableLanguage": ["English", "Indonesian"]
+      "availableLanguage": ["en","id"],
+      "url": "https://ciwaidevtools.netlify.app/support"
     }]
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "AllNetTools",
-        "operatingSystem": "Android",
-        "applicationCategory": "UtilitiesApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "downloadUrl": "https://drive.google.com/uc?export=download&id=1h31rDSKdgAwKnO-OKyfhjRWIrjMOSifa",
-        "publisher": {
-          "@type": "Organization",
-          "name": "CiwAI™ Smart Digital",
-          "url": "https://ciwaidevtools.netlify.app/"
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "GarageCars",
-        "operatingSystem": "Android",
-        "applicationCategory": "BusinessApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "downloadUrl": "https://drive.google.com/uc?export=download&id=1-QsFdDV1wf4yWX9-8HVNGrGve6oGome-",
-        "publisher": {
-          "@type": "Organization",
-          "name": "CiwAI™ Smart Digital",
-          "url": "https://ciwaidevtools.netlify.app/"
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Smooth Scroll -->
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 
-
-<body class="flex flex-col min-h-screen bg-gradient-to-b from-sky-50 via-white to-white text-gray-900 font-sans">
-
-  <!-- Language Switcher -->
-  <!-- Language Switcher (Dropdown) -->
-  <div class="absolute top-4 right-4 z-50">
-    <select id="langSwitcher"
-      class="bg-white border border-gray-300 rounded-md text-sm px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-500">
-      <option value="en">🇬🇧 English</option>
-      <option value="id">🇮🇩 Bahasa</option>
-    </select>
-  </div>
-
-
-
-  <!-- Hero Section -->
-  <section id="home" class="pt-24 pb-32 flex flex-col justify-center items-center text-center px-6">
-    <img src="assets/images/logo_ciwai_512.webp" alt="WaaAi Logo"
-      class="w-52 md:w-64 lg:w-72 mb-0 drop-shadow-xl animate-fade-in" data-aos="fade-down" />
-
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-center max-w-2xl mx-auto" data-aos="fade-up">
-      CiwAI™ Smart Digital
-    </h1>
-
-    <p class="text-lg md:text-xl max-w-xl mb-6 text-gray-600" data-aos="fade-up" data-aos-delay="100">
-      Smart, Lightweight, and Human-Friendly Tech — Mobile Apps, Web Design, VPS/VPN, and AI Chatbots.
-    </p>
-
-
-    <!-- CTA Buttons -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mt-6">
-
-      <a href="#projects"
-        class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 transition text-center">
-        Explore Projects
+<body class="bg-slate-50 text-slate-800">
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-2xl bg-slate-900 text-white grid place-items-center font-semibold">CI</div>
+        <div>
+          <h1 class="text-lg font-semibold">CiwAI Smart Digital</h1>
+          <p class="text-xs text-slate-500">“Simplifying Modern Technology for Everyone”</p>
+        </div>
       </a>
-
-      <a href="https://play.google.com/store/apps/details?id=com.waaai.smarttools" target="_blank"
-        rel="noopener noreferrer"
-        class="px-6 py-3 bg-rose-600 text-white rounded-xl shadow-md hover:bg-rose-500 transition text-center">
-        Play Store
-      </a>
-
-      <a href="/support" target="_blank" rel="noopener noreferrer"
-        class="px-6 py-3 bg-green-600 text-white rounded-xl shadow-md hover:bg-green-600 transition text-center">
-        Support
-      </a>
-
-      <a href="/updates.html" target="_blank" rel="noopener noreferrer"
-        class="px-6 py-3 bg-yellow-600 text-white rounded-xl shadow-md hover:bg-yellow-600 transition text-center">
-        Updates
-      </a>
-
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="/" class="hover:text-slate-900 text-slate-600">Home</a>
+        <a href="/support" class="text-slate-900 font-medium">Support</a>
+        <a href="/app-ads.txt" class="text-slate-600 hover:text-slate-900">app-ads.txt</a>
+      </nav>
     </div>
+  </header>
 
-
-  </section>
-
-  <!-- About Us -->
-  <section id="about" class="py-20 px-6 text-center bg-[#f9fafb]" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-4">About CiwAI™</h2>
-      <p class="text-gray-700 text-lg leading-relaxed">
-        CiwAI™ is a passionate digital team from Indonesia building smart, lightweight, and human-friendly tech.
-        We focus on Android/iOS apps, web development, private VPS/VPN solutions, and custom AI bots.
-      </p>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">CiwAI Help Center</h2>
+        <p class="mt-3 text-slate-300">Need help with AllNetTools, GarageCars, or WaaAI Tools? Check the FAQ below or
+          send us a message.</p>
+      </div>
     </div>
   </section>
 
+  <!-- Content Grid -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid lg:grid-cols-3 gap-8">
+    <!-- FAQ -->
+    <section class="lg:col-span-2">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="px-6 py-5 border-b border-slate-200">
+          <h3 class="text-xl font-semibold">FAQ</h3>
+          <p class="text-sm text-slate-500">Common questions about installation, ads, and privacy.</p>
+        </div>
+        <div class="divide-y divide-slate-200">
+          <details class="group px-6 py-5">
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              AllNetTools shows ads — is it safe?
+              <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
+            </summary>
+            <div class="mt-3 text-sm text-slate-600">
+              Ads are served by Google AdMob. We follow platform policies and strive to keep ads unobtrusive.
+              Verification file: <a href="/app-ads.txt" class="text-slate-900 underline">app-ads.txt</a>.
+            </div>
+          </details>
 
-  <section id="vision" class="py-20 px-6 text-center bg-gradient-to-br from-[#fafefe] to-[#ffffff]" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
-      <p class="text-gray-700 text-lg leading-relaxed">
-        At CiwAI™, we believe that technology should be simple, empowering, and accessible to everyone —
-        from remote villages to smart cities.
-        <br /><br />
-        Our vision is to become a trusted digital ally, building lightweight tools, private systems, and intuitive
-        solutions that make everyday tasks smarter, not harder.
-      </p>
-    </div>
-  </section>
-  <!-- Our Services -->
-  <section id="services" class="py-20 px-6 text-center bg-gradient-to-br from-[#f0f4fa] to-[#e8f0fe]"
-    data-aos="fade-up">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-10">What We Do</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-          data-aos="zoom-in">
-          <h3 class="text-xl font-semibold mb-2">Mobile Apps</h3>
-          <p>We build modern Android/iOS tools like WaaAi™, network utilities, and more.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-          data-aos="zoom-in" data-aos-delay="100">
-          <h3 class="text-xl font-semibold mb-2">Web Design & Hosting</h3>
-          <p>Clean, lightweight websites with secure and scalable hosting.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-          data-aos="zoom-in" data-aos-delay="200">
-          <h3 class="text-xl font-semibold mb-2">Custom VPS & VPN</h3>
-          <p>Private, tailored server solutions for business or privacy needs.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-xl transform hover:scale-105 transition duration-300"
-          data-aos="zoom-in" data-aos-delay="300">
-          <h3 class="text-xl font-semibold mb-2">AI Chatbots</h3>
-          <p>Telegram and WhatsApp bots for automation and digital support.</p>
-        </div>
-      </div>
-  </section>
+          <details class="group px-6 py-5">
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              How do I report a bug or send feedback?
+              <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
+            </summary>
+            <div class="mt-3 text-sm text-slate-600">
+              Use the support form or email <span class="font-mono">support@ciwai.dev</span> (optional placeholder —
+              adjust if needed).
+            </div>
+          </details>
 
-  <!-- Our Projects -->
-  <section id="projects" class="py-20 px-6 text-center bg-gradient-to-b from-[#fefce8] to-[#fef9c3]" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-10">Our Projects</h2>
+          <details class="group px-6 py-5">
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              Do you collect personal data?
+              <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
+            </summary>
+            <div class="mt-3 text-sm text-slate-600">
+              We collect the minimum data needed for analytics and app improvement in accordance with platform policies.
+            </div>
+          </details>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- AllNetTools -->
-        <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-          <h3 class="text-xl font-semibold mb-2">AllNetTools</h3>
-          <p class="text-gray-600 mb-4 text-sm">Android app packed with essential networking tools like Ping,
-            Traceroute, Speed Test, and more.
-          </p>
-          <a href="https://drive.google.com/uc?export=download&id=1h31rDSKdgAwKnO-OKyfhjRWIrjMOSifa"
-            class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition text-sm"
-            target="_blank" rel="noopener noreferrer">
-            📥 Download APK (Direct)
-          </a>
-        </div>
-
-        <!-- GarageCars -->
-        <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-          <h3 class="text-xl font-semibold mb-2">GarageCars</h3>
-          <p class="text-gray-600 mb-4 text-sm">Smart inventory management for car dealerships — flexible,
-            powerful, and ready to scale.
-          </p>
-          <a href="https://drive.google.com/uc?export=download&id=1-QsFdDV1wf4yWX9-8HVNGrGve6oGome-"
-            class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition text-sm"
-            target="_blank" rel="noopener noreferrer">
-            📥 Download APK (Direct)
-          </a>
-        </div>
-
-        <!-- Website SKH -->
-        <div class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105">
-          <h3 class="text-xl font-semibold mb-2">Website SKH Jannatul Aulad</h3>
-          <p class="text-gray-600 mb-4 text-sm">A modern website for schools — lightweight, responsive, and easy
-            to access.
-          </p>
-          <a href="https://jannatulaulad.netlify.app/" target="_blank"
-            class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm">
-            🌐 Check Website
-          </a>
-        </div>
-
-        <!-- SayurIn (Coming Soon...) -->
-        <div
-          class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-          <h3 class="text-xl font-semibold mb-2">SayurIn™</h3>
-          <p class="text-gray-600 mb-3 text-sm leading-snug">
-            <strong>
-              ⚠️ Coming Soon...<br />
-              We're building something cool!
-            </strong>
-          </p>
-          <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-            🔧 Coming Soon
-          </button>
-        </div>
-
-        <!-- Coming Soon... -->
-        <div
-          class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-          <h3 class="text-xl font-semibold mb-2">Coming Soon App</h3>
-          <p class="text-gray-600 mb-3 text-sm leading-snug">
-            <strong>
-              ⚠️ Coming Soon...<br />
-              We're building something cool!
-            </strong>
-          </p>
-          <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-            🔧 Coming Soon
-          </button>
-        </div>
-
-        <!-- Coming Soon... -->
-        <div
-          class="bg-white border rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 opacity-80">
-          <h3 class="text-xl font-semibold mb-2">Coming Soon App</h3>
-          <p class="text-gray-600 mb-3 text-sm leading-snug">
-            <strong>
-              ⚠️ Coming Soon...<br />
-              We're building something cool!
-            </strong>
-          </p>
-          <button disabled class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-            🔧 Coming Soon
-          </button>
+          <details class="group px-6 py-5">
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              Official channels of CiwAI Smart Digital?
+              <span class="text-slate-400 group-open:rotate-180 transition">&#9662;</span>
+            </summary>
+            <div class="mt-3 text-sm text-slate-600">
+              Website: <a class="underline" href="/">ciwaidevtools.netlify.app</a>.
+              All WaaAI Tools & WooOI announcements will appear here.
+            </div>
+          </details>
         </div>
       </div>
-  </section>
+      <section id="support-articles" class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+          <h2 class="text-2xl font-bold mb-6">Help Articles</h2>
+          <div id="support-list" class="space-y-4"></div>
+        </div>
+      </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6 text-center bg-gradient-to-br from-[#e0f7fa] to-[#e0f2f1]" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4">Let’s Talk!</h2>
-      <p class="text-gray-700 max-w-xl mx-auto mb-8">
-        Got an idea, project, or something you want? or just wanna say hi?
-        We’re open for collabs, custom apps and craft something meaningful.
-      </p>
-      <div class="text-lg text-gray-800 space-y-2">
-        <p>📩 Email: <strong><a href="mailto:ciwaismartdigital@gmail.com"
-              class="text-indigo-600 hover:underline">ciwaismartdigital@gmail.com</a></strong></p>
+      <script>
+        const supabaseClient = supabase.createClient(
+          window.SUPABASE_URL || '{{SUPABASE_URL}}',
+          window.SUPABASE_ANON_KEY || '{{SUPABASE_ANON_KEY}}'
+        );
+
+        async function loadSupportArticles() {
+          const { data, error } = await supabaseClient
+            .from('support_articles')
+            .select('title, slug, excerpt, category, published_at')
+            .eq('status', 'published')
+            .lte('published_at', new Date().toISOString())
+            .order('published_at', { ascending: false });
+
+          if (error) {
+            console.error(error);
+            return;
+          }
+
+          const container = document.getElementById('support-list');
+          container.innerHTML = data.map(a => `
+          <a href="/support/article.html?slug=${a.slug}" class="block bg-white p-4 rounded shadow hover:shadow-md transition">            <h3 class="font-semibold text-lg">${a.title}</h3>
+            <p class="text-sm text-gray-500 mb-2">${a.category} – ${new Date(a.published_at).toLocaleDateString()}</p>
+            <p class="mb-2">${a.excerpt || ''}</p>
+          </div>
+        `).join('');
+        }
+
+        loadSupportArticles();
+      </script>
+    </section>
+
+    <!-- Support Card -->
+    <aside class="space-y-8">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="px-6 py-5 border-b border-slate-200">
+          <h3 class="text-lg font-semibold">Contact Support</h3>
+          <p class="text-sm text-slate-500">Fill the form and we’ll get back to you shortly.</p>
+        </div>
+        <div class="px-6 py-6">
+          <!-- Netlify Forms -->
+          <form name="support" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+            <input type="hidden" name="form-name" value="support">
+            <p class="hidden">
+              <label>Don’t fill this out: <input name="bot-field"></label>
+            </p>
+            <div>
+              <label class="block text-sm mb-1">Name</label>
+              <input name="name" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Email</label>
+              <input type="email" name="email" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+            </div>
+            <div>
+              <label class="block text-sm mb-1">App</label>
+              <select name="app" class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500">
+                <option>AllNetTools</option>
+                <option>GarageCars</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Message</label>
+              <textarea name="message" rows="4" required
+                class="w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500"></textarea>
+            </div>
+            <button
+              class="w-full rounded-xl bg-slate-900 text-white py-2.5 font-medium hover:bg-slate-800">Send</button>
+            <p class="text-xs text-slate-500">By submitting this form, you agree to our privacy policy.</p>
+          </form>
+        </div>
       </div>
-  </section>
 
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+        <h4 class="font-semibold">Documents</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="underline" href="/app-ads.txt">app-ads.txt</a></li>
+          <li><a class="underline" href="/">Homepage</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
   <div id="ciwai-footer"></div>
 
   <script src="/footer.js"></script>
 
-
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/6282260383973" target="_blank"
-    class="block md:hidden fixed bottom-5 right-5 z-50 animate-bounce">
-    <div class="bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-110">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32" class="w-6 h-6">
-        <path d="M16 .3C7.3.3.2 7.4.2 16.1c0 2.8.7 5.5 2.1 7.9L0 32l8.2-2.1c2.3 1.2 4.9 1.8 7.5 1.8
-        8.7 0 15.8-7.1 15.8-15.9S24.7.3 16 .3zm0 29.3c-2.4 0-4.8-.6-6.9-1.8l-.5-.3-4.9 1.3
-        1.3-4.8-.3-.5c-1.2-2.1-1.9-4.5-1.9-6.9 0-7.5 6.1-13.6 13.6-13.6
-        3.6 0 7 1.4 9.5 3.9 2.5 2.5 3.9 5.9 3.9 9.5
-        0 7.5-6.1 13.6-13.8 13.6zm7.5-10.1c-.4-.2-2.4-1.2-2.7-1.3
-        -.4-.1-.7-.2-1 .2s-1.2 1.3-1.5 1.5c-.3.2-.6.3-1 .1
-        -.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8
-        -.2-.4 0-.6.2-.9.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6
-        .1-.2 0-.5 0-.7s-.9-2.2-1.2-3c-.3-.7-.7-.6-1-.6
-        -.2 0-.5 0-.7 0-.2 0-.5.1-.7.3-.2.2-1 1-1 2.5
-        0 1.5 1 3 1.1 3.2.1.2 2 3.4 4.9 4.8
-        1.8.9 2.5 1 3.4.9.6-.1 1.8-.7 2-1.4
-        .3-.6.3-1.1.2-1.3-.1-.1-.4-.2-.8-.4z" />
-      </svg>
-    </div>
-  </a>
-
-  <!-- Back to Top Button -->
-  <button onclick="scrollToTop()" id="backToTopBtn"
-    class="hidden fixed top-1/2 right-2 transform -translate-y-1/2 z-50 bg-white/40 hover:bg-white/60 backdrop-blur-sm text-blue-800 hover:text-blue-900 p-3 rounded-full shadow-md transition duration-300 border border-white/50">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd"
-        d="M10 4a1 1 0 01.894.553l5 10a1 1 0 01-1.788.894L10 6.618 5.894 15.447a1 1 0 01-1.788-.894l5-10A1 1 0 0110 4z"
-        clip-rule="evenodd" />
-    </svg>
-  </button>
-
-  <!-- Tailwind Config (sebelum script lainnya) -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {},
-      },
-      plugins: [],
-      corePlugins: {
-        backdropBlur: true,
-      },
-    }
-  </script>
-
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <!-- Script Section -->
-  <script>
-    // ✅ Init AOS (Animate On Scroll)
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-
-    // ✅ Scroll-to-top button logic
-    const backToTopBtn = document.getElementById("backToTopBtn");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.classList.remove("hidden");
-      } else {
-        backToTopBtn.classList.add("hidden");
-      }
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>
