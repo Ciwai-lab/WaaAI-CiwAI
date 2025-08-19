@@ -1,23 +1,30 @@
 <!-- /header.html -->
-<header id="ciwai-header" class="sticky top-0 z-40 bg-white/10 text-white backdrop-blur-lg 
-         supports-[backdrop-filter]:bg-white/5 shadow-none transition-shadow">
+<header id="ciwai-header" class="sticky top-0 z-40 bg-gray-800/50 text-white backdrop-blur-md
+         supports-[backdrop-filter]:bg-gray-800/40 shadow-none transition-shadow">
     <div class="max-w-6xl mx-auto px-4">
         <div class="h-14 flex items-center justify-between">
 
             <!-- Brand -->
-            <a href="/" class="inline-flex items-center gap-2 group">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-500 group-hover:scale-110 transition"></span>
+            <a href="/" class="inline-flex items-center gap-2 group" aria-label="CiwAI Smart Digital - Home">
+                <!-- Badge lingkaran: ikon & warna akan diinject via header.js sesuai data-page -->
+                <span id="brand-badge" class="inline-flex items-center justify-center w-7 h-7 rounded-full
+                 bg-blue-500 text-white group-hover:scale-125 transition shadow">
+                    <!-- fallback icon (diganti via JS) -->
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M13 2L3 14h7v8l10-12h-7z" />
+                    </svg>
+                </span>
                 <span class="text-sm font-semibold tracking-wide">CiwAI™ Smart Digital</span>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-6 text-sm">
+            <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
                 <a href="/" data-link="home" class="text-white/80 hover:text-white hover:underline">Home</a>
-                <a href="/article.html" data-link="article"
+                <a href="/article/" data-link="article"
                     class="text-white/80 hover:text-white hover:underline">Article</a>
                 <a href="/privacy.html" data-link="privacy"
                     class="text-white/80 hover:text-white hover:underline">Privacy</a>
-                <a href="/support.html" data-link="support"
+                <a href="/support/" data-link="support"
                     class="text-white/80 hover:text-white hover:underline">Support</a>
                 <a href="/updates.html" data-link="updates"
                     class="text-white/80 hover:text-white hover:underline">Updates</a>
@@ -28,7 +35,8 @@
             <!-- Mobile Burger -->
             <button type="button" id="ciwai-burger" aria-label="Toggle menu" aria-expanded="false"
                 class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"
+                    aria-hidden="true">
                     <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z" />
                 </svg>
             </button>
@@ -37,13 +45,13 @@
 
     <!-- Mobile Menu -->
     <div id="ciwai-mobile-menu" class="md:hidden hidden border-t border-white/10">
-        <nav class="max-w-6xl mx-auto px-4 py-3 grid gap-2 text-sm">
+        <nav class="max-w-6xl mx-auto px-4 py-3 grid gap-2 text-sm" aria-label="Mobile">
             <a href="/" data-link="home" class="block px-2 py-2 rounded hover:bg-white/10">Home</a>
-            <a href="/article.html" data-link="article" class="block px-2 py-2 rounded hover:bg-white/10">Article</a>
+            <a href="/article/" data-link="article" class="block px-2 py-2 rounded hover:bg-white/10">Article</a>
             <a href="/privacy.html" data-link="privacy" class="block px-2 py-2 rounded hover:bg-white/10">Privacy</a>
-            <a href="/support.html" data-link="support" class="block px-2 py-2 rounded hover:bg-white/10">Support</a>
+            <a href="/support/" data-link="support" class="block px-2 py-2 rounded hover:bg-white/10">Support</a>
             <a href="/updates.html" data-link="updates" class="block px-2 py-2 rounded hover:bg-white/10">Updates</a>
-            <a href="mailto:ciwaismartdigital@gmail.com" data-link="contact"
+            <a href="mailto:hello@ciwai.dev" data-link="contact"
                 class="block px-2 py-2 rounded hover:bg-white/10">Contact</a>
         </nav>
     </div>
