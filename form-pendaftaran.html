@@ -1,156 +1,290 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Form Pendaftaran Siswa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Form Pendaftaran — PKBM HALIFA</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      margin: 16px;
+      background: #f6f7fb
     }
 
-    form {
-      max-width: 600px;
-      margin: auto;
+    .card {
+      max-width: 980px;
+      margin: 18px auto;
+      padding: 18px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06)
     }
 
     label {
       display: block;
       margin-top: 10px;
-      font-weight: bold;
+      font-size: 14px;
+      color: #222
     }
 
     input,
-    select {
+    select,
+    textarea {
       width: 100%;
-      padding: 6px;
-      margin-top: 4px;
+      padding: 8px;
+      margin-top: 6px;
+      border: 1px solid #d6d9e6;
+      border-radius: 6px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
     }
 
     button {
-      margin-top: 15px;
-      padding: 10px 15px;
-      cursor: pointer;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border: 0;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer
+    }
+
+    .btn-ghost {
+      background: #6b7280
     }
 
     table {
-      border-collapse: collapse;
-      margin-top: 20px;
       width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px
     }
 
     th,
     td {
-      border: 1px solid #ccc;
-      padding: 6px;
-      text-align: left;
-      font-size: 14px;
+      border: 1px solid #e6e9f0;
+      padding: 8px;
+      font-size: 13px
     }
 
     th {
-      background: #f0f0f0;
+      background: #f1f5f9
+    }
+
+    .hint {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 6px
+    }
+
+    .small {
+      font-size: 12px;
+      color: #555
     }
   </style>
 </head>
 
 <body>
+  <div class="card">
+    <h2>Form Pendaftaran Siswa — PKBM HALIFA</h2>
+    <p class="hint">Isi data lengkap. Untuk mengedit, klik baris pada preview (No. Pendaftaran akan terisi).</p>
 
-  <h2>Formulir Pendaftaran Siswa</h2>
-  <form id="pendaftaranForm">
-    <label>Nama Lengkap</label>
-    <input type="text" name="Nama" required>
+    <form id="form">
+      <!-- hidden primary key -->
+      <input type="hidden" name="No. Pendaftaran" />
 
-    <label>Jenis Kelamin</label>
-    <select name="JK" required>
-      <option value="">-- Pilih --</option>
-      <option value="L">Laki-laki</option>
-      <option value="P">Perempuan</option>
-    </select>
+      <div class="grid">
+        <div>
+          <label>Nama</label>
+          <input type="text" name="Nama" required />
+        </div>
+        <div>
+          <label>Jenis Kelamin</label>
+          <select name="JK" required>
+            <option value="">-- Pilih --</option>
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
+          </select>
+        </div>
 
-    <label>NISN</label>
-    <input type="text" name="NISN">
+        <div>
+          <label>NISN</label><input type="text" name="NISN" />
+        </div>
+        <div>
+          <label>Tempat Lahir</label><input type="text" name="Tempat Lahir" />
+        </div>
 
-    <label>Tempat Lahir</label>
-    <input type="text" name="Tempat Lahir">
+        <div>
+          <label>Tanggal Lahir</label><input type="date" name="Tanggal Lahir" />
+        </div>
+        <div>
+          <label>NIK</label><input type="text" name="NIK" />
+        </div>
 
-    <label>Tanggal Lahir</label>
-    <input type="date" name="Tanggal Lahir">
+        <div style="grid-column:1/3">
+          <label>Alamat</label><input type="text" name="Alamat" />
+        </div>
 
-    <label>NIK</label>
-    <input type="text" name="NIK">
+        <div><label>RT</label><input type="text" name="RT" /></div>
+        <div><label>RW</label><input type="text" name="RW" /></div>
 
-    <label>Alamat</label>
-    <input type="text" name="Alamat">
+        <div><label>Dusun</label><input type="text" name="Dusun" /></div>
+        <div><label>Kelurahan</label><input type="text" name="Kelurahan" /></div>
 
-    <label>HP</label>
-    <input type="text" name="HP">
+        <div><label>Kecamatan</label><input type="text" name="Kecamatan" /></div>
+        <div><label>Kode Pos</label><input type="text" name="Kode Pos" /></div>
 
-    <label>Nama Ayah</label>
-    <input type="text" name="Nama Ayah">
+        <div><label>HP</label><input type="text" name="HP" /></div>
+        <div></div>
 
-    <label>Nama Ibu</label>
-    <input type="text" name="Nama Ibu">
+        <div style="grid-column:1/3">
+          <h3>Data Orang Tua</h3>
+        </div>
 
-    <label>Rombel Saat Ini</label>
-    <input type="text" name="Rombel Saat Ini">
+        <div><label>Nama Ayah</label><input type="text" name="Nama Ayah" /></div>
+        <div><label>Tahun Lahir Ayah</label><input type="number" name="Tahun Lahir Ayah" /></div>
 
-    <button type="submit">Kirim Data</button>
-  </form>
+        <div><label>Jenjang Pendidikan Ayah</label><input type="text" name="Jenjang Pendidikan Ayah" /></div>
+        <div><label>Pekerjaan Ayah</label><input type="text" name="Pekerjaan Ayah" /></div>
 
-  <!-- Tombol preview -->
-  <button id="lihatData">📋 Lihat Data (Preview)</button>
-  <div id="preview"></div>
+        <div><label>NIK Ayah</label><input type="text" name="NIK Ayah" /></div>
+        <div></div>
+
+        <div><label>Nama Ibu</label><input type="text" name="Nama Ibu" /></div>
+        <div><label>Tahun Lahir Ibu</label><input type="number" name="Tahun Lahir Ibu" /></div>
+
+        <div><label>Jenjang Pendidikan Ibu</label><input type="text" name="Jenjang Pendidikan Ibu" /></div>
+        <div><label>Pekerjaan Ibu</label><input type="text" name="Pekerjaan Ibu" /></div>
+
+        <div><label>NIK Ibu</label><input type="text" name="NIK Ibu" /></div>
+        <div></div>
+
+        <div style="grid-column:1/3">
+          <label>Rombel Saat Ini</label><input type="text" name="Rombel Saat Ini" />
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px">
+        <button type="submit">Kirim Data</button>
+        <button type="button" id="btnReset" class="btn-ghost">Reset</button>
+        <button type="button" id="btnPreview" class="btn-ghost">📋 Lihat Data (Preview)</button>
+      </div>
+    </form>
+
+    <div id="msg" class="small" style="margin-top:8px"></div>
+    <div id="preview"></div>
+  </div>
 
   <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzzLGRo7VrwvjZkIXYRq8hFtkkooaitbcWMnbselSiYbMT9oIb9TU2CMVJYCv47STTA/exec"; // ganti pake URL Apps Script lo
+    // === EDIT THIS: ganti dengan Web App URL dari Apps Script (ujungnya /exec) ===
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxy_5UA_ZoLFEJpFRPZ2fSDEHXORgIPhXa0iPjf4N6GWX_lFRPNRkSSPxsC0DNI-iGH/exec";
+    // =============================================================================
 
-    // Submit form
-    document.getElementById("pendaftaranForm").addEventListener("submit", e => {
-      e.preventDefault();
-      const form = e.target;
-      const data = Object.fromEntries(new FormData(form).entries());
+    const form = document.getElementById('form');
+    const msg = document.getElementById('msg');
+    const preview = document.getElementById('preview');
 
-      fetch(scriptURL, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(data)
-      })
-        .then(res => res.text())
-        .then(() => {
-          alert("✅ Data berhasil dikirim!");
-          form.reset();
-        })
-        .catch(err => alert("❌ Gagal: " + err.message));
-    });
+    function showMsg(t, clr = '') {
+      msg.textContent = t;
+      msg.style.color = clr;
+      setTimeout(() => { msg.textContent = ''; }, 5000);
+    }
 
-    // Tombol preview
-    document.getElementById("lihatData").addEventListener("click", () => {
-      fetch(scriptURL + "?action=read")
-        .then(res => res.json())
-        .then(data => {
-          if (!data || data.length === 0) {
-            document.getElementById("preview").innerHTML = "<p>Belum ada data.</p>";
-            return;
-          }
+    // Submit menggunakan FormData -> menghindari CORS preflight
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      showMsg('Mengirim...', '#444');
+      const fd = new FormData(form);
 
-          let html = "<table><tr>";
-          Object.keys(data[0]).forEach(k => html += `<th>${k}</th>`);
-          html += "</tr>";
-
-          // ambil 5 data terakhir
-          data.slice(-5).forEach(row => {
-            html += "<tr>";
-            Object.values(row).forEach(val => html += `<td>${val}</td>`);
-            html += "</tr>";
-          });
-          html += "</table>";
-          document.getElementById("preview").innerHTML = html;
-        })
-        .catch(err => {
-          document.getElementById("preview").innerHTML = "<p>❌ Gagal ambil data: " + err.message + "</p>";
+      try {
+        const res = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: fd // multipart/form-data
         });
+        const text = await res.text();
+        // coba parse JSON
+        let j = {};
+        try { j = JSON.parse(text); } catch (e) { j = { raw: text }; }
+        showMsg('✅ Data berhasil dikirim (id: ' + (j.id || '') + ')', 'green');
+        form.reset();
+        // clear No. Pendaftaran hidden (reset)
+        form.querySelector('input[name="No. Pendaftaran"]').value = '';
+        // optionally refresh preview
+        loadPreview();
+      } catch (err) {
+        console.error(err);
+        showMsg('❌ Gagal kirim: ' + (err.message || err), 'red');
+      }
     });
+
+    // Reset button
+    document.getElementById('btnReset').addEventListener('click', () => {
+      form.reset();
+      form.querySelector('input[name="No. Pendaftaran"]').value = '';
+    });
+
+    // Preview - ambil terakhir 5
+    async function loadPreview(limit = 5) {
+      preview.innerHTML = '<p class="small">Memuat preview...</p>';
+      try {
+        const res = await fetch(SCRIPT_URL + '?action=read&limit=' + limit, { method: 'GET' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (!data || data.length === 0) {
+          preview.innerHTML = '<p class="small">Belum ada data.</p>';
+          return;
+        }
+        // render table
+        const headers = Object.keys(data[0]);
+        let html = '<table><thead><tr>';
+        headers.forEach(h => html += '<th>' + h + '</th>');
+        html += '<th>Aksi</th></tr></thead><tbody>';
+        // newest first: show last items reversed
+        data.forEach(row => {
+          html += '<tr data-id="' + (row['No. Pendaftaran'] || '') + '">';
+          headers.forEach(h => html += '<td>' + (row[h] === undefined ? '' : String(row[h])) + '</td>');
+          html += '<td><button type="button" class="btn-edit">Edit</button></td></tr>';
+        });
+        html += '</tbody></table>';
+        preview.innerHTML = html;
+
+        // wire up edit buttons: click row to populate form
+        preview.querySelectorAll('button.btn-edit').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const tr = e.target.closest('tr');
+            const id = tr.getAttribute('data-id') || '';
+            const cells = tr.querySelectorAll('td');
+            // map headers -> values
+            const map = {};
+            headers.forEach((h, i) => map[h] = cells[i].textContent);
+            // populate form fields by name == header label
+            for (const key in map) {
+              const el = form.querySelector('[name="' + key + '"]');
+              if (el) {
+                el.value = map[key];
+              }
+            }
+            // show notice
+            showMsg('Edit mode: No. Pendaftaran = ' + id, 'green');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        });
+
+      } catch (err) {
+        console.error(err);
+        preview.innerHTML = '<p class="small">❌ Gagal ambil data: ' + (err.message || err) + '</p>';
+      }
+    }
+
+    // wire preview button
+    document.getElementById('btnPreview').addEventListener('click', () => loadPreview(5));
+
+    // auto load preview on page load (optional)
+    // loadPreview(5);
   </script>
 </body>
 
