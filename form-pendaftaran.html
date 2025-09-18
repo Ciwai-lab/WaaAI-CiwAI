@@ -3,25 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Form Input Peserta Didik</title>
+  <title>Form Pendaftaran Siswa</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 20px;
-    }
-
-    .container {
-      background: white;
       padding: 20px;
-      border-radius: 10px;
-      max-width: 900px;
-      margin: auto;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    h2 {
-      text-align: center;
+    form {
+      max-width: 600px;
+      margin: auto;
     }
 
     label {
@@ -33,201 +24,132 @@
     input,
     select {
       width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      padding: 6px;
+      margin-top: 4px;
     }
 
     button {
-      margin-top: 20px;
-      padding: 10px;
-      width: 100%;
-      background: #4CAF50;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
+      margin-top: 15px;
+      padding: 10px 15px;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #45a049;
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background: #f0f0f0;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h2>Form Input Peserta Didik</h2>
-    <form id="studentForm">
 
-      <div class="row">
-        <div>
-          <label>No</label>
-          <input type="number" name="No">
-        </div>
-        <div>
-          <label>Nama</label>
-          <input type="text" name="Nama" required>
-        </div>
-      </div>
+  <h2>Formulir Pendaftaran Siswa</h2>
+  <form id="pendaftaranForm">
+    <label>Nama Lengkap</label>
+    <input type="text" name="Nama" required>
 
-      <div class="row">
-        <div>
-          <label>Jenis Kelamin</label>
-          <select name="JK" required>
-            <option value="">--Pilih--</option>
-            <option value="L">Laki-laki</option>
-            <option value="P">Perempuan</option>
-          </select>
-        </div>
-        <div>
-          <label>NISN</label>
-          <input type="text" name="NISN">
-        </div>
-      </div>
+    <label>Jenis Kelamin</label>
+    <select name="JK" required>
+      <option value="">-- Pilih --</option>
+      <option value="L">Laki-laki</option>
+      <option value="P">Perempuan</option>
+    </select>
 
-      <div class="row">
-        <div>
-          <label>Tempat Lahir</label>
-          <input type="text" name="Tempat Lahir">
-        </div>
-        <div>
-          <label>Tanggal Lahir</label>
-          <input type="date" name="Tanggal Lahir">
-        </div>
-      </div>
+    <label>NISN</label>
+    <input type="text" name="NISN">
 
-      <label>NIK</label>
-      <input type="text" name="NIK">
+    <label>Tempat Lahir</label>
+    <input type="text" name="Tempat Lahir">
 
-      <label>Alamat</label>
-      <input type="text" name="Alamat">
+    <label>Tanggal Lahir</label>
+    <input type="date" name="Tanggal Lahir">
 
-      <div class="row">
-        <div>
-          <label>RT</label>
-          <input type="text" name="RT">
-        </div>
-        <div>
-          <label>RW</label>
-          <input type="text" name="RW">
-        </div>
-      </div>
+    <label>NIK</label>
+    <input type="text" name="NIK">
 
-      <div class="row">
-        <div>
-          <label>Dusun</label>
-          <input type="text" name="Dusun">
-        </div>
-        <div>
-          <label>Kelurahan</label>
-          <input type="text" name="Kelurahan">
-        </div>
-      </div>
+    <label>Alamat</label>
+    <input type="text" name="Alamat">
 
-      <div class="row">
-        <div>
-          <label>Kecamatan</label>
-          <input type="text" name="Kecamatan">
-        </div>
-        <div>
-          <label>Kode Pos</label>
-          <input type="text" name="Kode Pos">
-        </div>
-      </div>
+    <label>HP</label>
+    <input type="text" name="HP">
 
-      <label>HP</label>
-      <input type="text" name="HP">
+    <label>Nama Ayah</label>
+    <input type="text" name="Nama Ayah">
 
-      <h3>Data Ayah</h3>
-      <label>Nama Ayah</label>
-      <input type="text" name="Nama Ayah">
+    <label>Nama Ibu</label>
+    <input type="text" name="Nama Ibu">
 
-      <div class="row">
-        <div>
-          <label>Tahun Lahir Ayah</label>
-          <input type="number" name="Tahun Lahir Ayah">
-        </div>
-        <div>
-          <label>Jenjang Pendidikan Ayah</label>
-          <input type="text" name="Jenjang Pendidikan Ayah">
-        </div>
-      </div>
+    <label>Rombel Saat Ini</label>
+    <input type="text" name="Rombel Saat Ini">
 
-      <div class="row">
-        <div>
-          <label>Pekerjaan Ayah</label>
-          <input type="text" name="Pekerjaan Ayah">
-        </div>
-        <div>
-          <label>NIK Ayah</label>
-          <input type="text" name="NIK Ayah">
-        </div>
-      </div>
+    <button type="submit">Kirim Data</button>
+  </form>
 
-      <h3>Data Ibu</h3>
-      <label>Nama Ibu</label>
-      <input type="text" name="Nama Ibu">
-
-      <div class="row">
-        <div>
-          <label>Tahun Lahir Ibu</label>
-          <input type="number" name="Tahun Lahir Ibu">
-        </div>
-        <div>
-          <label>Jenjang Pendidikan Ibu</label>
-          <input type="text" name="Jenjang Pendidikan Ibu">
-        </div>
-      </div>
-
-      <div class="row">
-        <div>
-          <label>Pekerjaan Ibu</label>
-          <input type="text" name="Pekerjaan Ibu">
-        </div>
-        <div>
-          <label>NIK Ibu</label>
-          <input type="text" name="NIK Ibu">
-        </div>
-      </div>
-
-      <label>Rombel Saat Ini</label>
-      <input type="text" name="Rombel Saat Ini">
-
-      <button type="submit">Kirim</button>
-    </form>
-  </div>
+  <!-- Tombol preview -->
+  <button id="lihatData">📋 Lihat Data (Preview)</button>
+  <div id="preview"></div>
 
   <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzzLGRo7VrwvjZkIXYRq8hFtkkooaitbcWMnbselSiYbMT9oIb9TU2CMVJYCv47STTA/exec"; // ganti dengan URL Web App ente
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzzLGRo7VrwvjZkIXYRq8hFtkkooaitbcWMnbselSiYbMT9oIb9TU2CMVJYCv47STTA/exec"; // ganti pake URL Apps Script lo
 
-    document.getElementById("studentForm").addEventListener("submit", e => {
+    // Submit form
+    document.getElementById("pendaftaranForm").addEventListener("submit", e => {
       e.preventDefault();
-      const formData = new FormData(e.target);
-      const data = {};
-      formData.forEach((value, key) => data[key] = value);
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form).entries());
 
       fetch(scriptURL, {
         method: "POST",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8"
-        },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(data)
       })
-        .then(res => res.json())
-        .then(response => {
+        .then(res => res.text())
+        .then(() => {
           alert("✅ Data berhasil dikirim!");
-          e.target.reset();
+          form.reset();
         })
-        .catch(err => alert("❌ Gagal kirim: " + err));
+        .catch(err => alert("❌ Gagal: " + err.message));
+    });
+
+    // Tombol preview
+    document.getElementById("lihatData").addEventListener("click", () => {
+      fetch(scriptURL + "?action=read")
+        .then(res => res.json())
+        .then(data => {
+          if (!data || data.length === 0) {
+            document.getElementById("preview").innerHTML = "<p>Belum ada data.</p>";
+            return;
+          }
+
+          let html = "<table><tr>";
+          Object.keys(data[0]).forEach(k => html += `<th>${k}</th>`);
+          html += "</tr>";
+
+          // ambil 5 data terakhir
+          data.slice(-5).forEach(row => {
+            html += "<tr>";
+            Object.values(row).forEach(val => html += `<td>${val}</td>`);
+            html += "</tr>";
+          });
+          html += "</table>";
+          document.getElementById("preview").innerHTML = html;
+        })
+        .catch(err => {
+          document.getElementById("preview").innerHTML = "<p>❌ Gagal ambil data: " + err.message + "</p>";
+        });
     });
   </script>
 </body>
