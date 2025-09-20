@@ -195,30 +195,20 @@
     }
 
     // Submit menggunakan FormData -> menghindari CORS preflight
-    form.addEventListener('submit', async (ev) => {
-      ev.preventDefault();
-      showMsg('Mengirim...', '#444');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
       const fd = new FormData(form);
-
-      try {
-        const res = await fetch(SCRIPT_URL, {
-          method: 'POST',
-          body: fd // multipart/form-data
-        });
-        const text = await res.text();
-        // coba parse JSON
-        let j = {};
-        try { j = JSON.parse(text); } catch (e) { j = { raw: text }; }
-        showMsg('✅ Data berhasil dikirim (id: ' + (j.id || '') + ')', 'green');
-        form.reset();
-        // clear No. Pendaftaran hidden (reset)
-        form.querySelector('input[name="No. Pendaftaran"]').value = '';
-        // optionally refresh preview
-        loadPreview();
-      } catch (err) {
-        console.error(err);
-        showMsg('❌ Gagal kirim: ' + (err.message || err), 'red');
-      }
+      fetch(scriptURL, {
+        method: "POST",
+        body: fd
+      })
+        .then(res => res.json())
+        .then(d => {
+          alert("✅ Data berhasil dikirim! ID: " + d.id);
+          form.reset();
+          loadPreview(); // reload preview data
+        })
+        .catch(err => alert("❌ Gagal kirim: " + err));
     });
 
     // Reset button
@@ -228,56 +218,27 @@
     });
 
     // Preview - ambil terakhir 5
-    async function loadPreview(limit = 5) {
-      preview.innerHTML = '<p class="small">Memuat preview...</p>';
-      try {
-        const res = await fetch(SCRIPT_URL + '?action=read&limit=' + limit, { method: 'GET' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const data = await res.json();
-        if (!data || data.length === 0) {
-          preview.innerHTML = '<p class="small">Belum ada data.</p>';
-          return;
-        }
-        // render table
-        const headers = Object.keys(data[0]);
-        let html = '<table><thead><tr>';
-        headers.forEach(h => html += '<th>' + h + '</th>');
-        html += '<th>Aksi</th></tr></thead><tbody>';
-        // newest first: show last items reversed
-        data.forEach(row => {
-          html += '<tr data-id="' + (row['No. Pendaftaran'] || '') + '">';
-          headers.forEach(h => html += '<td>' + (row[h] === undefined ? '' : String(row[h])) + '</td>');
-          html += '<td><button type="button" class="btn-edit">Edit</button></td></tr>';
-        });
-        html += '</tbody></table>';
-        preview.innerHTML = html;
-
-        // wire up edit buttons: click row to populate form
-        preview.querySelectorAll('button.btn-edit').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            const tr = e.target.closest('tr');
-            const id = tr.getAttribute('data-id') || '';
-            const cells = tr.querySelectorAll('td');
-            // map headers -> values
-            const map = {};
-            headers.forEach((h, i) => map[h] = cells[i].textContent);
-            // populate form fields by name == header label
-            for (const key in map) {
-              const el = form.querySelector('[name="' + key + '"]');
-              if (el) {
-                el.value = map[key];
-              }
-            }
-            // show notice
-            showMsg('Edit mode: No. Pendaftaran = ' + id, 'green');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          });
-        });
-
-      } catch (err) {
-        console.error(err);
-        preview.innerHTML = '<p class="small">❌ Gagal ambil data: ' + (err.message || err) + '</p>';
-      }
+    function loadPreview() {
+      fetch(scriptURL + "?action=read&limit=1")
+        .then(res => res.json())
+        .then(data => {
+          const prevDiv = document.getElementById("preview");
+          if (data.length === 0) {
+            prevDiv.innerHTML = "<p>Belum ada data</p>";
+            return;
+          }
+          const d = data[0];
+          prevDiv.innerHTML = `
+        <div class="preview-card">
+          <p><b>No. Pendaftaran:</b> ${d["No. Pendaftaran"]}</p>
+          <p><b>Nama:</b> ${d["Nama"]}</p>
+          <p><b>NISN:</b> ${d["NISN"]}</p>
+          <p><b>Tanggal Lahir:</b> ${d["Tanggal Lahir"]}</p>
+          <button onclick="editData('${d["No. Pendaftaran"]}')">✏️ Edit</button>
+        </div>
+      `;
+        })
+        .catch(err => console.error("❌ Gagal ambil data:", err));
     }
 
     // wire preview button
