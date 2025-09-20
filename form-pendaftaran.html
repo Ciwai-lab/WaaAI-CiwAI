@@ -198,10 +198,11 @@
     form.addEventListener("submit", e => {
       e.preventDefault();
       const fd = new FormData(form);
-      fetch(scriptURL, {
+      fetch(SCRIPT_URL, {
         method: "POST",
         body: fd
       })
+
         .then(res => res.json())
         .then(d => {
           alert("✅ Data berhasil dikirim! ID: " + d.id);
@@ -219,7 +220,7 @@
 
     // Preview - ambil terakhir 5
     function loadPreview() {
-      fetch(scriptURL + "?action=read&limit=1")
+      fetch(SCRIPT_URL + "?action=read&limit=1")
         .then(res => res.json())
         .then(data => {
           const prevDiv = document.getElementById("preview");
