@@ -186,9 +186,8 @@
   </div>
 
   <script>
-    // === EDIT THIS: ganti dengan Web App URL dari Apps Script (ujungnya /exec) ===
+    // URL web app
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx7vVTY1ehFtEbBpFsC64d-20CCC35NV8Azs0HBEt6z3gTW4_o8m9ICnDidK1TH3CwG/exec";
-    // =============================================================================
 
     const form = document.getElementById('form');
     const msg = document.getElementById('msg');
@@ -200,15 +199,11 @@
       setTimeout(() => { msg.textContent = ''; }, 5000);
     }
 
-    // Submit menggunakan FormData -> menghindari CORS preflight
+    // === Kirim data ===
     form.addEventListener("submit", e => {
       e.preventDefault();
       const fd = new FormData(form);
-      fetch(SCRIPT_URL, {
-        method: "POST",
-        body: fd
-      })
-
+      fetch(SCRIPT_URL, { method: "POST", body: fd })
         .then(res => res.json())
         .then(d => {
           alert("✅ Data berhasil dikirim! ID: " + d.id);
@@ -218,13 +213,13 @@
         .catch(err => alert("❌ Gagal kirim: " + err));
     });
 
-    // Reset button
+    // Reset form
     document.getElementById('btnReset').addEventListener('click', () => {
       form.reset();
       form.querySelector('input[name="No. Pendaftaran"]').value = '';
     });
 
-    // Preview - ambil terakhir 5
+    // === Preview data terakhir ===
     function loadPreview() {
       fetch(SCRIPT_URL + "?action=read&limit=1")
         .then(res => res.json())
@@ -236,24 +231,73 @@
           }
           const d = data[0];
           prevDiv.innerHTML = `
-        <div class="preview-card">
-          <p><b>No. Pendaftaran:</b> ${d["No. Pendaftaran"]}</p>
-          <p><b>Nama:</b> ${d["Nama"]}</p>
-          <p><b>NISN:</b> ${d["NISN"]}</p>
-          <p><b>Tanggal Lahir:</b> ${d["Tanggal Lahir"]}</p>
-          <button onclick="editData('${d["No. Pendaftaran"]}')">✏️ Edit</button>
-        </div>
-      `;
+          <div class="preview-card">
+            <p><b>No. Pendaftaran:</b> ${d["No. Pendaftaran"]}</p>
+            <p><b>Nama:</b> ${d["Nama"]}</p>
+            <p><b>NISN:</b> ${d["NISN"]}</p>
+            <p><b>Tanggal Lahir:</b> ${d["Tanggal Lahir"]}</p>
+            <button onclick="editData('${d["No. Pendaftaran"]}')">✏️ Edit</button>
+          </div>
+        `;
         })
         .catch(err => console.error("❌ Gagal ambil data:", err));
     }
 
-    // wire preview button
-    document.getElementById('btnPreview').addEventListener('click', () => loadPreview(5));
+    // === Edit Data ===
+    function editData(noPend) {
+      fetch(SCRIPT_URL + "?action=read")
+        .then(res => res.json())
+        .then(rows => {
+          const d = rows.find(r => r["No. Pendaftaran"] === noPend);
+          if (!d) {
+            alert("❌ Data tidak ditemukan");
+            return;
+          }
+          // isi ke form
+          for (const k in d) {
+            const input = form.querySelector(`[name="${k}"]`);
+            if (input) input.value = d[k];
+          }
+        })
+        .catch(err => alert("❌ Gagal load data: " + err));
+    }
 
-    // auto load preview on page load (optional)
-    // loadPreview(5);
+    // === Cari Data ===
+    document.getElementById('btnCari').addEventListener('click', () => {
+      const keyword = document.getElementById('cariInput').value.trim().toLowerCase();
+      if (!keyword) {
+        alert("Masukkan kata kunci pencarian dulu");
+        return;
+      }
+
+      fetch(SCRIPT_URL + "?action=read")
+        .then(res => res.json())
+        .then(rows => {
+          const result = rows.filter(r =>
+            String(r["No. Pendaftaran"]).toLowerCase().includes(keyword) ||
+            String(r["Nama"]).toLowerCase().includes(keyword)
+          );
+          if (result.length === 0) {
+            preview.innerHTML = "<p>❌ Tidak ada data ditemukan</p>";
+            return;
+          }
+          preview.innerHTML = result.map(d => `
+          <div class="preview-card">
+            <p><b>No. Pendaftaran:</b> ${d["No. Pendaftaran"]}</p>
+            <p><b>Nama:</b> ${d["Nama"]}</p>
+            <p><b>NISN:</b> ${d["NISN"]}</p>
+            <p><b>Tanggal Lahir:</b> ${d["Tanggal Lahir"]}</p>
+            <button onclick="editData('${d["No. Pendaftaran"]}')">✏️ Edit</button>
+          </div>
+        `).join("");
+        })
+        .catch(err => console.error("❌ Gagal cari data:", err));
+    });
+
+    // Auto-load data terakhir pas buka
+    loadPreview();
   </script>
+
 </body>
 
 </html>
