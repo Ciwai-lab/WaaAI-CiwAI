@@ -89,6 +89,13 @@
       gap: 12px;
     }
 
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+        /* otomatis jadi 1 kolom di layar kecil */
+      }
+    }
+
     button {
       margin-top: 12px;
       padding: 10px 14px;
@@ -306,12 +313,34 @@
           const d = data[0];
           prevDiv.innerHTML = `
             <div class="preview-card">
-              <p><b>No. Pendaftaran:</b> ${d["No. Pendaftaran"]}</p>
-              <p><b>Nama:</b> ${d["Nama"]}</p>
-              <p><b>NISN:</b> ${d["NISN"]}</p>
-              <p><b>Tanggal Lahir:</b> ${d["Tanggal Lahir"]}</p>
-              <button onclick="editData('${d["No. Pendaftaran"]}')">✏️ Edit</button>
-            </div>`;
+  <h4>Data Siswa</h4>
+  <p><b>No. Pendaftaran:</b> ${d["No. Pendaftaran"]}</p>
+  <p><b>Nama:</b> ${d["Nama"]}</p>
+  <p><b>Jenis Kelamin:</b> ${d["JK"]}</p>
+  <p><b>NISN:</b> ${d["NISN"]}</p>
+  <p><b>Tempat, Tanggal Lahir:</b> ${d["Tempat Lahir"]}, ${d["Tanggal Lahir"]}</p>
+  <p><b>NIK:</b> ${d["NIK"]}</p>
+  <p><b>Alamat:</b> ${d["Alamat"]}, RT ${d["RT"]}/RW ${d["RW"]}, Dusun ${d["Dusun"]}, Kel. ${d["Kelurahan"]}, Kec. ${d["Kecamatan"]}, ${d["Kode Pos"]}</p>
+  <p><b>HP:</b> ${d["HP"]}</p>
+
+  <h4>Data Orang Tua</h4>
+  <p><b>Nama Ayah:</b> ${d["Nama Ayah"]}</p>
+  <p><b>Tahun Lahir Ayah:</b> ${d["Tahun Lahir Ayah"]}</p>
+  <p><b>Pendidikan Ayah:</b> ${d["Jenjang Pendidikan Ayah"]}</p>
+  <p><b>Pekerjaan Ayah:</b> ${d["Pekerjaan Ayah"]}</p>
+  <p><b>NIK Ayah:</b> ${d["NIK Ayah"]}</p>
+  <p><b>Nama Ibu:</b> ${d["Nama Ibu"]}</p>
+  <p><b>Tahun Lahir Ibu:</b> ${d["Tahun Lahir Ibu"]}</p>
+  <p><b>Pendidikan Ibu:</b> ${d["Jenjang Pendidikan Ibu"]}</p>
+  <p><b>Pekerjaan Ibu:</b> ${d["Pekerjaan Ibu"]}</p>
+  <p><b>NIK Ibu:</b> ${d["NIK Ibu"]}</p>
+
+  <h4>Sekolah</h4>
+  <p><b>Rombel Saat Ini:</b> ${d["Rombel Saat Ini"]}</p>
+
+  <button onclick="editData('${d["No. Pendaftaran"]}')">✏️ Edit</button>
+</div>
+`;
         });
     }
 
