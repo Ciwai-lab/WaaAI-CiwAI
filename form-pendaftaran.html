@@ -8,6 +8,7 @@
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="style.css" rel="stylesheet"> <!-- ini harus terakhir -->
 
   <link rel="icon" type="image/webp" href="/assets/images/favicon.webp" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -29,6 +30,36 @@
       margin-bottom: 10px;
       font-size: 20px;
       color: #1f2937;
+    }
+
+    .section-title {
+      margin-top: 2.5rem;
+      /* jarak dari atas */
+      margin-bottom: 1.5rem;
+      /* jarak ke bawah */
+      font-size: 1.5rem;
+      /* agak besar */
+      font-weight: 700;
+      /* bold */
+      color: #1e293b;
+      /* abu gelap elegan */
+      position: relative;
+      /* biar bisa pasang garis */
+      padding-bottom: 0.5rem;
+      /* kasih ruang buat garis */
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      /* panjang garis */
+      height: 3px;
+      /* tebal garis */
+      background: linear-gradient(to right, #2563eb, #38bdf8);
+      border-radius: 2px;
     }
 
     /* === Tabs === */
@@ -98,19 +129,37 @@
 
     button {
       margin-top: 12px;
-      padding: 10px 14px;
+      /* Jarak atas tombol */
+      padding: 10px 16px;
+      /* Padding lebih proporsional */
       border: none;
+      /* Hapus border default */
       border-radius: 8px;
-      background: #2563eb;
+      /* Sudut membulat */
+      background-color: #2563eb;
+      /* Warna utama */
       color: #fff;
-      cursor: pointer;
+      /* Warna teks putih */
       font-size: 14px;
-      transition: background 0.2s;
+      /* Ukuran teks */
+      font-weight: 500;
+      /* Sedikit bold untuk keterbacaan */
+      cursor: pointer;
+      /* Pointer saat hover */
+      transition: all 0.2s ease-in-out;
+      /* Animasi smooth untuk hover */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      /* Shadow ringan */
     }
 
     button:hover {
-      background: #1d4ed8;
+      background-color: #1d4ed8;
+      /* Warna hover */
+      transform: translateY(-1px);
+      /* Sedikit naik saat hover */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
+
 
     .btn-ghost {
       background: #6b7280;
@@ -204,6 +253,7 @@
     <form id="form">
       <input type="hidden" name="No. Pendaftaran" />
 
+      <h3 class="section-title">👨‍🎓👩‍🎓 Data Siswa</h3>
       <div class="grid">
         <div><label>Nama</label><input type="text" name="Nama" required /></div>
         <div><label>Jenis Kelamin</label>
@@ -234,7 +284,7 @@
         <div><label>HP</label><input type="text" name="HP" /></div>
       </div>
 
-      <h3>👨‍👩‍👦 Data Orang Tua</h3>
+      <h3 class="section-title">👨‍👩‍👦 Data Orang Tua</h3>
       <div class="grid">
         <div><label>Nama Ayah</label><input type="text" name="Nama Ayah" /></div>
         <div><label>Tahun Lahir Ayah</label><input type="number" name="Tahun Lahir Ayah" /></div>
@@ -270,31 +320,40 @@
 
   <!-- === TAB 2: Edit Data === -->
   <div id="tab2" class="tab-content">
-    <h3>🔍 Cari & Edit Data Siswa</h3>
-    <input type="text" id="searchInput" placeholder="Cari Nama atau NISN">
-    <button id="btnSearch">Cari</button>
+    <h3 class="section-title">🔍 Cari & Edit Data Siswa</h3>
+    <input type="text" id="searchInput" placeholder="Cari Nama atau No.Reg" class="w-full sm:w-96 px-4 py-2 border border-gray-300 rounded-lg shadow-sm 
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+         transition duration-200" />
+    <button id="btnSearch" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md 
+         hover:bg-blue-700 hover:scale-105 transition transform w-full sm:w-auto mt-2">
+      Cari
+    </button>
     <div id="searchResult"></div>
   </div>
 
   <!-- === TAB 3: Lihat Data === -->
   <div id="tab3" class="tab-content">
-    <h3>📋 Data Terakhir</h3>
+    <h3 class="section-title">📋 Data Terakhir</h3>
     <div id="preview"></div>
-    <button id="btnPreview">Refresh Preview</button>
+    <button id="btnPreview" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md 
+         hover:bg-blue-700 hover:scale-105 transition transform w-full sm:w-auto mt-2">Refresh Preview</button>
   </div>
 
   <!-- === TAB 4: Upload Foto === -->
   <div id="tab4" class="tab-content">
-    <h3>📷 Upload Foto Siswa</h3>
-    <input type="file" id="fotoInput" accept="image/*">
-    <button id="btnUpload">Upload</button>
+    <h3 class="section-title">📷 Upload Foto Siswa</h3>
+    <input type="file" id="fotoInput" accept="image/*" class="w-full sm:w-96 px-4 py-2 border border-gray-300 rounded-lg shadow-sm 
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+         transition duration-200" />
+    <button id="btnUpload" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md 
+         hover:bg-blue-700 hover:scale-105 transition transform w-full sm:w-auto mt-2">Upload</button>
     <div id="uploadMsg"></div>
   </div>
 
   <!-- === TAB 5: Download Data === -->
   <div id="tab5" class="tab-content">
-    <h3>⬇️ Download Data</h3>
-    <p>Download seluruh data pendaftaran dalam format CSV:</p>
+    <h3 class="section-title">⬇️ Download Data</h3>
+    <p>Download seluruh data pendaftaran dalam format (Excel):</p>
     <a href="https://script.google.com/macros/s/AKfycbx7vVTY1ehFtEbBpFsC64d-20CCC35NV8Azs0HBEt6z3gTW4_o8m9ICnDidK1TH3CwG/exec?action=download"
       target="_blank">📥 Download Data (Excel)</a>
   </div>
@@ -375,7 +434,7 @@
   <h4>Sekolah</h4>
   <p><b>Rombel Saat Ini:</b> ${d["Rombel Saat Ini"]}</p>
 
-  <button onclick="editData('${d["No. Pendaftaran"]}')">✏️ Edit</button>
+  <button style="margin-top: 14px;" onclick="editData('${d["No. Pendaftaran"]}')">✏️ Edit Data</button>
 </div>
 `;
         });
