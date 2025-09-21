@@ -16,7 +16,7 @@ fetch('/footer.html')
         if (y) y.textContent = new Date().getFullYear();
 
         // Fade-in saat terlihat
-        const footerEl = document.getElementById('ciwai-footer');
+        const footerEl = document.querySelector('footer');
         if (footerEl) {
             const obs = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
