@@ -183,117 +183,121 @@
 </head>
 
 <body>
-  <div class="container">
-    <h2>📑 Sistem Pendaftaran — PKBM HALIFA</h2>
+  <div class="container text-center my-8">
+    <h2 class="text-3xl font-bold tracking-wide relative inline-block pb-2">
+      📑 Sistem Pendaftaran — PKBM HALIFA
+      <span class="absolute left-1/2 -bottom-1 w-16 h-1 bg-blue-500 rounded -translate-x-1/2"></span>
+    </h2>
+  </div>
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <div class="tab active" data-tab="tab1">📝 Form Pendaftaran</div>
-      <div class="tab" data-tab="tab2">✏️ Edit</div>
-      <div class="tab" data-tab="tab3">📋 Views</div>
-      <div class="tab" data-tab="tab4">📷 Upload</div>
-      <div class="tab" data-tab="tab5">⬇️ Download</div>
-    </div>
+  <!-- Tabs -->
+  <div class="tabs flex flex-wrap justify-center gap-2 mt-4 border-b pb-2">
+    <div class="tab active" data-tab="tab1">📝 Form</div>
+    <div class="tab" data-tab="tab2">✏️ Edit</div>
+    <div class="tab" data-tab="tab3">📋 Views</div>
+    <div class="tab" data-tab="tab4">📷 Upload</div>
+    <div class="tab" data-tab="tab5">⬇️ Download</div>
+  </div>
 
-    <!-- === TAB 1: Form Pendaftaran === -->
-    <div id="tab1" class="tab-content active">
-      <form id="form">
-        <input type="hidden" name="No. Pendaftaran" />
+  <!-- === TAB 1: Form Pendaftaran === -->
+  <div id="tab1" class="tab-content active">
+    <form id="form">
+      <input type="hidden" name="No. Pendaftaran" />
 
-        <div class="grid">
-          <div><label>Nama</label><input type="text" name="Nama" required /></div>
-          <div><label>Jenis Kelamin</label>
-            <select name="JK" required>
-              <option value="">-- Pilih --</option>
-              <option value="L">Laki-laki</option>
-              <option value="P">Perempuan</option>
-            </select>
-          </div>
-
-          <div><label>NISN</label><input type="text" name="NISN" /></div>
-          <div><label>Tempat Lahir</label><input type="text" name="Tempat Lahir" /></div>
-
-          <div><label>Tanggal Lahir</label><input type="date" name="Tanggal Lahir" /></div>
-          <div><label>NIK</label><input type="text" name="NIK" /></div>
-
-          <div style="grid-column:1/3"><label>Alamat</label><input type="text" name="Alamat" /></div>
-
-          <div><label>RT</label><input type="text" name="RT" /></div>
-          <div><label>RW</label><input type="text" name="RW" /></div>
-
-          <div><label>Dusun</label><input type="text" name="Dusun" /></div>
-          <div><label>Kelurahan</label><input type="text" name="Kelurahan" /></div>
-
-          <div><label>Kecamatan</label><input type="text" name="Kecamatan" /></div>
-          <div><label>Kode Pos</label><input type="text" name="Kode Pos" /></div>
-
-          <div><label>HP</label><input type="text" name="HP" /></div>
+      <div class="grid">
+        <div><label>Nama</label><input type="text" name="Nama" required /></div>
+        <div><label>Jenis Kelamin</label>
+          <select name="JK" required>
+            <option value="">-- Pilih --</option>
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
+          </select>
         </div>
 
-        <h3>👨‍👩‍👦 Data Orang Tua</h3>
-        <div class="grid">
-          <div><label>Nama Ayah</label><input type="text" name="Nama Ayah" /></div>
-          <div><label>Tahun Lahir Ayah</label><input type="number" name="Tahun Lahir Ayah" /></div>
+        <div><label>NISN</label><input type="text" name="NISN" /></div>
+        <div><label>Tempat Lahir</label><input type="text" name="Tempat Lahir" /></div>
 
-          <div><label>Jenjang Pendidikan Ayah</label><input type="text" name="Jenjang Pendidikan Ayah" /></div>
-          <div><label>Pekerjaan Ayah</label><input type="text" name="Pekerjaan Ayah" /></div>
+        <div><label>Tanggal Lahir</label><input type="date" name="Tanggal Lahir" /></div>
+        <div><label>NIK</label><input type="text" name="NIK" /></div>
 
-          <div><label>NIK Ayah</label><input type="text" name="NIK Ayah" /></div>
-          <div><label>Nama Ibu</label><input type="text" name="Nama Ibu" /></div>
+        <div style="grid-column:1/3"><label>Alamat</label><input type="text" name="Alamat" /></div>
 
-          <div><label>Tahun Lahir Ibu</label><input type="number" name="Tahun Lahir Ibu" /></div>
-          <div><label>Jenjang Pendidikan Ibu</label><input type="text" name="Jenjang Pendidikan Ibu" /></div>
+        <div><label>RT</label><input type="text" name="RT" /></div>
+        <div><label>RW</label><input type="text" name="RW" /></div>
 
-          <div><label>Pekerjaan Ibu</label><input type="text" name="Pekerjaan Ibu" /></div>
-          <div><label>NIK Ibu</label><input type="text" name="NIK Ibu" /></div>
+        <div><label>Dusun</label><input type="text" name="Dusun" /></div>
+        <div><label>Kelurahan</label><input type="text" name="Kelurahan" /></div>
 
-          <div style="grid-column:1/3"><label>Rombel Saat Ini</label><input type="text" name="Rombel Saat Ini" /></div>
-        </div>
+        <div><label>Kecamatan</label><input type="text" name="Kecamatan" /></div>
+        <div><label>Kode Pos</label><input type="text" name="Kode Pos" /></div>
 
-        <div class="flex flex-wrap gap-3 my-3">
-          <button type="submit" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
-            🚀 Kirim Data
-          </button>
-          <button type="button" id="btnReset"
-            class="px-4 py-2 rounded-lg bg-gray-100 border border-gray-300 hover:bg-gray-200 transition">
-            Reset
-          </button>
-        </div>
+        <div><label>HP</label><input type="text" name="HP" /></div>
+      </div>
 
-      </form>
-      <div id="msg" class="small" style="margin-top:8px"></div>
-    </div>
+      <h3>👨‍👩‍👦 Data Orang Tua</h3>
+      <div class="grid">
+        <div><label>Nama Ayah</label><input type="text" name="Nama Ayah" /></div>
+        <div><label>Tahun Lahir Ayah</label><input type="number" name="Tahun Lahir Ayah" /></div>
 
-    <!-- === TAB 2: Edit Data === -->
-    <div id="tab2" class="tab-content">
-      <h3>🔍 Cari & Edit Data Siswa</h3>
-      <input type="text" id="searchInput" placeholder="Cari Nama atau NISN">
-      <button id="btnSearch">Cari</button>
-      <div id="searchResult"></div>
-    </div>
+        <div><label>Jenjang Pendidikan Ayah</label><input type="text" name="Jenjang Pendidikan Ayah" /></div>
+        <div><label>Pekerjaan Ayah</label><input type="text" name="Pekerjaan Ayah" /></div>
 
-    <!-- === TAB 3: Lihat Data === -->
-    <div id="tab3" class="tab-content">
-      <h3>📋 Data Terakhir</h3>
-      <div id="preview"></div>
-      <button id="btnPreview">Refresh Preview</button>
-    </div>
+        <div><label>NIK Ayah</label><input type="text" name="NIK Ayah" /></div>
+        <div><label>Nama Ibu</label><input type="text" name="Nama Ibu" /></div>
 
-    <!-- === TAB 4: Upload Foto === -->
-    <div id="tab4" class="tab-content">
-      <h3>📷 Upload Foto Siswa</h3>
-      <input type="file" id="fotoInput" accept="image/*">
-      <button id="btnUpload">Upload</button>
-      <div id="uploadMsg"></div>
-    </div>
+        <div><label>Tahun Lahir Ibu</label><input type="number" name="Tahun Lahir Ibu" /></div>
+        <div><label>Jenjang Pendidikan Ibu</label><input type="text" name="Jenjang Pendidikan Ibu" /></div>
 
-    <!-- === TAB 5: Download Data === -->
-    <div id="tab5" class="tab-content">
-      <h3>⬇️ Download Data</h3>
-      <p>Download seluruh data pendaftaran dalam format CSV:</p>
-      <a href="https://script.google.com/macros/s/AKfycbx7vVTY1ehFtEbBpFsC64d-20CCC35NV8Azs0HBEt6z3gTW4_o8m9ICnDidK1TH3CwG/exec?action=download"
-        target="_blank">📥 Download Data (Excel)</a>
-    </div>
+        <div><label>Pekerjaan Ibu</label><input type="text" name="Pekerjaan Ibu" /></div>
+        <div><label>NIK Ibu</label><input type="text" name="NIK Ibu" /></div>
+
+        <div style="grid-column:1/3"><label>Rombel Saat Ini</label><input type="text" name="Rombel Saat Ini" /></div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 my-6 mt-8">
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+          🚀 Kirim Data
+        </button>
+        <button type="button" id="btnReset"
+          class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg shadow hover:bg-gray-300 transition">
+          Reset
+        </button>
+      </div>
+
+    </form>
+    <div id="msg" class="small" style="margin-top:8px"></div>
+  </div>
+
+  <!-- === TAB 2: Edit Data === -->
+  <div id="tab2" class="tab-content">
+    <h3>🔍 Cari & Edit Data Siswa</h3>
+    <input type="text" id="searchInput" placeholder="Cari Nama atau NISN">
+    <button id="btnSearch">Cari</button>
+    <div id="searchResult"></div>
+  </div>
+
+  <!-- === TAB 3: Lihat Data === -->
+  <div id="tab3" class="tab-content">
+    <h3>📋 Data Terakhir</h3>
+    <div id="preview"></div>
+    <button id="btnPreview">Refresh Preview</button>
+  </div>
+
+  <!-- === TAB 4: Upload Foto === -->
+  <div id="tab4" class="tab-content">
+    <h3>📷 Upload Foto Siswa</h3>
+    <input type="file" id="fotoInput" accept="image/*">
+    <button id="btnUpload">Upload</button>
+    <div id="uploadMsg"></div>
+  </div>
+
+  <!-- === TAB 5: Download Data === -->
+  <div id="tab5" class="tab-content">
+    <h3>⬇️ Download Data</h3>
+    <p>Download seluruh data pendaftaran dalam format CSV:</p>
+    <a href="https://script.google.com/macros/s/AKfycbx7vVTY1ehFtEbBpFsC64d-20CCC35NV8Azs0HBEt6z3gTW4_o8m9ICnDidK1TH3CwG/exec?action=download"
+      target="_blank">📥 Download Data (Excel)</a>
+  </div>
   </div>
 
   <!-- Footer -->
@@ -432,9 +436,12 @@
   </script>
 
   <!-- Back to Top Button -->
-  <button onclick="scrollToTop()" id="backToTopBtn"
-    class="hidden fixed top-1/2 right-2 transform -translate-y-1/2 z-50 bg-white/40 hover:bg-white/60 backdrop-blur-sm text-blue-800 hover:text-blue-900 p-3 rounded-full shadow-md transition duration-300 border border-white/50">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+  <button onclick="scrollToTop()" id="backToTopBtn" class="hidden fixed bottom-6 right-6 z-50 
+  w-12 h-12 flex items-center justify-center
+  bg-white/40 hover:bg-white/60 backdrop-blur-sm
+  text-blue-800 hover:text-blue-900 
+  rounded-full shadow-md transition duration-300 border border-white/50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd"
         d="M10 4a1 1 0 01.894.553l5 10a1 1 0 01-1.788.894L10 6.618 5.894 15.447a1 1 0 01-1.788-.894l5-10A1 1 0 0110 4z"
         clip-rule="evenodd" />
