@@ -140,9 +140,13 @@
       color: #6b7280;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 767px) {
       .grid {
         grid-template-columns: 1fr;
+      }
+
+      .grid>[style*="grid-column"] {
+        grid-column: auto ! important;
       }
 
       input,
@@ -164,6 +168,7 @@
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -173,10 +178,10 @@
     <!-- Tabs -->
     <div class="tabs">
       <div class="tab active" data-tab="tab1">📝 Form Pendaftaran</div>
-      <div class="tab" data-tab="tab2">✏️ Edit Data</div>
-      <div class="tab" data-tab="tab3">📋 Lihat Data</div>
-      <div class="tab" data-tab="tab4">📷 Upload Foto</div>
-      <div class="tab" data-tab="tab5">⬇️ Download Data</div>
+      <div class="tab" data-tab="tab2">✏️ Edit</div>
+      <div class="tab" data-tab="tab3">📋 Views</div>
+      <div class="tab" data-tab="tab4">📷 Upload</div>
+      <div class="tab" data-tab="tab5">⬇️ Download</div>
     </div>
 
     <!-- === TAB 1: Form Pendaftaran === -->
@@ -403,6 +408,11 @@
     // auto-load preview
     loadPreview();
   </script>
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <div id="ciwai-footer"></div>
+  <script src="/assets/js/footer.js"></script>
+
 </body>
 
 </html>
