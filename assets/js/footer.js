@@ -9,7 +9,7 @@ fetch('/footer.html')
             auto.id = 'ciwai-footer';
             document.body.appendChild(auto);
         }
-        document.getElementById('ciwai-footer').outerHTML = html;
+        document.getElementById('ciwai-footer').innerHTML = html;
 
         // Setelah inject, set tahun
         const y = document.getElementById('year');
