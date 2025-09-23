@@ -247,6 +247,52 @@
       padding: 6px 10px;
       border-radius: 6px;
     }
+
+    .card-total {
+      border-left: 4px solid #353332;
+      /* oranye terang sebagai accent */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card-total:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .card {
+      background: #ffffff;
+      /* putih bersih */
+      border-radius: 1rem;
+      /* sudut bulat */
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      /* shadow lembut */
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    /* Hover effect: card “angkat” */
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Optional accent per type */
+    .card-gender {
+      border-left: 4px solid #42a5f5;
+    }
+
+    /* biru untuk gender laki-laki */
+    .card-rombel {
+      border-left: 4px solid #66bb6a;
+    }
+
+    /* hijau untuk rombel */
+    .card-other {
+      border-left: 4px solid #ffa726;
+    }
+
+    /* oranye untuk Lainnya */
   </style>
 </head>
 
@@ -374,59 +420,71 @@
   <div id="tab3" class="tab-content">
     <h3 class="section-title">📊 Statistik Pendaftar</h3>
 
+    <!-- Cards -->
     <div class="grid sm:grid-cols-3 gap-4" id="statsCards">
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Total Pendaftar</p>
+      <div class="card card-total">
+        <p class="text-sm">Total Pendaftar</p>
         <p id="stat-total" class="text-2xl font-bold">—</p>
-        <p id="stat-total-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-total-pct" class="text-xs mt-1"></p>
       </div>
-
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Laki-laki</p>
+      <div class="card card-gender">
+        <p class="text-sm">Laki-laki</p>
         <p id="stat-male" class="text-2xl font-bold">—</p>
-        <p id="stat-male-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-male-pct" class="text-xs mt-1"></p>
       </div>
-
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Perempuan</p>
+      <div class="card card-gender" style="border-left-color:#f06292;">
+        <p class="text-sm">Perempuan</p>
         <p id="stat-female" class="text-2xl font-bold">—</p>
-        <p id="stat-female-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-female-pct" class="text-xs mt-1"></p>
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 gap-4 mt-4">
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Rombel VII</p>
+    <!-- Rombel Cards -->
+    <div class="grid sm:grid-cols-3 gap-4 mt-4" id="rombelCards">
+      <div class="card card-rombel">
+        <p class="text-sm">Rombel VII</p>
         <p id="stat-vii" class="text-2xl font-bold">—</p>
-        <p id="stat-vii-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-vii-pct" class="text-xs mt-1"></p>
       </div>
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Rombel VIII</p>
+      <div class="card card-rombel">
+        <p class="text-sm">Rombel VIII</p>
         <p id="stat-viii" class="text-2xl font-bold">—</p>
-        <p id="stat-viii-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-viii-pct" class="text-xs mt-1"></p>
       </div>
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Rombel IX</p>
+      <div class="card card-rombel">
+        <p class="text-sm">Rombel IX</p>
         <p id="stat-ix" class="text-2xl font-bold">—</p>
-        <p id="stat-ix-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-ix-pct" class="text-xs mt-1"></p>
       </div>
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Rombel X</p>
+      <div class="card card-rombel">
+        <p class="text-sm">Rombel X</p>
         <p id="stat-x" class="text-2xl font-bold">—</p>
-        <p id="stat-x-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-x-pct" class="text-xs mt-1"></p>
       </div>
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Rombel XI</p>
+      <div class="card card-rombel">
+        <p class="text-sm">Rombel XI</p>
         <p id="stat-xi" class="text-2xl font-bold">—</p>
-        <p id="stat-xi-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-xi-pct" class="text-xs mt-1"></p>
       </div>
-      <div class="p-4 bg-white rounded-lg shadow">
-        <p class="text-sm text-gray-500">Rombel XII</p>
+      <div class="card card-rombel">
+        <p class="text-sm">Rombel XII</p>
         <p id="stat-xii" class="text-2xl font-bold">—</p>
-        <p id="stat-xii-pct" class="text-xs text-gray-400 mt-1"></p>
+        <p id="stat-xii-pct" class="text-xs mt-1"></p>
+      </div>
+      <div class="card card-other">
+        <p class="text-sm">Rombel Lainnya</p>
+        <p id="stat-lainnya" class="text-2xl font-bold">—</p>
+        <p id="stat-lainnya-pct" class="text-xs mt-1"></p>
       </div>
     </div>
 
+    <!-- Charts -->
+    <div class="grid sm:grid-cols-2 gap-4 mt-6">
+      <div class="card" id="chart-gender" style="height:300px;"></div>
+      <div class="card" id="chart-rombel" style="height:300px;"></div>
+    </div>
+
+    <!-- Buttons -->
     <div class="mt-4 flex gap-2">
       <button id="btnRefreshStats"
         class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition">
@@ -480,8 +538,10 @@
 
   <!-- Footer -->
   <div id="ciwai-footer"></div>
-  <script src="/assets/js/footer.js"></script>
+  <script src="./assets/js/footer.js"></script>
 
+  <!-- Google Charts -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx7vVTY1ehFtEbBpFsC64d-20CCC35NV8Azs0HBEt6z3gTW4_o8m9ICnDidK1TH3CwG/exec";
@@ -545,12 +605,13 @@
           closeModal();
           alert("✅ Data berhasil dikirim! ID: " + d.id);
           form.reset();
-          loadPreview();
+          // loadPreview();
         })
         .catch(err => alert("❌ Gagal kirim: " + err));
     });
 
     // === Statistik ===
+    google.charts.load('current', { packages: ['corechart'] });
 
     // helper: cari nilai field pertama dari list kandidat
     function pickFieldValue(row, candidates) {
@@ -582,6 +643,17 @@
       return 'Unknown';
     }
 
+    function setStat(idNum, idPct, value, totalForPct) {
+      const elNum = document.getElementById(idNum);
+      const elPct = document.getElementById(idPct);
+      elNum.textContent = String(value || 0);
+      if (totalForPct && totalForPct > 0) {
+        elPct.textContent = `(${Math.round((value / totalForPct) * 100)}%)`;
+      } else {
+        elPct.textContent = '';
+      }
+    }
+
     async function refreshStats() {
       const noteEl = document.getElementById('stats-note');
       noteEl.textContent = 'Memuat data...';
@@ -589,17 +661,17 @@
       try {
         const res = await fetch(SCRIPT_URL + '?action=read');
         const rows = await res.json();
-
         const total = Array.isArray(rows) ? rows.length : 0;
 
-        // kandidat nama field untuk gender dan jenjang/level
         const genderCandidates = ['JK', 'Jenis Kelamin', 'Gender', 'Sex'];
         const levelCandidates = ['Program/Layanan', 'Rombel Saat Ini', 'Jenjang', 'Level', 'Tingkat', 'Bentuk Pendidikan'];
         const rombels = ["Kelas VII", "Kelas VIII", "Kelas IX", "Kelas X", "Kelas XI", "Kelas XII"];
+        const rombelKeys = ["VII", "VIII", "IX", "X", "XI", "XII"];
 
         let male = 0, female = 0, unknownGender = 0;
         let rombelCount = {};
         rombels.forEach(r => rombelCount[r] = 0);
+        rombelCount["Lainnya"] = 0;
 
         rows.forEach(r => {
           const gRaw = pickFieldValue(r, genderCandidates);
@@ -608,59 +680,67 @@
           else if (g === 'female') female++;
           else unknownGender++;
 
-          const lvlRaw = pickFieldValue(r, levelCandidates); // pickFieldValue ambil kolom yg ada isinya
-          const rombel = lvlRaw.replace("Kelas", "").trim();
-
-          // Hitung statistik rombel
-          if (rombels.includes(rombel)) {
-            rombelCount[rombel]++;
-          } else {
-            if (!rombelCount["Lainnya"]) rombelCount["Lainnya"] = 0;
-            rombelCount["Lainnya"]++;
-          }
+          const lvlRaw = pickFieldValue(r, levelCandidates) || "";
+          const rombel = lvlRaw.trim();
+          if (rombels.includes(rombel)) rombelCount[rombel]++;
+          else rombelCount["Lainnya"]++;
         });
 
-        // helper tampil angka + persen
-        function setStat(idNum, idPct, value) {
-          const elNum = document.getElementById(idNum);
-          const elPct = document.getElementById(idPct);
-          elNum.textContent = String(value);
-          if (total > 0) {
-            elPct.textContent = `(${Math.round((value / total) * 100)}%)`;
-          } else {
-            elPct.textContent = '';
-          }
-        }
+        // Total Rombel untuk persentase
+        const totalRombelAll = rombelKeys.reduce((acc, k) => acc + rombelCount[`Kelas ${k}`], 0) + rombelCount["Lainnya"];
 
+        // Update angka
         setStat('stat-total', 'stat-total-pct', total);
         setStat('stat-male', 'stat-male-pct', male);
         setStat('stat-female', 'stat-female-pct', female);
-        setStat('stat-vii', 'stat-vii-pct', rombelVII);
-        setStat('stat-viii', 'stat-viii-pct', rombelVIII);
-        setStat('stat-ix', 'stat-ix-pct', rombelIX);
-        setStat('stat-x', 'stat-x-pct', rombelX);
-        setStat('stat-xi', 'stat-xi-pct', rombelXI);
-        setStat('stat-xii', 'stat-xii-pct', rombelXII);
 
-        noteEl.textContent = `Data terakhir diambil: ${total} row${total !== 1 ? 's' : ''}. ${unknownGender ? `${unknownGender} gender tidak terdeteksi.` : ''} ${otherLevel ? `${otherLevel} jenjang lain/tdk terdeteksi.` : ''}`.trim();
+        rombelKeys.forEach(k => {
+          setStat(`stat-${k.toLowerCase()}`, `stat-${k.toLowerCase()}-pct`, rombelCount[`Kelas ${k}`], totalRombelAll);
+        });
+
+        setStat('stat-lainnya', 'stat-lainnya-pct', rombelCount["Lainnya"], totalRombelAll);
+
+        // Charts
+        drawGenderChart(male, female);
+        drawRombelChart(rombelCount);
+
+        noteEl.textContent = `Data terakhir: ${total} row. ${unknownGender ? unknownGender + " gender tidak terdeteksi." : ""}`;
 
       } catch (err) {
         console.error('refreshStats error', err);
-        document.getElementById('stats-note').textContent = 'Gagal memuat statistik. Cek koneksi atau SCRIPT_URL.';
+        noteEl.textContent = 'Gagal memuat data. Cek koneksi atau SCRIPT_URL.';
       }
     }
+
+    function drawGenderChart(male, female) {
+      const data = google.visualization.arrayToDataTable([
+        ['Gender', 'Jumlah'],
+        ['Laki-laki', male],
+        ['Perempuan', female]
+      ]);
+      const chart = new google.visualization.PieChart(document.getElementById('chart-gender'));
+      chart.draw(data, { pieHole: 0.4, legend: { position: 'bottom' } });
+    }
+
+    function drawRombelChart(rombels) {
+      const dataArr = [['Rombel', 'Jumlah']];
+      Object.keys(rombels).forEach(k => dataArr.push([k, rombels[k]]));
+      const data = google.visualization.arrayToDataTable(dataArr);
+      const chart = new google.visualization.ColumnChart(document.getElementById('chart-rombel'));
+      chart.draw(data, { legend: { position: 'none' }, chartArea: { width: '80%', height: '70%' } });
+    }
+
 
     // event listeners
     document.getElementById('btnRefreshStats').addEventListener('click', refreshStats);
 
     // opsional: tombol lanjutan cek kelengkapan nanti (step 2)
     document.getElementById('btnComputeCompleteness').addEventListener('click', () => {
-      alert('Nanti kita hitung kelengkapan field & tampilkan progress. Mau lanjut?');
+      alert('Nanti kita hitung kelengkapan field & tampilkan progress.');
     });
 
     // auto-refresh pertama kali
     refreshStats();
-
 
     // === Edit Data ===
     function editData(noPend) {
@@ -781,7 +861,7 @@
     tabs.forEach(t => t.addEventListener("click", () => switchTab(t.dataset.tab)));
 
     // auto-load preview
-    loadPreview();
+    // loadPreview();
   </script>
 
   <!-- Back to Top Button -->
@@ -823,6 +903,9 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 
 </html>
