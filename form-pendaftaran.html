@@ -452,6 +452,23 @@
     <div id="uploadMsg"></div>
   </div>
 
+  <!-- === Modal Preview Modern === -->
+  <div id="previewModal"
+    class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+    <div
+      class="bg-white rounded-2xl shadow-2xl p-6 w-[90%] max-w-lg transform scale-95 opacity-0 transition-all duration-300"
+      id="modalBox">
+      <h2 class="text-xl font-bold text-gray-800 mb-4">📋 Konfirmasi Data</h2>
+      <div id="previewContent" class="space-y-2 text-gray-700 text-sm max-h-64 overflow-y-auto pr-2"></div>
+      <div class="mt-6 flex justify-end gap-3">
+        <button id="btnCancel"
+          class="px-4 py-2 rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300 transition">Batal</button>
+        <button id="btnConfirm" class="px-4 py-2 rounded-xl bg-green-500 text-white hover:bg-green-600 transition">Kirim
+          ✅</button>
+      </div>
+    </div>
+  </div>
+
   <!-- === TAB 5: Download Data === -->
   <div id="tab5" class="tab-content">
     <h3 class="section-title">⬇️ Download Data</h3>
@@ -479,23 +496,58 @@
       setTimeout(() => { msg.textContent = ''; }, 5000);
     }
 
-    // === Submit Form ===
+    // === Submit Form (show modal) ===
     form.addEventListener("submit", e => {
       e.preventDefault();
       const fd = new FormData(form);
-      fetch(SCRIPT_URL, { method: "POST", body: fd })
+
+      // Buat konten preview
+      let html = "";
+      fd.forEach((val, key) => {
+        html += `<p><span class="font-semibold">${key}:</span> ${val}</p>`;
+      });
+      document.getElementById("previewContent").innerHTML = html;
+
+      // Simpan sementara
+      window.pendingFormData = fd;
+
+      // Show modal dengan animasi
+      const modal = document.getElementById("previewModal");
+      const box = document.getElementById("modalBox");
+      modal.classList.remove("hidden");
+      setTimeout(() => {
+        box.classList.remove("opacity-0", "scale-95");
+        box.classList.add("opacity-100", "scale-100");
+      }, 20);
+    });
+
+    // === Cancel (close modal) ===
+    document.getElementById("btnCancel").addEventListener("click", () => {
+      closeModal();
+    });
+
+    function closeModal() {
+      const box = document.getElementById("modalBox");
+      box.classList.remove("opacity-100", "scale-100");
+      box.classList.add("opacity-0", "scale-95");
+      setTimeout(() => {
+        document.getElementById("previewModal").classList.add("hidden");
+      }, 300);
+    }
+
+    // === Confirm (submit ke GAS) ===
+    document.getElementById("btnConfirm").addEventListener("click", () => {
+      if (!window.pendingFormData) return;
+
+      fetch(SCRIPT_URL, { method: "POST", body: window.pendingFormData })
         .then(res => res.json())
         .then(d => {
+          closeModal();
           alert("✅ Data berhasil dikirim! ID: " + d.id);
           form.reset();
           loadPreview();
         })
         .catch(err => alert("❌ Gagal kirim: " + err));
-    });
-
-    document.getElementById('btnReset').addEventListener('click', () => {
-      form.reset();
-      form.querySelector('input[name="No. Pendaftaran"]').value = '';
     });
 
     // === Statistik ===
