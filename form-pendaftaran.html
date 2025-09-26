@@ -502,12 +502,19 @@
   <!-- === TAB 4: Upload Foto === -->
   <div id="tab4" class="tab-content">
     <h3 class="section-title">📷 Upload Foto Siswa</h3>
+    <label for="studentSelect" class="block text-sm font-medium text-gray-700 mb-1 mt-2">Pilih Siswa (Belum Ada
+      Foto):</label>
+    <select id="studentSelect" required class="w-full sm:w-96 px-4 py-2 border border-gray-300 rounded-lg shadow-sm 
+     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+     transition duration-200 mb-4">
+      <option value="" disabled selected>... Memuat Daftar Siswa ...</option>
+    </select>
     <input type="file" id="fotoInput" accept="image/*" class="w-full sm:w-96 px-4 py-2 border border-gray-300 rounded-lg shadow-sm 
-         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-         transition duration-200" />
+       focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+       transition duration-200" />
     <button id="btnUpload" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md 
-         hover:bg-blue-700 hover:scale-105 transition transform w-full sm:w-auto mt-2">Upload</button>
-    <div id="uploadMsg"></div>
+       hover:bg-blue-700 hover:scale-105 transition transform w-full sm:w-auto mt-2">Upload</button>
+    <div id="uploadMsg" class="mt-2 text-sm text-red-500"></div>
   </div>
 
   <!-- === Modal Preview Modern === -->
@@ -862,6 +869,197 @@
 
     // auto-load preview
     // loadPreview();
+  </script>
+
+  <script>
+    // --- Konstanta Ukuran 3x4 (Wajib di awal script) ---
+    const MAX_WIDTH_3X4 = 600;
+    const MAX_HEIGHT_3X4 = 800;
+    const QUALITY = 0.8;
+    let resizedDataToSend = null; // Variable global untuk menyimpan data hasil resize
+    // ----------------------------------------------------
+
+
+    // Ambil elemen (TAMBAH nisnInput)
+    const nisnInput = document.getElementById("nisnInput");
+    const fotoInput = document.getElementById("fotoInput");
+    const btnUpload = document.getElementById("btnUpload");
+    const previewModal = document.getElementById("previewModal");
+    const previewContent = document.getElementById("previewContent");
+    const btnCancel = document.getElementById("btnCancel");
+    const btnConfirm = document.getElementById("btnConfirm");
+    const uploadMsg = document.getElementById("uploadMsg");
+    const modalBox = document.getElementById("modalBox");
+
+    // Ambil elemen baru
+    const studentSelect = document.getElementById("studentSelect");
+
+    // --- FUNGSI BARU: Isi Dropdown ---
+    function populateStudentDropdown(students) {
+      if (students.length === 0) {
+        studentSelect.innerHTML = '<option value="" disabled selected>SEMUA SISWA SUDAH PUNYA FOTO! ✅</option>';
+        uploadMsg.textContent = "Semua siswa di database sudah memiliki foto. Tidak ada yang perlu di-upload.";
+        btnUpload.disabled = true; // Non-aktifkan tombol upload
+        return;
+      }
+
+      // Isi Dropdown
+      let options = '<option value="" disabled selected>--- Pilih Nama Siswa ---</option>';
+      students.forEach(student => {
+        options += `<option value="${student.nisn}">${student.nama} (${student.nisn})</option>`;
+      });
+      studentSelect.innerHTML = options;
+      uploadMsg.textContent = "";
+      btnUpload.disabled = false;
+    }
+
+    // --- FUNGSI BARU: Handle Error GAS ---
+    function showError(error) {
+      uploadMsg.textContent = `ERROR dari GAS: ${error.message}`;
+      studentSelect.innerHTML = '<option value="" disabled selected>Gagal memuat daftar siswa. Cek Code.gs.</option>';
+    }
+
+    // --- FUNGSI BARU: Load Daftar Siswa ---
+    function loadStudentList() {
+      studentSelect.innerHTML = '<option value="" disabled selected>... Sedang Memuat Daftar Siswa ...</option>';
+
+      // Panggil fungsi GAS untuk ambil daftar yang belum ada foto
+      google.script.run
+        .withSuccessHandler(populateStudentDropdown)
+        .withFailureHandler(showError)
+        .getStudentsWithoutPhoto();
+    }
+
+    // --- FUNGSI RESIZING (3X4) ---
+    /**
+     * Fungsi untuk resize foto ke ukuran maksimal 600x800px (rasio 3:4)
+     * (PASTIKAN FUNGSI INI SUDAH ADA DI SCRIPT BRO)
+     */
+    function resizeImage(fileObj) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = new Image();
+          img.onload = function () {
+            let width = img.width;
+            let height = img.height;
+
+            const widthRatio = MAX_WIDTH_3X4 / width;
+            const heightRatio = MAX_HEIGHT_3X4 / height;
+            let ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio;
+
+            if (ratio > 1) { // Jika foto sudah kecil, pakai yang asli
+              resolve(e.target.result);
+              return;
+            }
+
+            width = width * ratio;
+            height = height * ratio;
+
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+
+            ctx.drawImage(img, 0, 0, width, height);
+
+            const resizedDataUrl = canvas.toDataURL('image/jpeg', QUALITY);
+            resolve(resizedDataUrl);
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(fileObj);
+      });
+    }
+    // -----------------------------
+
+    // Klik Upload → Preview (SEKARANG SUDAH ADA VALIDASI NISN DAN RESIZING)
+    btnUpload.addEventListener("click", () => {
+      // Ambil NISN dari selected value di dropdown
+      const nisn = studentSelect.value;
+      const file = fotoInput.files[0];
+
+      // 1. Validasi NISN dan File
+      if (!nisn) {
+        uploadMsg.textContent = "Pilih Nama Siswa dari Daftar!";
+        return;
+      }
+      if (!file) {
+        uploadMsg.textContent = "Pilih foto dulu 😅";
+        return;
+      }
+      uploadMsg.textContent = "Memproses foto & resize ke 3x4... Mohon tunggu.";
+
+      // 2. Lakukan Resizing (Asynchronous: pakai .then())
+      resizeImage(file)
+        .then(resizedDataUrl => {
+          // Data sudah di-resize! Kita simpan dulu.
+          const parts = resizedDataUrl.split(',');
+          const fileData = parts[1];
+          const mimeType = parts[0].match(/:(.*?);/)[1];
+
+          resizedDataToSend = {
+            nisn: nisn,
+            fileName: file.name,
+            mimeType: mimeType,
+            fileData: fileData
+          };
+
+          // 3. Tampilkan Modal Preview
+          previewContent.innerHTML = `
+                <p><strong>NISN Siswa:</strong> ${nisn}</p>
+                <p><strong>Nama File:</strong> ${file.name} (Akan disimpan di Drive dengan nama: ${nisn}_FOTO.${mimeType.split('/').pop()})</p>
+                <p class="text-xs text-green-600 font-semibold">Foto sudah di-resize ke maks. 600x800px (3x4).</p>
+                <img src="${resizedDataUrl}" alt="Preview Foto" class="w-full rounded-lg mt-2 border"/>
+            `;
+          uploadMsg.textContent = "";
+          previewModal.classList.remove("hidden");
+          setTimeout(() => modalBox.classList.remove("opacity-0", "scale-95"), 10);
+        })
+        .catch(err => {
+          uploadMsg.textContent = "Gagal memproses foto. Coba ganti file. 😢";
+          console.error(err);
+          resizedDataToSend = null;
+        });
+    });
+
+    // Klik Batal → Tutup modal
+    btnCancel.addEventListener("click", () => {
+      modalBox.classList.add("opacity-0", "scale-95");
+      setTimeout(() => previewModal.classList.add("hidden"), 200);
+      resizedDataToSend = null; // Reset data
+    });
+
+    // Klik Konfirmasi → Upload (MENGGANTI LOGIKA FETCH DENGAN google.script.run)
+    btnConfirm.addEventListener("click", () => {
+      if (!resizedDataToSend) return;
+
+      // Tampilkan loading dan tutup modal
+      uploadMsg.textContent = "Mengirim data... Mohon tunggu.";
+      modalBox.classList.add("opacity-0", "scale-95");
+      setTimeout(() => previewModal.classList.add("hidden"), 200);
+
+      // 1. Panggil fungsi uploadFile di Code.gs
+      google.script.run
+        .withSuccessHandler(result => {
+          // Berhasil dari Code.gs
+          uploadMsg.textContent = result;
+          // Reset semua input dan variabel
+          fotoInput.value = "";
+          nisnInput.value = "";
+          resizedDataToSend = null;
+        })
+        .withFailureHandler(error => {
+          // Gagal dari Code.gs
+          uploadMsg.textContent = `Upload Gagal: ${error.message}`;
+          resizedDataToSend = null;
+        })
+        .uploadFile(resizedDataToSend); // Mengirim data yang sudah di-resize
+    });
+    loadStudentList();
+
   </script>
 
   <!-- Back to Top Button -->
