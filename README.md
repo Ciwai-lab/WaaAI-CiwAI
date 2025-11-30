@@ -57,13 +57,13 @@ flutter run -d chrome
 🖥️ Visit the landing page here:  
 👉 [https://ciwai-lab.github.io/WaaAI-CiwAI/](https://ciwai-lab.github.io/WaaAI-CiwAI/)
 
-👉 [https://ciwaidevtools.netlify.app/](https://www.ciwai.dev/)
+👉 [https://www.ciwai.dev/](https://www.ciwai.dev/)
 
 ---
 
 ## ✉️ Contact
 
-📧 [support@ciwai.dev](mailto:support@cwai.dev)  
+📧 [info@ciwai.dev](mailto:info@cwai.dev)  
 🔗 [CiwAI-lab GitHub](https://github.com/Ciwai-lab)
 💬 WhatsApp: [Chat Now](https://wa.me/6282260383973)
 
