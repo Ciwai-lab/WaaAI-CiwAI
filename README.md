@@ -48,7 +48,7 @@ flutter run -d chrome
 
 ## 📱 Download
 
-🔗 [Visit WaaAi™ Website](https://ciwaidevtools.netlify.app/#projects)
+🔗 [Visit WaaAi™ Website](https://www.ciwai.dev/#projects)
 
 ---
 
@@ -57,13 +57,13 @@ flutter run -d chrome
 🖥️ Visit the landing page here:  
 👉 [https://ciwai-lab.github.io/WaaAI-CiwAI/](https://ciwai-lab.github.io/WaaAI-CiwAI/)
 
-👉 [https://ciwaidevtools.netlify.app/](https://ciwaidevtools.netlify.app/)
+👉 [https://ciwaidevtools.netlify.app/](https://www.ciwai.dev/)
 
 ---
 
 ## ✉️ Contact
 
-📧 [ciwaismartdigital@gmail.com](mailto:ciwaismartdigital@gmail.com)  
+📧 [support@ciwai.dev](mailto:support@cwai.dev)  
 🔗 [CiwAI-lab GitHub](https://github.com/Ciwai-lab)
 💬 WhatsApp: [Chat Now](https://wa.me/6282260383973)
 
