@@ -59,23 +59,23 @@ body {
     max-width: 800px;
     margin: 30px auto;
     background: rgba(30, 41, 59, 0.7);
-    /* Transparan dikit */
     backdrop-filter: blur(8px);
     padding: 30px;
     border-radius: 20px;
     border: 1px solid rgba(129, 140, 248, 0.2);
-    /* Border indigo tipis */
-    /* Efek Glow Tipis di Sini */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3),
         0 0 15px rgba(99, 102, 241, 0.05);
 }
 
 .ruang-iframe {
-    margin: 0 -20px;
+    margin: 100%;
     width: calc(100% + 40px);
     height: calc(100vh - 150px);
     border: none;
     display: block;
+    margin-top: 10px;
+    background: white;
+    border-radius: 8px;
 }
 
 @media (max-width: 600px) {
