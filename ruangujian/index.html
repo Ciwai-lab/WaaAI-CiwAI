@@ -23,6 +23,15 @@
     </div>
 
     <script src="/assets/auth.js"></script>
+
+    <script>
+        function masuk() {
+            // flag sementara, seolah-olah sudah login
+            localStorage.setItem("login", "guest");
+            window.location.href = "pilih.html";
+        }
+    </script>
+
     <script>
         if (GUEST_MODE) {
             localStorage.setItem("login", "guest");
