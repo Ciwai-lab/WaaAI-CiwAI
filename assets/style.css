@@ -32,7 +32,7 @@ body {
 
 .topbar span {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 0.5px;
     color: #818cf8;
     white-space: nowrap;
@@ -79,10 +79,15 @@ body {
 }
 
 @media (max-width: 600px) {
+    .container {
+        padding: 8px;
+    }
+
     .ruang-iframe {
-        margin: 0 -16px;
-        width: calc(100% + 32px);
-        height: calc(100vh - 140px);
+        width: calc(100% + 16px);
+        margin-left: -8px;
+        margin-right: -8px;
+        border-radius: 0;
     }
 }
 
