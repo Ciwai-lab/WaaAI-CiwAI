@@ -10,25 +10,26 @@ async function login() {
     const msg = document.getElementById("msg");
 
     if (!nik) {
-        msg.innerText = "NIK wajib diisi";
+        msg.innerText = "⚠️ NIK wajib diisi";
         return;
     }
 
-    const res = await fetch(SHEET_URL);
-    const text = await res.text();
+    msg.innerText = "⏳ Sedang memverifikasi...";
 
-    const rows = text.split("\n").slice(1); // skip header
+    try {
+        const res = await fetch(SHEET_URL);
+        const text = await res.text();
+        const rows = text.split("\n").map(row => row.split(","));
 
-    for (let r of rows) {
-        const cols = r.split(",");
-        const sheetNIK = cols[6]?.trim(); // ⬅️ KOLOM G
+        const user = rows.find(cols => cols[6]?.trim() === nik);
 
-        if (sheetNIK === nik) {
+        if (user) {
             localStorage.setItem("login", nik);
             location.href = "pilih.html";
-            return;
+        } else {
+            msg.innerText = "❌ NIK tidak terdaftar";
         }
+    } catch (err) {
+        msg.innerText = "⚠️ Gangguan koneksi, coba lagi.";
     }
-
-    msg.innerText = "NIK tidak terdaftar / tidak berhak masuk";
 }
