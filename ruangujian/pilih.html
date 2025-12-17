@@ -1,20 +1,42 @@
-<link rel="stylesheet" href="/assets/style.css">
-<script>
-    if (!localStorage.getItem("login")) location.href = "index.html";
-</script>
+<!DOCTYPE html>
+<html lang="id">
 
-<button onclick="logout()">Keluar</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pilih Paket - Ruang Ujian</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
 
-<script>
-    function logout() {
-        localStorage.removeItem("login");
-        location.href = "/ruangujian/";
-    }
-</script>
+<body>
 
-<div class="container">
-    <h2>Pilih Paket Kelas</h2>
-    <a href="a/index.html">Paket A</a>
-    <a href="b/index.html">Paket B</a>
-    <a href="c/index.html">Paket C</a>
-</div>
+    <script>
+        if (!localStorage.getItem("login")) {
+            location.href = "index.html";
+        }
+    </script>
+
+    <div class="topbar">
+        <button onclick="history.back()">←</button>
+        <span>Ruang Ujian</span>
+        <button onclick="logout()">⎋</button>
+    </div>
+
+    <div class="container">
+        <h2>Pilih Paket Kelas</h2>
+
+        <a href="a/index.html">Paket A</a>
+        <a href="b/index.html">Paket B</a>
+        <a href="c/index.html">Paket C</a>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("login");
+            location.href = "/ruangujian/";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ruang Ujian PKBM HALIFA</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 
 <body>
+
     <div class="container">
         <h1>Ruang Ujian PKBM HALIFA</h1>
 
         <p>
-            Selamat Datang di Ruang Ujian PKBM HALIFA<br>
+            Selamat datang di Ruang Ujian PKBM HALIFA.<br>
             Silakan masuk untuk melihat ruang ujian.
         </p>
 
         <button onclick="masuk()">Masuk Ruang Ujian</button>
 
         <p style="opacity:.7;margin-top:15px">
-            Login NIK akan diaktifkan kembali setelah data lengkap.
+            * Login NIK akan diaktifkan kembali setelah data lengkap.
+        </p>
+
+        <p style="background:#1e293b;padding:10px;border-radius:8px;margin-top:20px">
+            ℹ️ Mode tamu aktif sementara.
         </p>
     </div>
 
-    <script src="/assets/auth.js"></script>
-
     <script>
         function masuk() {
-            // flag sementara, seolah-olah sudah login
             localStorage.setItem("login", "guest");
-            window.location.href = "pilih.html";
+            location.href = "pilih.html";
         }
     </script>
-
-    <p style="background:#1e293b;padding:10px;border-radius:6px">
-        ℹ️ Mode tamu aktif sementara. Login NIK akan dibuka setelah data final.
-    </p>
-
 
 </body>
 

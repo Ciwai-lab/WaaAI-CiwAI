@@ -1,18 +1,39 @@
-<link rel="stylesheet" href="/assets/style.css">
-<script>
-    if (!localStorage.getItem("login")) location.href = "../index.html";
-</script>
+<!DOCTYPE html>
+<html lang="id">
 
-<button onclick="logout()">Keluar</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paket B - Ruang Ujian</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
 
-<script>
-    function logout() {
-        localStorage.removeItem("login");
-        location.href = "/ruangujian/";
-    }
-</script>
+<body>
 
-<div class="container">
-    <h2>Paket B – Mata Pelajaran</h2>
-    <a href="inggris.html">Bahasa Inggris</a>
-</div>
+    <script>
+        if (!localStorage.getItem("login")) {
+            location.href = "../index.html";
+        }
+    </script>
+
+    <div class="topbar">
+        <button onclick="history.back()">←</button>
+        <span>Ruang Ujian</span>
+        <button onclick="logout()">⎋</button>
+    </div>
+
+    <div class="container">
+        <h2>Paket B – Mata Pelajaran</h2>
+        <a href="inggris.html">Bahasa Inggris</a>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("login");
+            location.href = "/ruangujian/";
+        }
+    </script>
+
+</body>
+
+</html>
