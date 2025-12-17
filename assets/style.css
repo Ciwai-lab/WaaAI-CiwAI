@@ -212,3 +212,28 @@ iframe {
 * {
     -webkit-tap-highlight-color: transparent;
 }
+
+/* ===== FOOTER STYLING ===== */
+#ciwai-footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.6;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+/* Biar body index ngikutin warna terang juga */
+body.home-page {
+    background: #f0f2f5;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.home-page .container {
+    background: white;
+    color: #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}

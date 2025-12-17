@@ -8,21 +8,25 @@
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 
-<body>
+<body class="home-page">
+    <div class="container" style="margin-top: 50px;">
+        <h1 style="color: #4f46e5;">Ruang Ujian PKBM HALIFA</h1>
 
-    <div class="container">
-        <h1>Ruang Ujian PKBM HALIFA</h1>
-
-        <p style="opacity:.7;margin-top:15px">
-            Selamat datang di Ruang Ujian PKBM HALIFA.<br>
+        <p style="opacity:.8; margin-top:15px; text-align: center;">
+            Selamat datang di portal ujian resmi PKBM HALIFA.<br>
         </p>
 
-        <button onclick="masuk()">Masuk Ruang Ujian</button>
+        <button onclick="masuk()" style="background: #4f46e5;">Masuk Ruang Ujian</button>
 
-        <p style="background:#1e293b;padding:10px;border-radius:8px;margin-top:20px">
-            ℹ️ Login akan diaktifkan setelah data lengkap.
-        </p>
+        <div
+            style="background: #f8fafc; padding: 15px; border-radius: 12px; margin-top: 25px; border: 1px solid #e2e8f0;">
+            <p style="font-size: 13px; margin: 0; color: #64748b;">
+                ℹ️ <b>Info:</b> Fitur Login NIK akan diaktifkan setelah sinkronisasi data Dapodik selesai.
+            </p>
+        </div>
     </div>
+
+    <div id="ciwai-footer"></div>
 
     <script>
         function masuk() {
@@ -30,9 +34,6 @@
             location.href = "pilih.html";
         }
     </script>
-
-    <div id="ciwai-footer"></div>
-
     <script src="/assets/js/footer.js"></script>
 
 </body>
