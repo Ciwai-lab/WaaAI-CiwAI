@@ -22,13 +22,18 @@
         </p>
     </div>
 
+    <script src="/assets/auth.js"></script>
     <script>
-        function masuk() {
-            // flag sementara, seolah-olah sudah login
+        if (GUEST_MODE) {
             localStorage.setItem("login", "guest");
-            window.location.href = "pilih.html";
+            location.href = "pilih.html";
         }
     </script>
+
+    <p style="background:#1e293b;padding:10px;border-radius:6px">
+        ℹ️ Mode tamu aktif sementara. Login NIK akan dibuka setelah data final.
+    </p>
+
 
 </body>
 

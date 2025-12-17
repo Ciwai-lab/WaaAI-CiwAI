@@ -3,6 +3,15 @@
     if (!localStorage.getItem("login")) location.href = "index.html";
 </script>
 
+<button onclick="logout()">Keluar</button>
+
+<script>
+    function logout() {
+        localStorage.removeItem("login");
+        location.href = "/ruangujian/";
+    }
+</script>
+
 <div class="container">
     <h2>Pilih Paket Kelas</h2>
     <a href="a/index.html">Paket A</a>

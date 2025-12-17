@@ -3,6 +3,19 @@
     if (!localStorage.getItem("login")) location.href = "../index.html";
 </script>
 
+<p id="timer" style="font-weight:bold"></p>
+
+<script>
+    let sisa = 60 * 60; // 60 menit
+    setInterval(() => {
+        const m = Math.floor(sisa / 60);
+        const d = sisa % 60;
+        document.getElementById("timer").innerText =
+            `Sisa waktu: ${m}:${d.toString().padStart(2, "0")}`;
+        if (sisa > 0) sisa--;
+    }, 1000);
+</script>
+
 <div class="container">
     <h2>UAS Bahasa Inggris – Paket C</h2>
 
