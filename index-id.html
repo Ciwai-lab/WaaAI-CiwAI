@@ -9,12 +9,10 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // ⚠️ Kalau root situs serve langsung index.html di path "/",
-      // pakai PATH_EN = '/' biar pasti kebuka halaman EN.
-      const PATH_EN = '/';               // alternatif: '/index.html'
+
+      const PATH_EN = '/';
       const PATH_ID = '/index-id.html';
 
-      // Ambil preferensi user / auto-detect
       let target = localStorage.getItem('chosenLang');
       if (!target) {
         const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
@@ -22,12 +20,10 @@
         localStorage.setItem('chosenLang', target);
       }
 
-      // Set dropdown sesuai preferensi
       const select = document.getElementById('langSwitcher');
       if (select) {
         select.value = target;
 
-        // Ganti bahasa → simpan & redirect
         select.addEventListener('change', function () {
           const val = this.value;
           localStorage.setItem('chosenLang', val);
@@ -40,10 +36,9 @@
 
   <script>
     (function () {
-      const PATH_EN = '/index.html';      // ganti '/' kalau root serve index.html
+      const PATH_EN = '/index.html';
       const PATH_ID = '/index-id.html';
 
-      // Ambil preferensi
       let target = localStorage.getItem('chosenLang');
       if (!target) {
         const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
@@ -51,11 +46,9 @@
         localStorage.setItem('chosenLang', target);
       }
 
-      // Set dropdown sesuai pilihan
       const select = document.getElementById('langSwitcher');
       if (select) select.value = target;
 
-      // Redirect saat ganti
       if (select) {
         select.addEventListener('change', function () {
           const val = this.value;
@@ -171,8 +164,6 @@
 
 <body class="flex flex-col min-h-screen bg-gradient-to-b from-sky-50 via-white to-white text-gray-900 font-sans">
 
-  <!-- Pilihan Bahasa -->
-  <!-- Language Switcher (Dropdown) -->
   <div class="absolute top-4 right-4 z-50">
     <select id="langSwitcher"
       class="bg-white border border-gray-300 rounded-md text-sm px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-500">
@@ -180,8 +171,6 @@
       <option value="id">🇮🇩 Bahasa</option>
     </select>
   </div>
-
-
 
   <!-- Hero -->
   <section id="home" class="pt-24 pb-32 flex flex-col justify-center items-center text-center px-6">
@@ -544,10 +533,8 @@
 
   <!-- Script Section -->
   <script>
-    // Init AOS (Animate On Scroll)
     AOS.init({ duration: 800, once: true });
 
-    // Scroll-to-top button logic
     const backToTopBtn = document.getElementById("backToTopBtn");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) backToTopBtn.classList.remove("hidden");

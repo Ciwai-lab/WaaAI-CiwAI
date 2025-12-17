@@ -14,6 +14,11 @@ body {
     line-height: 1.6;
 }
 
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 /* ===== TOP BAR (Sticky & Blur) ===== */
 .topbar {
     position: sticky;
@@ -70,20 +75,23 @@ body {
 .ruang-iframe {
     margin: 100%;
     width: calc(100% + 40px);
-    height: calc(100vh - 150px);
+    height: calc(100vh - 120px);
     border: none;
     display: block;
     margin-top: 10px;
     background: white;
     border-radius: 8px;
+    overflow-y: auto;
 }
 
 @media (max-width: 600px) {
     .container {
-        padding: 8px;
+        padding: 0px;
+        max-width: none;
     }
 
     .ruang-iframe {
+        height: calc(100vh - 110px);
         width: calc(100% + 16px);
         margin-left: -8px;
         margin-right: -8px;
