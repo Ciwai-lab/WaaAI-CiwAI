@@ -367,6 +367,137 @@
 
   <script src="/assets/js/footer.js"></script>
 
+  <!-- ================= CIWAI BOT UI ================= -->
+  <style>
+    #ciwai-bot-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      background: #2563eb;
+      color: #fff;
+      width: 56px;
+      height: 56px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+      font-size: 22px;
+    }
+
+    #ciwai-bot-panel {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      width: 340px;
+      max-height: 520px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    #ciwai-bot-header {
+      background: #2563eb;
+      color: #fff;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #ciwai-bot-header small {
+      display: block;
+      font-size: 11px;
+      opacity: .9;
+    }
+
+    #ciwai-bot-messages {
+      padding: 12px;
+      flex: 1;
+      overflow-y: auto;
+      background: #f8fafc;
+    }
+
+    .msg {
+      margin-bottom: 10px;
+      max-width: 85%;
+      font-size: 14px;
+      line-height: 1.4;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+
+    .bot {
+      background: #e2e8f0;
+    }
+
+    .user {
+      background: #2563eb;
+      color: #fff;
+      margin-left: auto;
+    }
+
+    #ciwai-bot-input {
+      display: flex;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    #ciwai-bot-input input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    #ciwai-bot-input button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 0 16px;
+      cursor: pointer;
+    }
+
+    .ciwai-actions a {
+      display: inline-block;
+      margin-top: 6px;
+      margin-right: 6px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #2563eb;
+      border: 1px solid #2563eb;
+    }
+  </style>
+
+  <div id="ciwai-bot-btn">🤖</div>
+
+  <div id="ciwai-bot-panel">
+    <div id="ciwai-bot-header">
+      <div>
+        <strong>CiwAI Bot (Beta)</strong>
+        <small>Asisten ringan buatan tim CiwAI</small>
+      </div>
+      <button onclick="toggleCiwaiBot()" style="background:none;border:none;color:white;font-size:18px">✕</button>
+    </div>
+
+    <div id="ciwai-bot-messages"></div>
+
+    <div id="ciwai-bot-input">
+      <input id="ciwai-input" type="text" placeholder="Tanya seputar CiwAI…" />
+      <button onclick="sendCiwaiMsg()">➤</button>
+    </div>
+  </div>
+  <!-- =============== END CIWAI BOT UI =============== -->
+
+
   <!-- Tombol WhatsApp -->
   <a href="https://wa.me/6282260383973" target="_blank" rel="noopener noreferrer" aria-label="Buka WhatsApp CiwAI"
     class="block md:hidden fixed bottom-5 right-5 z-50 animate-bounce">
@@ -424,6 +555,9 @@
     });
     function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
   </script>
+
+  <script src="/assets/js/ciwai-bot.js"></script>
+
 </body>
 
 </html>
