@@ -73,29 +73,38 @@ body.no-scroll {
 }
 
 .ruang-iframe {
-    margin: 100%;
-    width: calc(100% + 40px);
-    height: calc(100vh - 120px);
+    width: 100%;
+    height: calc(100vh - 160px);
     border: none;
     display: block;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
     background: white;
     border-radius: 8px;
     overflow-y: auto;
 }
 
 @media (max-width: 600px) {
+
     .container {
-        padding: 0px;
+        padding: 0px !important;
+        margin: 10px auto;
         max-width: none;
+        background: transparent;
+        border: none;
+        box-shadow: none;
     }
 
     .ruang-iframe {
-        height: calc(100vh - 110px);
-        width: calc(100% + 16px);
-        margin-left: -8px;
-        margin-right: -8px;
+        height: calc(100vh - 140px);
+        width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
         border-radius: 0;
+    }
+
+    body {
+        overflow: hidden;
+        height: 100vh;
     }
 }
 
