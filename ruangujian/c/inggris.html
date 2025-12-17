@@ -8,23 +8,18 @@
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 
-<body>
-
+<body class="ujian-page">
+    <div class="timer-only" id="timer">Memuat waktu...</div>
     <script>
         if (!localStorage.getItem("login")) {
             location.href = "../index.html";
         }
     </script>
 
-    <div class="topbar">
-        <button onclick="history.back()">← Kembali</button>
-        <span>Ruang Ujian</span>
-        <button onclick="logout()">Keluar ⎋</button>
-    </div>
-
     <div class="timer" id="timer"></div>
 
-    <div class="container">
+    <div class="container"
+        style="max-width: 100%; padding: 0; margin: 0; background: transparent; border: none; box-shadow: none;">
         <p style="opacity:.7; font-size:12px; text-align:center; margin: 10px;">
             ℹ️ Izin cookies: klik <b>Allow</b> untuk lanjut.
         </p>
