@@ -8,23 +8,15 @@
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 
-<body>
-
-    <script>
-        if (!localStorage.getItem("login")) {
-            location.href = "index.html";
-        }
-    </script>
-
+<body class="home-page">
     <div class="topbar">
         <button onclick="history.back()">← Kembali</button>
         <span>Ruang Ujian</span>
         <button onclick="logout()">Keluar ⎋</button>
     </div>
 
-    <div class="container">
-        <h2>Pilih Paket Kelas</h2>
-
+    <div class="container" style="margin-top: 30px;">
+        <h2 style="color: #4f46e5; text-align: center;">Pilih Paket Kelas</h2>
         <a href="a/index.html">Paket A</a>
         <a href="b/index.html">Paket B</a>
         <a href="c/index.html">Paket C</a>
@@ -35,7 +27,7 @@
         <p style="color: #94a3b8; font-size: 12px; margin-bottom: 12px !important;">© 2025 Ciwai™ Smart Digital. All
             rights reserved.</p>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="#"
+            <a href="/ruangujian/"
                 style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Home</a>
             <a href="#"
                 style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Article</a>
@@ -52,7 +44,6 @@
             location.href = "/ruangujian/";
         }
     </script>
-
 </body>
 
 </html>

@@ -24,6 +24,11 @@ body.home-page {
     min-height: 100vh;
 }
 
+body.home-page .container {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
 body.ujian-page {
     overflow: hidden;
     height: 100vh;
