@@ -48,7 +48,7 @@ flutter run -d chrome
 
 ## 📱 Download
 
-🔗 [Visit WaaAi™ Website](https://ciwaidevtools.netlify.app/#projects)
+🔗 [Visit WaaAi™ Website](https://ciwai.dev/#projects)
 
 ---
 
