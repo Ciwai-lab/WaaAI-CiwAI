@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hasil Evaluasi Ujian Bahasa Inggris</title>
+
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <main class="container" style="max-width:760px;margin:60px auto;">
+        <h1 style="color:#4f46e5;">Hasil Evaluasi Ujian Bahasa Inggris</h1>
+        <p style="opacity:.8">Masukkan email yang digunakan saat mengerjakan ujian</p>
+
+        <div style="margin-top:25px;">
+            <input id="emailInput" type="email" placeholder="contoh@email.com"
+                style="width:100%;padding:14px;border-radius:10px;border:1px solid #e5e7eb;">
+            <button onclick="cekHasil()" style="margin-top:15px;background:#4f46e5;">
+                Lihat Hasil
+            </button>
+        </div>
+
+        <div id="errorBox" style="display:none;margin-top:20px;color:#dc2626;">
+            Email tidak ditemukan. Pastikan menggunakan email yang sama saat ujian.
+        </div>
+
+        <section id="hasilBox" style="display:none;margin-top:40px;">
+            <div id="ringkasan"></div>
+
+            <h3 style="margin-top:30px;">Soal yang Perlu Diperbaiki</h3>
+            <div id="detailSoal"></div>
+
+            <button onclick="downloadPDF()" style="margin-top:30px;">
+                Download Hasil (PDF)
+            </button>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+
+    <script src="hasil.js"></script>
+    <script src="pdf.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+[
+    {
+        "email": "user@email.com",
+        "nama": "Andi",
+        "paket": "A",
+        "total": 40,
+        "benar": 28,
+        "salah": 12,
+        "nilai": 70,
+        "detail": [
+            {
+                "no": 1,
+                "soal": "She ___ to school every day.",
+                "jawaban_peserta": "go",
+                "jawaban_benar": "goes",
+                "opsi": [
+                    "go",
+                    "goes",
+                    "gone",
+                    "going"
+                ],
+                "benar": false
+            }
+        ]
+    }
+]

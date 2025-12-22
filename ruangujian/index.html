@@ -6,56 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ruang Ujian PKBM HALIFA</title>
 
-    <link rel="icon" type="image/webp" href="assets/images/favicon.webp" />
+    <link rel="icon" type="image/webp" href="/assets/images/favicon.webp">
+    <link rel="stylesheet" href="/assets/style.css">
 
     <meta property="og:title" content="Ruang Ujian PKBM HALIFA">
-    <meta property="og:description" content="Portal ujian resmi PKBM HALIFA. Selamat mengerjakan, jujur itu juara!">
-    <meta property="og:image" content="https://ciwai.dev/assets/images/og-preview.jpg">
-    <meta property="og:url" content="https://ciwai.dev/ruangujian/">
-
-    <link rel="stylesheet" href="/assets/style.css">
+    <meta property="og:description" content="Portal ujian resmi PKBM HALIFA">
 </head>
 
 <body class="home-page">
-    <div class="container" style="margin-top: 50px; text-align: center;">
-        <h1 style="color: #4f46e5;">Ruang Ujian PKBM HALIFA</h1>
 
-        <p style="opacity:.8; margin-top:15px; text-align: center;">
-            Selamat datang di portal ujian PKBM HALIFA<br>
+    <div id="header"></div>
+
+    <main class="container" style="margin-top:60px;text-align:center;max-width:720px;">
+
+        <h1 style="color:#4f46e5;">Ruang Ujian PKBM HALIFA</h1>
+
+        <p style="opacity:.8;margin-top:15px;">
+            Selamat datang di portal ujian resmi PKBM HALIFA
         </p>
 
-        <button onclick="masuk()" style="background: #4f46e5;">Masuk Ruang Ujian</button>
+        <!-- ACTION BUTTON -->
+        <div style="margin-top:35px;display:flex;flex-direction:column;gap:15px;">
 
-        <div
-            style="background: #f8fafc; padding: 15px; border-radius: 12px; margin-top: 25px; border: 1px solid #e2e8f0;">
-            <p style="font-size: 13px; margin: 0; color: #64748b;">
-                ℹ️ <b>Info:</b> Fitur Login akan diaktifkan setelah sinkronisasi.
+            <button onclick="masukUjian()" style="background:#4f46e5;">
+                📝 Masuk Ruang Ujian
+            </button>
+
+            <button onclick="lihatHasil()" style="background:#16a34a;">
+                📊 Lihat Hasil Ujian
+            </button>
+
+        </div>
+
+        <!-- INFO -->
+        <div style="background:#f8fafc;padding:15px;border-radius:12px;margin-top:30px;border:1px solid #e2e8f0;">
+            <p style="font-size:13px;margin:0;color:#64748b;">
+                ℹ️ Gunakan email yang sama dengan saat mengerjakan ujian untuk melihat hasil evaluasi.
             </p>
         </div>
-    </div>
 
-    <footer
-        style="margin-top: auto; padding: 40px 15px 20px 15px; text-align: center; border-top: 1px solid #e2e8f0; width: 100%; box-sizing: border-box; background: #ffffff;">
-        <p style="color: #94a3b8; font-size: 12px; margin-bottom: 12px !important;">© 2025 Ciwai™ Smart Digital. All
-            rights reserved.</p>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="#"
-                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Home</a>
-            <a href="#"
-                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Article</a>
-            <a href="#"
-                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Privacy</a>
-            <a href="#"
-                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Support</a>
-        </div>
-    </footer>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
 
     <script>
-        function masuk() {
+        function masukUjian() {
             localStorage.setItem("login", "guest");
             location.href = "pilih.html";
         }
+
+        function lihatHasil() {
+            location.href = "hasilujian/inggris.html";
+        }
     </script>
+
 </body>
 
 </html>
