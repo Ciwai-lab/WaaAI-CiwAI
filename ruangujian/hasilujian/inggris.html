@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hasil Evaluasi Ujian Bahasa Inggris</title>
 
+    <link rel="icon" type="image/webp" href="assets/images/favicon.webp" />
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 
-<body>
-
-    <div id="header"></div>
+<body class="home-page">
+    <div class="topbar">
+        <button onclick="history.back()">← Kembali</button>
+        <span>Bahasa Inggris</span>
+        <button onclick="logout()">Keluar ⎋</button>
+    </div>
 
     <main class="container" style="max-width:760px;margin:60px auto;">
         <h1 style="color:#4f46e5;">Hasil Evaluasi Ujian Bahasa Inggris</h1>
@@ -41,10 +45,28 @@
         </section>
     </main>
 
-    <div id="footer"></div>
+    <footer
+        style="margin-top: auto; padding: 40px 15px 20px 15px; text-align: center; border-top: 1px solid #e2e8f0; width: 100%; box-sizing: border-box; background: #ffffff;">
+        <p style="color: #94a3b8; font-size: 12px; margin-bottom: 12px !important;">© 2025 Ciwai™ Smart Digital. All
+            rights reserved.</p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="/ruangujian/"
+                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Home</a>
+            <a href="#"
+                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Article</a>
+            <a href="#"
+                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Privacy</a>
+            <a href="#"
+                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Support</a>
+        </div>
+    </footer>
 
-    <script src="/assets/js/header.js"></script>
-    <script src="/assets/js/footer.js"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem("login");
+            location.href = "/ruangujian/";
+        }
+    </script>
 
     <script src="hasil.js"></script>
     <script src="pdf.js"></script>
