@@ -61,31 +61,22 @@ function renderHasil() {
   </div>
 `;
 
-  const salah = CURRENT.detail;
+  if (!CURRENT.detail || CURRENT.detail.length === 0) {
+    document.getElementById("detailSoal").innerHTML = `
+    <div style="
+      padding:16px;
+      border-radius:12px;
+      background:#f8fafc;
+      border:1px dashed #cbd5e1;
+      color:#475569;
+      font-size:14px;
+    ">
+      ℹ️ <b>Hasil evaluasi detail akan menyusul</b><br>
+      Informasi ini akan ditampilkan sebagai bahan pembelajaran siswa.
+    </div>
+  `;
+    return;
+  }
 
-  document.getElementById("detailSoal").innerHTML =
-    salah.map((s, i) => `
-    <details class="wrong-question">
-      <summary>❌ Soal ${i + 1} yang perlu diperbaiki</summary>
-
-      <p class="question-text">
-        ${s.soal}
-      </p>
-
-      <p>
-        <b>Jawaban kamu:</b>
-        <span class="wrong">
-          ${s.jawaban_peserta ? s.jawaban_peserta : "—"}
-        </span>
-      </p>
-
-      ${s.jawaban_benar
-        ? `<p><b>Jawaban benar:</b>
-               <span class="correct">${s.jawaban_benar}</span>
-             </p>`
-        : ""
-      }
-    </details>
-  `).join("");
 
 }
