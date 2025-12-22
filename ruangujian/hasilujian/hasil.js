@@ -56,7 +56,7 @@ function renderHasil() {
     </div>
     <div class="result-item highlight">
       <span>Nilai Akhir</span>
-      <strong>${CURRENT.nilai}</strong>
+      <strong>${CURRENT.nilai_text}</strong>
     </div>
   </div>
 `;
