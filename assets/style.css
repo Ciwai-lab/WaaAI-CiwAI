@@ -31,6 +31,12 @@ body.ujian-page {
     background: #ffffff;
 }
 
+.ujian-page {
+    padding-top: 56px;
+    /* tinggi topbar */
+}
+
+
 /* ===== 2. TOPBAR (Header) ===== */
 .topbar {
     position: sticky;
