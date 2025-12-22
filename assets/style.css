@@ -335,3 +335,20 @@ button:focus-visible {
 .action-card.secondary .card-icon {
     color: #16a34a;
 }
+
+/* ===== DISABLED CARD ===== */
+.action-card.disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    background: #f8fafc;
+    border-style: dashed;
+}
+
+.action-card.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.action-card.disabled .card-icon {
+    filter: grayscale(100%);
+}
