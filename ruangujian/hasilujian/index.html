@@ -11,7 +11,11 @@
 
 <body>
 
-    <div id="header"></div>
+    <div class="topbar">
+        <button onclick="history.back()">← Kembali</button>
+        <span>Ruang Ujian</span>
+        <button onclick="logout()">Keluar ⎋</button>
+    </div>
 
     <main class="container" style="max-width:720px;margin:60px auto;text-align:center;">
         <h1 style="color:#4f46e5;">Hasil Ujian</h1>
@@ -36,10 +40,21 @@
         </div>
     </main>
 
-    <div id="footer"></div>
-
-    <script src="/assets/js/header.js"></script>
-    <script src="/assets/js/footer.js"></script>
+    <footer
+        style="margin-top: auto; padding: 40px 15px 20px 15px; text-align: center; border-top: 1px solid #e2e8f0; width: 100%; box-sizing: border-box; background: #ffffff;">
+        <p style="color: #94a3b8; font-size: 12px; margin-bottom: 12px !important;">© 2025 Ciwai™ Smart Digital. All
+            rights reserved.</p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="/ruangujian/"
+                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Home</a>
+            <a href="#"
+                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Article</a>
+            <a href="#"
+                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Privacy</a>
+            <a href="#"
+                style="display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; color: #64748b !important; font-size: 13px !important; text-decoration: none !important; font-weight: 500 !important;">Support</a>
+        </div>
+    </footer>
 
 </body>
 
