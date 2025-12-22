@@ -44,15 +44,22 @@
             </p>
 
             <!-- ACTION BUTTON -->
-            <div style="display:flex;flex-direction:column;gap:14px;">
-                <button onclick="masukUjian()" style="background:#4f46e5;">
-                    📝 Masuk Ruang Ujian
-                </button>
+            <div class="card-grid">
 
-                <button onclick="lihatHasil()" style="background:#16a34a;">
-                    📊 Lihat Hasil Ujian
-                </button>
+                <div class="action-card" onclick="masukUjian()">
+                    <div class="card-icon">📝</div>
+                    <h3>Ruang Ujian</h3>
+                    <p>Mulai dan lanjutkan ujian</p>
+                </div>
+
+                <div class="action-card secondary" onclick="lihatHasil()">
+                    <div class="card-icon">📊</div>
+                    <h3>Hasil Ujian</h3>
+                    <p>Lihat nilai dan evaluasi</p>
+                </div>
+
             </div>
+
 
             <!-- INFO -->
             <div style="
