@@ -352,3 +352,19 @@ button:focus-visible {
 .action-card.disabled .card-icon {
     filter: grayscale(100%);
 }
+
+/* ===== SERAGAM ICON PAKET ===== */
+.card-icon.badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #4f46e5;
+    letter-spacing: .5px;
+}
