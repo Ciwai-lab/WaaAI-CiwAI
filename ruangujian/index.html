@@ -24,8 +24,12 @@
             Selamat datang di portal ujian PKBM HALIFA<br>
         </p>
 
-        <button onclick="masuk()" style="background: #4f46e5;">Masuk Ruang Ujian</button>
-
+        <button onclick="masukUjian()" style="background:#4f46e5;">
+            📝 Masuk Ruang Ujian
+        </button>
+        <button onclick="lihatHasil()" style="background:#16a34a;">
+            📊 Lihat Hasil Ujian
+        </button>
         <div
             style="background: #f8fafc; padding: 15px; border-radius: 12px; margin-top: 25px; border: 1px solid #e2e8f0;">
             <p style="font-size: 13px; margin: 0; color: #64748b;">
@@ -51,9 +55,13 @@
     </footer>
 
     <script>
-        function masuk() {
+        function masukUjian() {
             localStorage.setItem("login", "guest");
             location.href = "pilih.html";
+        }
+
+        function lihatHasil() {
+            location.href = "hasilujian/inggris.html";
         }
     </script>
 </body>
