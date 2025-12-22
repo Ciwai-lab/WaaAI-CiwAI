@@ -179,3 +179,68 @@ footer a:hover {
     text-decoration: underline !important;
     transform: none !important;
 }
+
+.result-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.result-item {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+}
+
+.result-item span {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.result-item strong {
+    display: block;
+    font-size: 22px;
+    margin-top: 6px;
+    color: #0f172a;
+}
+
+.result-item.highlight {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #fff;
+}
+
+.result-item.highlight span,
+.result-item.highlight strong {
+    color: #fff;
+}
+
+.wrong-question {
+    border-left: 4px solid #ef4444;
+    background: #fff;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.wrong-question summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.question-text {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.wrong {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.correct {
+    color: #16a34a;
+    font-weight: 600;
+}
