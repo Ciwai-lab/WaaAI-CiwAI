@@ -31,6 +31,15 @@ async function cekHasil() {
 function renderHasil() {
   document.getElementById("hasilBox").style.display = "block";
 
+  document.getElementById("hasilBox").insertAdjacentHTML(
+    "afterbegin",
+    `
+  <div class="status-badge">
+    🟢 Ujian Telah Selesai
+  </div>
+  `
+  );
+
   document.getElementById("ringkasan").innerHTML = `
   <div class="result-card">
     <div class="result-item">
@@ -52,24 +61,31 @@ function renderHasil() {
   </div>
 `;
 
-  const salah = CURRENT.detail.filter(s => !s.benar);
+  const salah = CURRENT.detail;
 
   document.getElementById("detailSoal").innerHTML =
-    salah.map(s => `
-      <details style="margin-bottom:15px;">
-        <details class="wrong-question">
-  <summary>❌ Soal yang perlu diperbaiki</summary>
-  <p class="question-text">${s.soal}</p>
+    salah.map((s, i) => `
+    <details class="wrong-question">
+      <summary>❌ Soal ${i + 1} yang perlu diperbaiki</summary>
 
-  <p><b>Jawaban kamu:</b>
-    <span class="wrong">${s.jawaban_peserta || "-"}</span>
-  </p>
+      <p class="question-text">
+        ${s.soal}
+      </p>
 
-  ${s.jawaban_benar ? `
-    <p><b>Jawaban benar:</b>
-      <span class="correct">${s.jawaban_benar}</span>
-    </p>` : ""}
-</details>
+      <p>
+        <b>Jawaban kamu:</b>
+        <span class="wrong">
+          ${s.jawaban_peserta ? s.jawaban_peserta : "—"}
+        </span>
+      </p>
 
-    `).join("");
+      ${s.jawaban_benar
+        ? `<p><b>Jawaban benar:</b>
+               <span class="correct">${s.jawaban_benar}</span>
+             </p>`
+        : ""
+      }
+    </details>
+  `).join("");
+
 }

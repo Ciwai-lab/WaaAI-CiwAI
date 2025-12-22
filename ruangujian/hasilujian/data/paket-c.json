@@ -4,9 +4,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 12,
-    "benar": null,
+    "total": 50,
     "salah": 12,
+    "benar": 38,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -75,9 +75,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 12,
-    "benar": null,
+    "total": 50,
     "salah": 12,
+    "benar": 38,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -146,9 +146,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 12,
-    "benar": null,
+    "total": 50,
     "salah": 12,
+    "benar": 38,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -217,9 +217,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 12,
-    "benar": null,
+    "total": 50,
     "salah": 12,
+    "benar": 38,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -288,9 +288,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 12,
-    "benar": null,
+    "total": 50,
     "salah": 12,
+    "benar": 38,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -359,9 +359,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 12,
-    "benar": null,
+    "total": 50,
     "salah": 12,
+    "benar": 38,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -430,9 +430,9 @@
     "nama": "She ___ in Jakarta since 2018. [Feedback]",
     "paket": "If it rains, we ___ stay at home. [Feedback]",
     "nilai": null,
-    "total": null,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -440,9 +440,9 @@
     "nama": "Nafisa Shazfa Widiya",
     "paket": "Paket C",
     "nilai": 92,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -450,9 +450,9 @@
     "nama": "Intan sukesa",
     "paket": "Paket C",
     "nilai": 56,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -460,9 +460,9 @@
     "nama": "Marisa",
     "paket": "Paket C",
     "nilai": 84,
-    "total": 3.6799999999999997,
-    "benar": null,
+    "total": 50,
     "salah": 2,
+    "benar": 48,
     "detail": [
       {
         "soal": "What is the announcement about?",
@@ -481,9 +481,9 @@
     "nama": "VIDIA MAYRAMINA (BIA)",
     "paket": "Paket C",
     "nilai": 92,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -491,9 +491,9 @@
     "nama": "Septi mutia",
     "paket": "Paket C",
     "nilai": 86,
-    "total": 1.8599999999999999,
-    "benar": null,
+    "total": 50,
     "salah": 1,
+    "benar": 49,
     "detail": [
       {
         "soal": "What kind of text is it?",
@@ -507,9 +507,9 @@
     "nama": "Destia Nurul Adha",
     "paket": "Paket C",
     "nilai": 80,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -517,9 +517,9 @@
     "nama": "Yulianingsih",
     "paket": "Paket C",
     "nilai": 88,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -527,9 +527,9 @@
     "nama": "KIKI TAZQIYAH",
     "paket": "Paket C",
     "nilai": 88,
-    "total": 3.76,
-    "benar": null,
+    "total": 50,
     "salah": 2,
+    "benar": 48,
     "detail": [
       {
         "soal": "When will the meeting be held?",
@@ -548,9 +548,9 @@
     "nama": "Muhammad Azhar dawami",
     "paket": "Paket C",
     "nilai": 76,
-    "total": 12.32,
-    "benar": null,
+    "total": 50,
     "salah": 7,
+    "benar": 43,
     "detail": [
       {
         "soal": "What is the announcement about?",
@@ -594,9 +594,9 @@
     "nama": "Siti Nurul Fadhilah",
     "paket": "Paket C",
     "nilai": 90,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -604,9 +604,9 @@
     "nama": "Istikomah sunjanis",
     "paket": "Paket C",
     "nilai": 72,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -614,9 +614,9 @@
     "nama": "vina damayanti",
     "paket": "Paket C",
     "nilai": 94,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -624,9 +624,9 @@
     "nama": "Nurhalimah",
     "paket": "Paket C",
     "nilai": 48,
-    "total": 4.4399999999999995,
-    "benar": null,
+    "total": 50,
     "salah": 3,
+    "benar": 47,
     "detail": [
       {
         "soal": "What kind of text is it?",
@@ -650,9 +650,9 @@
     "nama": "veren delyanti",
     "paket": "Paket C",
     "nilai": 72,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -660,9 +660,9 @@
     "nama": "Muhammad Reza permana",
     "paket": "Paket C",
     "nilai": 90,
-    "total": 1.9,
-    "benar": null,
+    "total": 50,
     "salah": 1,
+    "benar": 49,
     "detail": [
       {
         "soal": "What kind of text is it?",
@@ -676,9 +676,9 @@
     "nama": "M Miftahul ulum",
     "paket": "Paket C",
     "nilai": 14,
-    "total": 7.98,
-    "benar": null,
+    "total": 50,
     "salah": 7,
+    "benar": 43,
     "detail": [
       {
         "soal": "What is the announcement about?",
@@ -722,9 +722,9 @@
     "nama": "denny ardiansyah",
     "paket": "Paket C",
     "nilai": 66,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -732,9 +732,9 @@
     "nama": "Mustakmilah",
     "paket": "Paket C",
     "nilai": 66,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -742,9 +742,9 @@
     "nama": "Indah Yulinda",
     "paket": "Paket C",
     "nilai": 92,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -752,9 +752,9 @@
     "nama": "Rahma",
     "paket": "Paket C",
     "nilai": 38,
-    "total": 2.76,
-    "benar": null,
+    "total": 50,
     "salah": 2,
+    "benar": 48,
     "detail": [
       {
         "soal": "How was Cinderella’s stepmother?",
@@ -773,9 +773,9 @@
     "nama": "Siti Rohmah",
     "paket": "Paket C",
     "nilai": 56,
-    "total": 1.56,
-    "benar": null,
+    "total": 50,
     "salah": 1,
+    "benar": 49,
     "detail": [
       {
         "soal": "What kind of text is that?",
@@ -789,9 +789,9 @@
     "nama": "RIPAI",
     "paket": "Paket C",
     "nilai": 88,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -799,9 +799,9 @@
     "nama": "Syyeda Anabia",
     "paket": "Paket C",
     "nilai": 72,
-    "total": 1.72,
-    "benar": null,
+    "total": 50,
     "salah": 1,
+    "benar": 49,
     "detail": [
       {
         "soal": "How to serve the best ?",
@@ -815,9 +815,9 @@
     "nama": "Icah",
     "paket": "Paket C",
     "nilai": 76,
-    "total": 3.52,
-    "benar": null,
+    "total": 50,
     "salah": 2,
+    "benar": 48,
     "detail": [
       {
         "soal": "What kind of text is it?",

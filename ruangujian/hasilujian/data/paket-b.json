@@ -4,9 +4,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -70,9 +70,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -136,9 +136,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -202,9 +202,9 @@
     "nama": "I have breakfast and go to school.",
     "paket": "",
     "nilai": null,
-    "total": null,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -268,9 +268,9 @@
     "nama": "I have breakfast and go to school.",
     "paket": "",
     "nilai": null,
-    "total": null,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -334,9 +334,9 @@
     "nama": "I have breakfast and go to school.",
     "paket": "",
     "nilai": null,
-    "total": null,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -400,9 +400,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -466,9 +466,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -532,9 +532,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -598,9 +598,9 @@
     "nama": "she ___.” [Feedback]\",The opposite of dirty is …,The opposite of dirty is … [Score],The opposite of dirty is … [Feedback],My brother is ___ than me.,My brother is ___ than me. [Score],My brother is ___ than me. [Feedback],There are ___ apples on the table.,There are ___ apples on the table. [Score],There are ___ apples on the table. [Feedback],\"“She can sing very well.”",
     "paket": "",
     "nilai": null,
-    "total": null,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -664,9 +664,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -730,9 +730,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -796,9 +796,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -862,9 +862,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -928,9 +928,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -994,9 +994,9 @@
     "nama": "",
     "paket": "",
     "nilai": 0,
-    "total": 11,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -1060,9 +1060,9 @@
     "nama": "What kind of text is it? [Feedback]",
     "paket": "",
     "nilai": null,
-    "total": null,
-    "benar": null,
+    "total": 50,
     "salah": 11,
+    "benar": 39,
     "detail": [
       {
         "soal": "Nama Lengkap",
@@ -1126,9 +1126,9 @@
     "nama": "Mesah Atmi",
     "paket": "Paket B",
     "nilai": 96,
-    "total": 1.96,
-    "benar": null,
+    "total": 50,
     "salah": 1,
+    "benar": 49,
     "detail": [
       {
         "soal": "This is my house. __ is very small but comfortable.",
@@ -1142,9 +1142,9 @@
     "nama": "Suci Wulandari",
     "paket": "Paket B",
     "nilai": 86,
-    "total": 3.7199999999999998,
-    "benar": null,
+    "total": 50,
     "salah": 2,
+    "benar": 48,
     "detail": [
       {
         "soal": "He ___ English very well.",
@@ -1163,9 +1163,9 @@
     "nama": "Muhamad rehan mauluda",
     "paket": "Paket B",
     "nilai": 68,
-    "total": 8.4,
-    "benar": null,
+    "total": 50,
     "salah": 5,
+    "benar": 45,
     "detail": [
       {
         "soal": "This is my house. __ is very small but comfortable.",
@@ -1199,9 +1199,9 @@
     "nama": "Nazmi Rizkia Zera Maulida",
     "paket": "Paket B",
     "nilai": 98,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -1209,9 +1209,9 @@
     "nama": "Harkoni",
     "paket": "Paket B",
     "nilai": 70,
-    "total": 5.1,
-    "benar": null,
+    "total": 50,
     "salah": 3,
+    "benar": 47,
     "detail": [
       {
         "soal": "We ___ to the zoo last week.",
@@ -1235,9 +1235,9 @@
     "nama": "wiwin winarsih",
     "paket": "Paket B",
     "nilai": 98,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -1245,9 +1245,9 @@
     "nama": "yeni ulfah",
     "paket": "Paket B",
     "nilai": 98,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -1255,9 +1255,9 @@
     "nama": "Fauzan Nurill Arsya",
     "paket": "Paket B",
     "nilai": 70,
-    "total": 3.4,
-    "benar": null,
+    "total": 50,
     "salah": 2,
+    "benar": 48,
     "detail": [
       {
         "soal": "This is my house. __ is very small but comfortable.",
@@ -1276,9 +1276,9 @@
     "nama": "Yeni heryani",
     "paket": "Paket B",
     "nilai": 54,
-    "total": 9.24,
-    "benar": null,
+    "total": 50,
     "salah": 6,
+    "benar": 44,
     "detail": [
       {
         "soal": "This is my house. __ is very small but comfortable.",
@@ -1317,9 +1317,9 @@
     "nama": "Muhammad Isnan Gunawan",
     "paket": "Paket B",
     "nilai": 76,
-    "total": 5.28,
-    "benar": null,
+    "total": 50,
     "salah": 3,
+    "benar": 47,
     "detail": [
       {
         "soal": "The antonym of happy is …",
@@ -1343,9 +1343,9 @@
     "nama": "UFI",
     "paket": "Paket B",
     "nilai": 94,
-    "total": 1.94,
-    "benar": null,
+    "total": 50,
     "salah": 1,
+    "benar": 49,
     "detail": [
       {
         "soal": "He ___ English very well.",
@@ -1359,9 +1359,9 @@
     "nama": "siti.chuliatu rodiah (lia)",
     "paket": "Paket B",
     "nilai": 96,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   },
   {
@@ -1369,9 +1369,9 @@
     "nama": "Roni supriyanto",
     "paket": "Paket B",
     "nilai": 26,
-    "total": 7.5600000000000005,
-    "benar": null,
+    "total": 50,
     "salah": 6,
+    "benar": 44,
     "detail": [
       {
         "soal": "This is my house. __ is very small but comfortable.",
@@ -1410,9 +1410,9 @@
     "nama": "Zaenudin",
     "paket": "Paket B",
     "nilai": 26,
-    "total": 10.08,
-    "benar": null,
+    "total": 50,
     "salah": 8,
+    "benar": 42,
     "detail": [
       {
         "soal": "This is my house. __ is very small but comfortable.",
@@ -1461,9 +1461,9 @@
     "nama": "Ahmad Sonhaji",
     "paket": "Paket B",
     "nilai": 86,
-    "total": 0,
-    "benar": null,
+    "total": 50,
     "salah": 0,
+    "benar": 50,
     "detail": []
   }
 ]

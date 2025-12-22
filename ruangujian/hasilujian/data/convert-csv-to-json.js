@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const TOTAL_SOAL = 50;
 
 function parseCSV(file) {
     const raw = fs.readFileSync(file, "utf8");
@@ -51,9 +52,9 @@ function convert(csvFile, outFile) {
             nama: row["Nama Lengkap"],
             paket: row["PKBM Paket :"],
             nilai: Math.round(totalScore),
-            total: detail.length + (totalScore / 100) * detail.length,
-            benar: null, // opsional
+            total: TOTAL_SOAL,
             salah,
+            benar: TOTAL_SOAL - salah,
             detail
         });
     });
