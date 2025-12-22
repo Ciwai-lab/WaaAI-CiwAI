@@ -56,6 +56,10 @@ function downloadPDF() {
   <body>
 
     <h1>Hasil Evaluasi Ujian Bahasa Inggris</h1>
+<p style="color:#64748b;font-size:13px;margin-top:-6px;">
+  Semester Ganjil • PKBM HALIFA
+</p>
+
 
     <div class="summary">
       <p><b>Nama:</b> ${CURRENT.nama}</p>
