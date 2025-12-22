@@ -255,3 +255,33 @@ footer a:hover {
     font-weight: 600;
     margin-bottom: 14px;
 }
+
+/* ===== BUTTON POLISH ===== */
+button {
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        background-color .18s ease,
+        opacity .18s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, .18);
+    opacity: .95;
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+}
+
+/* warna secondary biar konsisten */
+button[style*="#16a34a"]:hover {
+    box-shadow: 0 10px 20px rgba(22, 163, 74, .2);
+}
+
+button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, .35);
+}
