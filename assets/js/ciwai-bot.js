@@ -19,7 +19,7 @@ function toggleCiwaiBot() {
         addBotMsg(
             `Halo 👋<br>
       Aku <b>CiwAI Bot (beta)</b>.<br>
-      Tanya hal simpel dulu ya, kalau ribet nanti aku arahin ke owner 😄`
+      Tanya hal simpel dulu ya, kalau ribet nanti aku arahin ke team 😄`
         );
         greeted = true;
     }
@@ -114,7 +114,7 @@ function fallbackOwner() {
       <a href="https://wa.me/?text=Halo%20CiwAI%2C%20saya%20mau%20tanya" target="_blank">
         💬 Chat WhatsApp
       </a>
-      <a href="mailto:ciwaismartdigital@gmail.com">
+      <a href="mailto:halo@ciwai.dev">
         📩 Email
       </a>
     </div>
