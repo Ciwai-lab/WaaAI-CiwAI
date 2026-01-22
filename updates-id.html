@@ -95,11 +95,9 @@
     <script src="/assets/js/hero.js"></script>
 
     <script>
-        // Fungsi tarik data pengganti Supabase
         async function fetchUpdates() {
             const container = document.getElementById('updates-container');
             try {
-                // Ambil artikel dengan tag 'changelog' atau 'ai'
                 const res = await fetch('https://dev.to/api/articles?tag=changelog&per_page=5');
                 const posts = await res.json();
 
@@ -130,7 +128,6 @@
             }
         }
 
-        // Fungsi Modal (Sesuai request buka di tempat)
         async function openModal(id) {
             const modal = document.getElementById('article-modal');
             const modalBody = document.getElementById('modal-body');
