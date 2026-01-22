@@ -4,88 +4,137 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CiwAI Smart Digital — Articles</title>
+  <title>CiwAI Smart Digital — Insights</title>
   <meta name="description"
-    content="Explore insights, tutorials, and articles from the CiwAI Smart Digital team to stay informed and inspired." />
+    content="Explore automated tech insights and tutorials from the global community, curated by CiwAI." />
 
   <link rel="icon" type="image/webp" href="/assets/images/favicon.webp" />
 
-  <!-- OG tags -->
-  <meta property="og:title" content="CiwAI Smart Digital — Articles" />
-  <meta property="og:description"
-    content="Read the latest articles, tutorials, and knowledge shared by the CiwAI team." />
-  <meta property="og:url" content="https://www.ciwai.dev/article" />
-  <meta property="og:type" content="website" />
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Extra libs -->
-  <script src="/assets/env.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-
-
-<body class="bg-slate-50 text-slate-800" data-page="article" data-hero-title="Articles"
-  data-hero-subtitle="Insights, tutorials, and updates from the CiwAI team." data-hero-variant="subtle">
-
-  <script src="/assets/js/lang.js"></script>
-
-  <!-- HEADER placeholder -->
-  <div id="ciwai-header"></div>
-
-  <!-- HERO placeholder -->
-  <div id="ciwai-hero"></div>
-
-  <!-- ======= Content ======= -->
-  <main class="max-w-4xl mx-auto py-10 px-4" id="article-content">
-    <p class="text-gray-500">Loading article...</p>
-  </main>
-
-  <!-- ======= Script ======= -->
-  <script>
-    const supabaseClient = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get('slug');
-
-    async function loadArticle() {
-      if (!slug) {
-        document.getElementById('article-content').innerHTML = `<p class="text-red-500">No article specified.</p>`;
-        return;
-      }
-
-      const { data, error } = await supabaseClient
-        .from('support_articles')
-        .select('*')
-        .eq('slug', slug)
-        .eq('status', 'published')
-        .single();
-
-      if (error || !data) {
-        document.getElementById('article-content').innerHTML = `<p class="text-red-500">Article not found.</p>`;
-        return;
-      }
-
-      document.title = `${data.title} - CiwAI Support`;
-      document.getElementById('article-content').innerHTML = `
-        <h1 class="text-3xl font-bold mb-2">${data.title}</h1>
-        <p class="text-sm text-gray-500 mb-6">${data.category} • ${new Date(data.published_at).toLocaleDateString()}</p>
-        ${data.cover_url ? `<img src="${data.cover_url}" class="rounded mb-6"/>` : ''}
-        <article class="prose max-w-none">${marked.parse(data.content_md)}</article>
-        <div class="mt-8"><a href="/support" class="text-blue-600 hover:underline">← Back to Support</a></div>
-      `;
+  <style>
+    /* Animasi biar makin smooth pas load */
+    .fade-in-card {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
     }
 
-    loadArticle();
-  </script>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
 
-  <!-- Footer -->
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .glass-card {
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800" data-page="article">
+
+  <div id="ciwai-header"></div>
+
+  <section class="py-16 bg-white border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Tech Insights</h1>
+      <p class="mt-4 text-lg text-slate-500">Kumpulan artikel teknologi terbaru yang ditarik otomatis dari komunitas
+        global.</p>
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto py-12 px-4" id="article-content">
+    <div id="loader" class="space-y-8 animate-pulse">
+      <div class="h-48 bg-slate-200 rounded-3xl w-full"></div>
+      <div class="h-6 bg-slate-200 rounded w-3/4"></div>
+      <div class="h-4 bg-slate-200 rounded w-1/2"></div>
+    </div>
+  </main>
+
   <div id="ciwai-footer"></div>
 
   <script src="/assets/js/footer.js"></script>
   <script src="/assets/js/header.js"></script>
-  <script src="/assets/js/hero.js"></script>
+
+  <script>
+    async function fetchGlobalArticles() {
+      const contentArea = document.getElementById('article-content');
+
+      try {
+        // Ente bisa ganti 'tag=ai' jadi 'tag=webdev' atau lainnya sesuai mood ente
+        const response = await fetch('https://dev.to/api/articles?tag=ai&per_page=6');
+        if (!response.ok) throw new Error('Gagal narik data');
+
+        const articles = await response.json();
+
+        let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-8">';
+
+        articles.forEach((art, index) => {
+          html += `
+            <div class="fade-in-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" style="animation-delay: ${index * 100}ms">
+              <div class="relative h-48 overflow-hidden">
+                <img src="${art.cover_image || 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80'}" 
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                     alt="${art.title}">
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded-md">
+                    ${art.tag_list[0] || 'Tech'}
+                  </span>
+                  <span class="text-xs text-slate-400">${Math.ceil(art.reading_time_minutes)} min read</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 leading-snug group-hover:text-blue-600 transition">
+                  ${art.title}
+                </h3>
+                <p class="text-slate-500 text-sm line-clamp-2 mb-4">
+                  ${art.description}
+                </p>
+                <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                  <div class="flex items-center gap-2">
+                    <img src="${art.user.profile_image_90}" class="w-6 h-6 rounded-full border border-slate-200">
+                    <span class="text-xs font-medium text-slate-600">${art.user.name}</span>
+                  </div>
+                  <a href="${art.url}" target="_blank" class="text-xs font-bold text-slate-900 flex items-center gap-1 hover:underline">
+                    READ MORE 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        html += '</div>';
+        contentArea.innerHTML = html;
+
+      } catch (err) {
+        contentArea.innerHTML = `
+          <div class="text-center py-20 bg-white rounded-3xl border border-dashed border-slate-300">
+            <span class="text-5xl">📡</span>
+            <h2 class="text-xl font-bold mt-4 text-slate-800">Koneksi Lagi Galau</h2>
+            <p class="text-slate-500 mb-6">Gagal narik artikel dari server global. Mungkin internet ente lagi kena hujan, bro.</p>
+            <button onclick="location.reload()" class="px-6 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition shadow-lg">
+              Coba Lagi
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    // Eksekusi
+    document.addEventListener('DOMContentLoaded', fetchGlobalArticles);
+  </script>
 </body>
 
 </html>
