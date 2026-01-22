@@ -162,27 +162,55 @@
 
       modal.classList.remove('hidden');
       modal.classList.add('flex');
-      document.body.style.overflow = 'hidden'; // Stop scroll background
+      document.body.style.overflow = 'hidden';
 
-      modalBody.innerHTML = '<div class="flex justify-center py-20"><div class="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600"></div></div>';
+      modalBody.innerHTML = `
+        <div class="flex flex-col items-center justify-center py-20">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
+            <p class="text-slate-500 animate-pulse">Fetching insight...</p>
+        </div>`;
 
       try {
         const response = await fetch(`https://dev.to/api/articles/${id}`);
+        if (!response.ok) throw new Error('API Error');
+
         const data = await response.json();
 
+        const content = data.body_html || data.description || "No content available, bro.";
+
         modalBody.innerHTML = `
-            <img src="${data.cover_image}" class="w-full h-64 object-cover rounded-2xl mb-8">
-            <h1 class="text-3xl font-black mb-4">${data.title}</h1>
-            <div class="flex items-center gap-3 mb-8 not-prose">
-                <img src="${data.user.profile_image_90}" class="w-8 h-8 rounded-full">
-                <span class="text-sm font-medium text-slate-500">${data.user.name} • ${new Date(data.published_at).toLocaleDateString()}</span>
-            </div>
-            <div class="article-body">
-                ${data.body_html}
+            <div class="animate-fade-in">
+                <img src="${data.cover_image || 'https://via.placeholder.com/800x400'}" 
+                     class="w-full h-64 object-cover rounded-2xl mb-8 shadow-sm">
+                
+                <h1 class="text-3xl font-black text-slate-900 mb-4 leading-tight">${data.title}</h1>
+                
+                <div class="flex items-center gap-3 mb-10 pb-6 border-b border-slate-100">
+                    <img src="${data.user.profile_image_90}" class="w-10 h-10 rounded-full border border-slate-100">
+                    <div>
+                        <p class="text-sm font-bold text-slate-800">${data.user.name}</p>
+                        <p class="text-xs text-slate-400">${new Date(data.published_at).toLocaleDateString()} • ${data.reading_time_minutes} min read</p>
+                    </div>
+                </div>
+
+                <div class="article-content prose prose-slate max-w-none text-slate-700">
+                    ${content}
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-slate-100">
+                    <button onclick="closeModal()" class="text-sm font-bold text-slate-400 hover:text-slate-900 transition">
+                        ESC TO CLOSE
+                    </button>
+                </div>
             </div>
         `;
       } catch (err) {
-        modalBody.innerHTML = '<p class="text-red-500">Failed to load content, bro.</p>';
+        modalBody.innerHTML = `
+            <div class="text-center py-20">
+                <span class="text-5xl">⚠️</span>
+                <h2 class="text-xl font-bold mt-4">Failed to load article</h2>
+                <p class="text-slate-500">Coba cek koneksi internet atau refresh browser ente, bro.</p>
+            </div>`;
       }
     }
 
