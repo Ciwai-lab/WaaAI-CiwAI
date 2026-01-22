@@ -8,56 +8,26 @@
   <link rel="alternate" hreflang="x-default" href="https://www.ciwai.dev/" />
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-
-      const PATH_EN = '/';
-      const PATH_ID = '/index-id.html';
-
-      let target = localStorage.getItem('chosenLang');
-      if (!target) {
-        const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-        target = lang.toLowerCase().startsWith('id') ? 'id' : 'en';
-        localStorage.setItem('chosenLang', target);
-      }
-
+    document.addEventListener('DOMContentLoaded', () => {
       const select = document.getElementById('langSwitcher');
-      if (select) {
-        select.value = target;
+      const savedLang = localStorage.getItem('chosenLang') ||
+        (navigator.language.startsWith('id') ? 'id' : 'en');
 
-        select.addEventListener('change', function () {
-          const val = this.value;
-          localStorage.setItem('chosenLang', val);
-          if (val === 'id') window.location.href = PATH_ID;
-          else window.location.href = PATH_EN;
-        });
+      if (select) select.value = savedLang;
+
+      const currentPath = window.location.pathname;
+      if (savedLang === 'id' && !currentPath.includes('index-id.html')) {
+        window.location.href = '/index-id.html';
+      } else if (savedLang === 'en' && currentPath.includes('index-id.html')) {
+        window.location.href = '/';
       }
+
+      select?.addEventListener('change', (e) => {
+        const val = e.target.value;
+        localStorage.setItem('chosenLang', val);
+        window.location.href = (val === 'id') ? '/index-id.html' : '/';
+      });
     });
-  </script>
-
-  <script>
-    (function () {
-      const PATH_EN = '/index.html';
-      const PATH_ID = '/index-id.html';
-
-      let target = localStorage.getItem('chosenLang');
-      if (!target) {
-        const lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-        target = lang.toLowerCase().startsWith('id') ? 'id' : 'en';
-        localStorage.setItem('chosenLang', target);
-      }
-
-      const select = document.getElementById('langSwitcher');
-      if (select) select.value = target;
-
-      if (select) {
-        select.addEventListener('change', function () {
-          const val = this.value;
-          localStorage.setItem('chosenLang', val);
-          if (val === 'id') window.location.href = PATH_ID;
-          else window.location.href = PATH_EN;
-        });
-      }
-    })();
   </script>
 
   <meta charset="UTF-8" />
@@ -363,7 +333,7 @@
       bottom: 24px;
       right: 24px;
       z-index: 9999;
-      background: #2563eb;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
       color: #fff;
       width: 56px;
       height: 56px;
@@ -374,21 +344,22 @@
       cursor: pointer;
       box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
       font-size: 22px;
+      transition: all 0.3s ease;
+    }
+
+    #ciwai-bot-btn:hover {
+      transform: scale(1.1) rotate(10deg);
     }
 
     #ciwai-bot-panel {
-      position: fixed;
-      bottom: 90px;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      bottom: 100px;
       right: 24px;
-      width: 340px;
-      max-height: 520px;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 9999;
+      width: 350px;
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     }
 
     #ciwai-bot-header {
