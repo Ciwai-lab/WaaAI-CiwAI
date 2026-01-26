@@ -497,22 +497,6 @@
     </svg>
   </button>
 
-  <!-- Script Section -->
-  <script>
-    AOS.init({ duration: 800, once: true });
-
-    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-
-    window.addEventListener('scroll', () => {
-      const btn = document.getElementById('backToTopBtn');
-      if (window.scrollY > 300) {
-        btn.classList.remove('hidden');
-      } else {
-        btn.classList.add('hidden');
-      }
-    });
-  </script>
-
   <!-- Tailwind Config -->
   <script>
     tailwind.config = {
@@ -524,6 +508,18 @@
 
   <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Script Section -->
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) backToTopBtn.classList.remove("hidden");
+      else backToTopBtn.classList.add("hidden");
+    });
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  </script>
 
   <script src="/assets/js/ciwai-bot.js"></script>
 
