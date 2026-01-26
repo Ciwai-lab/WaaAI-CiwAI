@@ -78,9 +78,3 @@ window.executeLogin = async function () {
         msg.innerText = "Gagal koneksi ke server";
     }
 };
-
-setTimeout(() => {
-    const modal = document.getElementById("loginModal");
-    if (modal) document.body.appendChild(modal);
-}, 50);
-
