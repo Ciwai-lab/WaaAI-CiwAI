@@ -3,7 +3,6 @@ fetch('/footer.html')
     .then(res => res.text())
     .then(html => {
         const mount = document.getElementById('ciwai-footer');
-        // Jika halaman belum punya placeholder, buat otomatis di akhir <body>
         if (!mount) {
             const auto = document.createElement('div');
             auto.id = 'ciwai-footer';
@@ -11,11 +10,9 @@ fetch('/footer.html')
         }
         document.getElementById('ciwai-footer').innerHTML = html;
 
-        // Setelah inject, set tahun
         const y = document.getElementById('year');
         if (y) y.textContent = new Date().getFullYear();
 
-        // Fade-in saat terlihat
         const footerEl = document.querySelector('footer');
         if (footerEl) {
             const obs = new IntersectionObserver((entries) => {
@@ -28,3 +25,48 @@ fetch('/footer.html')
         }
     })
     .catch(err => console.error('Footer load error:', err));
+
+window.openLoginModal = function () {
+    const modal = document.getElementById("loginModal");
+    if (modal) modal.classList.remove("hidden");
+    else alert("Modal login belum ditemukan");
+};
+
+window.closeLoginModal = function () {
+    const modal = document.getElementById("loginModal");
+    if (modal) modal.classList.add("hidden");
+};
+
+window.executeLogin = async function () {
+    const email = document.getElementById("modalEmail").value;
+    const password = document.getElementById("modalPassword").value;
+    const msg = document.getElementById("modalMessage");
+
+    const tenant = window.location.hostname.split('.')[0];
+
+    try {
+        msg.innerText = "Sedang masuk...";
+
+        const res = await fetch("https://api.ciwai.dev/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Tenant": tenant
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            msg.innerText = data.error || "Login gagal";
+            return;
+        }
+
+        localStorage.setItem("ciwai_token", data.token);
+        window.location.href = "/dashboard.html";
+
+    } catch (err) {
+        msg.innerText = "Gagal koneksi ke server";
+    }
+};
