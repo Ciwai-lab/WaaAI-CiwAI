@@ -126,26 +126,21 @@
     </div>
 
     <script>
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function openLoginModal() {
+        window.openLoginModal = function () {
             const modal = document.getElementById("loginModal");
             if (modal) {
                 modal.classList.remove("hidden");
             } else {
                 alert("Modal login belum ditemukan");
             }
-        }
+        };
 
-        function closeLoginModal() {
-            const modal = document.getElementById('loginModal');
-            if (modal) modal.classList.add('hidden');
-        }
+        window.closeLoginModal = function () {
+            const modal = document.getElementById("loginModal");
+            if (modal) modal.classList.add("hidden");
+        };
 
-        // 🔥 PINDAHKAN KE SINI (GLOBAL)
-        async function executeLogin() {
+        window.executeLogin = async function () {
             const email = document.getElementById("modalEmail").value;
             const password = document.getElementById("modalPassword").value;
             const msg = document.getElementById("modalMessage");
@@ -178,19 +173,6 @@
             } catch (err) {
                 msg.innerText = "API Offline / error jaringan";
             }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const backToTopBtn = document.getElementById('backToTopBtn');
-
-            window.onscroll = function () {
-                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                    if (backToTopBtn) backToTopBtn.classList.remove('hidden');
-                } else {
-                    if (backToTopBtn) backToTopBtn.classList.add('hidden');
-                }
-            };
-        });
+        };
     </script>
-
 </footer>
