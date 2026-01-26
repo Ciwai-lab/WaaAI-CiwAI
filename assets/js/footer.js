@@ -28,13 +28,21 @@ fetch('/footer.html')
 
 window.openLoginModal = function () {
     const modal = document.getElementById("loginModal");
-    if (modal) modal.classList.remove("hidden");
-    else alert("Modal login belum ditemukan");
+    const card = document.getElementById("loginCard");
+
+    if (modal && card) {
+        modal.classList.remove("hidden");
+        setTimeout(() => modal.classList.add("show"), 10);
+    }
 };
 
 window.closeLoginModal = function () {
     const modal = document.getElementById("loginModal");
-    if (modal) modal.classList.add("hidden");
+
+    if (modal) {
+        modal.classList.remove("show");
+        setTimeout(() => modal.classList.add("hidden"), 200);
+    }
 };
 
 window.executeLogin = async function () {

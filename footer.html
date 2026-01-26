@@ -24,34 +24,44 @@
             </nav>
 
             <div id="loginModal"
-                class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/60 backdrop-blur-sm">
-                <div
-                    class="bg-gray-900 border border-gray-700 w-full max-w-md p-8 rounded-2xl shadow-2xl transform transition-all">
+                class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center px-4">
+
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 w-full max-w-md p-8 rounded-2xl shadow-2xl
+           transform transition-all duration-300 scale-95 opacity-0" id="loginCard">
+
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-xl font-bold text-white">Login CiwAI</h2>
-                        <button onclick="closeLoginModal()" class="text-gray-400 hover:text-white">&times;</button>
+                        <h2 class="text-xl font-bold text-white tracking-wide">Login CiwAI</h2>
+                        <button onclick="closeLoginModal()"
+                            class="text-gray-400 hover:text-white text-xl">&times;</button>
                     </div>
 
                     <div id="modalMessage"
-                        class="hidden mb-4 p-3 rounded text-xs bg-red-500/20 text-red-400 border border-red-500/50">
+                        class="hidden mb-4 p-3 rounded-lg text-xs bg-red-500/10 text-red-400 border border-red-500/30">
                     </div>
 
-                    <div class="space-y-4">
+                    <div class="space-y-5">
                         <div>
                             <label class="block text-xs text-gray-400 mb-1">Email</label>
-                            <input type="email" id="modalEmail"
-                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500">
+                            <input id="modalEmail" type="email" class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-2 text-white
+                      focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-transparent
+                      placeholder-gray-500" placeholder="you@school.id">
                         </div>
+
                         <div>
                             <label class="block text-xs text-gray-400 mb-1">Password</label>
-                            <input type="password" id="modalPassword"
-                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500">
+                            <input id="modalPassword" type="password" class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-2 text-white
+                      focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-transparent
+                      placeholder-gray-500" placeholder="••••••••">
                         </div>
-                        <button onclick="executeLogin()"
-                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-200">
+
+                        <button onclick="executeLogin()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600
+                     hover:from-blue-500 hover:to-indigo-500
+                     text-white font-semibold py-2.5 rounded-xl
+                     shadow-lg shadow-blue-900/30 transition-all duration-200">
                             Sign In
                         </button>
                     </div>
+
                 </div>
             </div>
 
