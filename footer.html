@@ -16,7 +16,10 @@
             <nav class="flex flex-wrap justify-center gap-5 text-xs">
                 <a href="/" class="text-white/80 hover:text-white hover:underline">Home</a>
                 <button onclick="openLoginModal()" class="text-white/80 hover:text-white hover:underline">Login</button>
+                <a href="/article.html" class="text-white/80 hover:text-white hover:underline">Article</a>
+                <a href="/privacy.html" class="text-white/80 hover:text-white hover:underline">Privacy</a>
                 <a href="/support.html" class="text-white/80 hover:text-white hover:underline">Support</a>
+                <a href="/updates.html" class="text-white/80 hover:text-white hover:underline">Updates</a>
                 <a href="mailto:info@ciwai.dev" class="text-white/80 hover:text-white hover:underline">Contact</a>
             </nav>
 
@@ -123,46 +126,52 @@
     </div>
 
     <script>
-        function openLoginModal() {
-            document.getElementById('loginModal').classList.remove('hidden');
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('loginModal');
+            const btnLogin = document.getElementById('btnLogin');
+            const btnClose = document.getElementById('btnCloseModal');
+            const btnSubmit = document.getElementById('btnSubmitLogin');
 
-        function closeLoginModal() {
-            document.getElementById('loginModal').classList.add('hidden');
-        }
-
-        async function executeLogin() {
-            const email = document.getElementById("modalEmail").value;
-            const password = document.getElementById("modalPassword").value;
-            const msg = document.getElementById("modalMessage");
-
-            const tenant = window.location.hostname.split('.')[0];
-
-            try {
-                const res = await fetch("https://api.ciwai.dev/auth/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-Tenant": tenant // Kirim tenant biar gak 400 lagi
-                    },
-                    body: JSON.stringify({ email, password })
-                });
-
-                const data = await res.json();
-
-                if (!res.ok) {
-                    msg.innerText = data.error || "Login gagal";
-                    msg.classList.remove("hidden");
-                    return;
-                }
-
-                localStorage.setItem("ciwai_token", data.token);
-                window.location.href = "/dashboard.html";
-
-            } catch (err) {
-                msg.innerText = "Koneksi server terputus";
-                msg.classList.remove("hidden");
+            if (btnLogin) {
+                btnLogin.onclick = () => modal.classList.remove('hidden');
             }
-        }
+
+            if (btnClose) {
+                btnClose.onclick = () => modal.classList.add('hidden');
+            }
+
+            if (btnSubmit) {
+                btnSubmit.onclick = async () => {
+                    const email = document.getElementById("modalEmail").value;
+                    const password = document.getElementById("modalPassword").value;
+                    const msg = document.getElementById("modalMessage");
+                    const tenant = window.location.hostname.split('.')[0];
+
+                    try {
+                        const res = await fetch("https://api.ciwai.dev/auth/login", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-Tenant": tenant
+                            },
+                            body: JSON.stringify({ email, password })
+                        });
+
+                        const data = await res.json();
+                        if (!res.ok) {
+                            msg.innerText = data.error || "Login gagal";
+                            msg.classList.remove("hidden");
+                            return;
+                        }
+
+                        localStorage.setItem("ciwai_token", data.token);
+                        window.location.href = "/dashboard.html";
+                    } catch (err) {
+                        msg.innerText = "API Server offline, bro!";
+                        msg.classList.remove("hidden");
+                    }
+                };
+            }
+        });
     </script>
 </footer>
