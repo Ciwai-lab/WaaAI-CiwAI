@@ -126,28 +126,53 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        /** * CIWAI UTILITY SCRIPT 
+         */
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openLoginModal() {
             const modal = document.getElementById('loginModal');
-            const btnLogin = document.getElementById('btnLogin');
-            const btnClose = document.getElementById('btnCloseModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                console.log("Modal dibuka, bro!");
+            } else {
+                console.error("ID loginModal gak ketemu di HTML ente!");
+            }
+        }
+
+        function closeLoginModal() {
+            const modal = document.getElementById('loginModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+
+            window.onscroll = function () {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    if (backToTopBtn) backToTopBtn.classList.remove('hidden');
+                } else {
+                    if (backToTopBtn) backToTopBtn.classList.add('hidden');
+                }
+            };
+
             const btnSubmit = document.getElementById('btnSubmitLogin');
-
-            if (btnLogin) {
-                btnLogin.onclick = () => modal.classList.remove('hidden');
-            }
-
-            if (btnClose) {
-                btnClose.onclick = () => modal.classList.add('hidden');
-            }
-
             if (btnSubmit) {
                 btnSubmit.onclick = async () => {
                     const email = document.getElementById("modalEmail").value;
                     const password = document.getElementById("modalPassword").value;
                     const msg = document.getElementById("modalMessage");
+
                     const tenant = window.location.hostname.split('.')[0];
 
                     try {
+                        msg.innerText = "Sedang masuk...";
+                        msg.classList.remove("hidden", "bg-red-500/20", "text-red-400");
+                        msg.classList.add("bg-blue-500/20", "text-blue-400");
+
                         const res = await fetch("https://api.ciwai.dev/auth/login", {
                             method: "POST",
                             headers: {
@@ -158,16 +183,22 @@
                         });
 
                         const data = await res.json();
+
                         if (!res.ok) {
                             msg.innerText = data.error || "Login gagal";
+                            msg.classList.replace("bg-blue-500/20", "bg-red-500/20");
+                            msg.classList.replace("text-blue-400", "text-red-400");
                             msg.classList.remove("hidden");
                             return;
                         }
 
                         localStorage.setItem("ciwai_token", data.token);
                         window.location.href = "/dashboard.html";
+
                     } catch (err) {
-                        msg.innerText = "API Server offline, bro!";
+                        msg.innerText = "API Offline, cek server EC2 ente bro!";
+                        msg.classList.replace("bg-blue-500/20", "bg-red-500/20");
+                        msg.classList.replace("text-blue-400", "text-red-400");
                         msg.classList.remove("hidden");
                     }
                 };
