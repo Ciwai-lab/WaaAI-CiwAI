@@ -356,18 +356,37 @@
         Got an idea, project, or something you want? or just wanna say hi?
         We’re open for collabs, custom apps and craft something meaningful.
       </p>
-      <div class="text-lg text-gray-800 space-y-2">
-        <p>📩 Email: <strong><a href="mailto:halo@ciwai.dev" class="text-indigo-600 hover:underline">halo@ciwai.dev</a>
+      <div class="text-lg text-gray-800 space-y-5">
+        <p>
+          📩 Email:
+          <strong>
+            <a href="mailto:halo@ciwai.dev" class="text-indigo-600 hover:underline">
+              halo@ciwai.dev
+            </a>
           </strong>
         </p>
-        <p class="text-base text-gray-700">
-          ☕ Want to support the development of CiwAI?
-          <a href="/donate.html" class="text-indigo-600 font-semibold hover:underline">
-            Support here
+
+        <!-- Donate button -->
+        <div>
+          <p class="text-base text-gray-700 mb-3">
+            ☕ Want to support the development of CiwAI?
+          </p>
+
+          <a href="/donate.html" class="inline-flex items-center justify-center
+           px-6 py-3 rounded-xl
+           bg-indigo-600 text-white font-semibold
+           hover:bg-indigo-500
+           transition shadow-md hover:shadow-lg">
+            Support CiwAI
           </a>
-        </p>
+        </div>
       </div>
   </section>
+
+  <!-- Footer -->
+  <div id="ciwai-footer"></div>
+
+  <script src="/assets/js/footer.js"></script>
 
   <!-- ================= CIWAI BOT UI ================= -->
   <style>
@@ -576,11 +595,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
-
-  <!-- Footer -->
-  <div id="ciwai-footer"></div>
-
-  <script src="/assets/js/footer.js"></script>
 
 </body>
 
