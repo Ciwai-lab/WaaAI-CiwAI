@@ -96,17 +96,17 @@
                 </div>
 
                 <!-- RIGHT: QR -->
-                <div class="flex justify-center lg:justify-end p-4">
-                    <div class="bg-white border border-slate-100 rounded-[2.5rem] p-8 
+                <div class="flex justify-center lg:justify-end p-2 sm:p-4">
+                    <div class="bg-white border border-slate-100 rounded-[2rem] sm:rounded-[2.5rem] p-4 sm:p-8 
                 shadow-[20px_20px_60px_rgba(0,0,0,0.05),-20px_-20px_60px_rgba(255,255,255,1)] 
                 transition-all duration-500 hover:shadow-[30px_30px_70px_rgba(0,0,0,0.08)]">
 
                         <div class="relative group">
                             <button onclick="openQR()"
-                                class="relative block overflow-hidden rounded-2xl bg-slate-50 p-2 shadow-inner">
+                                class="relative block overflow-hidden rounded-2xl bg-slate-50 p-1 sm:p-2 shadow-inner">
                                 <img src="assets/images/qris-ciwai-elegan.png" alt="QRIS CiwAI" loading="eager"
                                     decoding="async"
-                                    class="w-full h-auto aspect-square max-w-[380px] rounded-xl cursor-zoom-in
+                                    class="w-full h-auto aspect-square max-w-[320px] sm:max-w-[380px] rounded-xl cursor-zoom-in
                             transition-all duration-700 ease-out
                             group-hover:scale-[1.05] group-hover:[transform:perspective(1000px)_rotateX(5deg)_rotateY(-5deg)]">
 
@@ -117,13 +117,15 @@
 
                             <div class="mt-6 text-center space-y-2">
                                 <div class="flex items-center justify-center gap-2">
-                                    <span class="h-[1px] w-8 bg-slate-200"></span>
-                                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Scan to
-                                        Support</p>
-                                    <span class="h-[1px] w-8 bg-slate-200"></span>
+                                    <span class="h-[1px] w-6 sm:w-8 bg-slate-200"></span>
+                                    <p
+                                        class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+                                        Scan to Support</p>
+                                    <span class="h-[1px] w-6 sm:w-8 bg-slate-200"></span>
                                 </div>
-                                <p class="text-xs text-slate-400 font-medium">Tap QR untuk memperbesar</p>
-                                <p class="text-sm text-slate-600 leading-relaxed italic">
+                                <p class="text-[11px] sm:text-xs text-slate-400 font-medium">Tap QR untuk memperbesar
+                                </p>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed italic px-2">
                                     Scan dengan e-wallet atau mobile banking
                                 </p>
                             </div>
