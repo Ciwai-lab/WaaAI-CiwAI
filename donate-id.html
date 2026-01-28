@@ -127,7 +127,7 @@
             </button>
 
             <!-- Full QR -->
-            <img src="assets/images/qris-ciwai-elegan.png" alt="QRIS Fullscreen"
+            <img src="assets/images/qris-ciwai-elegan.webp" alt="QRIS Fullscreen"
                 class="max-h-[90vh] rounded-xl bg-white p-2 shadow-lg">
         </div>
     </div>
@@ -135,15 +135,14 @@
     <script>
         function openQR() {
             document.getElementById('qrModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // lock scroll
+            document.body.style.overflow = 'hidden';
         }
 
         function closeQR() {
             document.getElementById('qrModal').classList.add('hidden');
-            document.body.style.overflow = ''; // restore scroll
+            document.body.style.overflow = '';
         }
 
-        // Close if click outside image
         document.getElementById('qrModal').addEventListener('click', function (e) {
             if (e.target.id === 'qrModal') closeQR();
         });
