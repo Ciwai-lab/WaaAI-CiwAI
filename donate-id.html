@@ -96,8 +96,15 @@
                 <!-- RIGHT: QR -->
                 <div class="flex justify-center lg:justify-end">
                     <div class="bg-white border-2 border-blue-100 rounded-3xl p-8 shadow-md">
-                        <img src="assets/images/qris-ciwai-elegan.png" alt="QRIS CiwAI"
-                            class="w-full max-w-[380px] rounded-2xl">
+                        <button onclick="openQR()" class="group">
+                            <img src="assets/images/qris-ciwai-elegan.png" alt="QRIS CiwAI" class="w-full max-w-[380px] rounded-2xl cursor-zoom-in 
+           transition group-hover:scale-[1.01]">
+                        </button>
+
+                        <p class="text-center text-xs text-slate-400 mt-2">
+                            Tap QR untuk memperbesar
+                        </p>
+
                         <p class="text-center text-sm text-slate-500 mt-4">
                             Scan dengan e-wallet atau mobile banking
                         </p>
@@ -107,6 +114,40 @@
             </div>
         </div>
     </main>
+
+    <!-- QR Fullscreen Modal -->
+    <div id="qrModal" class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center p-4">
+
+        <div class="relative max-w-full max-h-full">
+
+            <!-- Close button -->
+            <button onclick="closeQR()"
+                class="absolute -top-10 right-0 text-white text-sm opacity-80 hover:opacity-100">
+                Tutup ✕
+            </button>
+
+            <!-- Full QR -->
+            <img src="assets/images/qris-ciwai-elegan.png" alt="QRIS Fullscreen"
+                class="max-h-[90vh] rounded-xl bg-white p-2 shadow-lg">
+        </div>
+    </div>
+
+    <script>
+        function openQR() {
+            document.getElementById('qrModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // lock scroll
+        }
+
+        function closeQR() {
+            document.getElementById('qrModal').classList.add('hidden');
+            document.body.style.overflow = ''; // restore scroll
+        }
+
+        // Close if click outside image
+        document.getElementById('qrModal').addEventListener('click', function (e) {
+            if (e.target.id === 'qrModal') closeQR();
+        });
+    </script>
 
     <!-- FOOTER -->
     <div id="ciwai-footer"></div>
