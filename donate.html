@@ -10,6 +10,7 @@
         content="Support the development of CiwAI Smart Digital through voluntary donations to help cover server, domain, and feature development costs." />
 
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="preload" as="image" href="assets/images/qris-ciwai-elegan.png">
 
     <!-- OG -->
     <meta property="og:title" content="Support CiwAI" />
@@ -57,8 +58,10 @@
             <!-- QRIS -->
             <div class="flex flex-col items-center gap-4">
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                    <img src="assets/images/qris-ciwai-elegan.png" alt="QRIS CiwAI"
-                        class="w-full max-w-[380px] rounded-xl">
+                    <img src="assets/images/qris-ciwai-elegan.png" alt="QRIS CiwAI" width="380" height="380"
+                        loading="eager" decoding="async" class="w-full max-w-[380px] rounded-md cursor-zoom-in 
+         transition group-hover:scale-[1.01]">
+
                 </div>
                 <p class="text-sm text-slate-500">
                     Scan menggunakan aplikasi e-wallet atau mobile banking
